@@ -1,0 +1,68 @@
+EXPECTED METABOLITES - DETECTION STATUS
+==================================================
+
+Total Expected: 59
+Detected: 32
+Detection Rate: 54.2%
+
+No.  Expected Metabolite                    Status      Found As
+--------------------------------------------------------------------------------
+  1. 4-Hydroxybenzoic acid               FOUND      Benzoic acid (partial)
+  2. 4-Hydroxybenzoic acid sulfate       FOUND      Sulfate (partial)
+  3. Caffeic acid 3-glucoside            FOUND      Glucoside (partial)
+  4. Catechin sulfate                    FOUND      Sulfate (partial)
+  5. Cyanidin-3-glucuronide              FOUND      Glucuronide (partial)
+  6. Dihydroferulic acid sulfate         FOUND      Sulfate (partial)
+  7. Dihydroresveratrol                  FOUND      Resveratrol (partial)
+  8. Dihydroresveratrol sulfate          FOUND      Sulfate (partial)
+  9. Dihydroresveratrol sulfate-glucuron FOUND      Glucuronide (partial)
+ 10. Gallic acid                         FOUND      Gallic acid (exact)
+ 11. Gallic acid sulfate                 FOUND      Sulfate (partial)
+ 12. Luteolin 7-sulfate                  FOUND      Sulfate (partial)
+ 13. Malvidin-3-glucoside                FOUND      Glucoside (partial)
+ 14. Malvidin-3-glucuronide              FOUND      Glucuronide (partial)
+ 15. Methyl-peonidin-3-glucuronide-sulfa FOUND      Glucuronide (partial)
+ 16. Methylcatechin sulfate              FOUND      Sulfate (partial)
+ 17. Methylepicatechin glucuronide       FOUND      Glucuronide (partial)
+ 18. Methylepicatechin sulfate           FOUND      Sulfate (partial)
+ 19. Peonidin-3-(6″-acetyl)-glucoside    FOUND      Glucoside (partial)
+ 20. Peonidin-3-glucoside                FOUND      Glucoside (partial)
+ 21. Peonidin-3-glucuronide              FOUND      Glucuronide (partial)
+ 22. Peonidin-diglucuronide              FOUND      Glucuronide (partial)
+ 23. Protocatechuic acid ethyl ester     FOUND      Protocatechuic acid (partial)
+ 24. Resveratrol                         FOUND      Resveratrol (exact)
+ 25. Syringic acid                       FOUND      Syringic acid (exact)
+ 26. Syringic acid glucuronide           FOUND      Glucuronide (partial)
+ 27. Vanillic acid-4-O-glucuronide       FOUND      Glucuronide (partial)
+ 28. p-Coumaryl alcohol 4-O-glucoside    FOUND      Glucoside (partial)
+ 29. trans-Delphinidin-3-(6″-coumaroyl)- FOUND      Glucoside (partial)
+ 30. trans-Resveratrol glucoside         FOUND      Glucoside (partial)
+ 31. trans-Resveratrol glucuronide       FOUND      Glucuronide (partial)
+ 32. trans-Resveratrol sulfate           FOUND      Sulfate (partial)
+ 33. 1-Caffeoyl-beta-D-glucose           MISSING     
+ 34. 1-O-[3-(2,4-Dihydroxy-methoxyphenyl MISSING     
+ 35. 2-amino-3-oxoadipic acid            MISSING     
+ 36. 3-Methylglutarylcarnitine           MISSING     
+ 37. 4-(2-Carboxyethyl)-3-hydroxy-2-meth MISSING     
+ 38. 5-(3′,4′-dihydroxyphenyl)-valeric a MISSING     
+ 39. 6-Hydroxy-4′,5,7-trimethoxyflavone  MISSING     
+ 40. Beta-lactic acid                    MISSING     
+ 41. Caffeic acid ethyl ester            MISSING     
+ 42. Citramalic acid                     MISSING     
+ 43. Delphinidin-3-arabinoside           MISSING     
+ 44. Equol                               MISSING     
+ 45. Erythro-3-methylmalic acid          MISSING     
+ 46. Ethyl-gallate                       MISSING     
+ 47. Galactopinitol A                    MISSING     
+ 48. Galactopinitol B                    MISSING     
+ 49. Gravolenic acid                     MISSING     
+ 50. Isohelenol                          MISSING     
+ 51. Methyl (2E)-5-(5-methyl-2-thienyl)- MISSING     
+ 52. N-formyl-L-glutamic acid            MISSING     
+ 53. O-adipoylcarnitine                  MISSING     
+ 54. Threo-3-methylmalic acid            MISSING     
+ 55. Urolithin A                         MISSING     
+ 56. Valine-Histidine (Val-His)          MISSING     
+ 57. Xanthine                            MISSING     
+ 58. cis-Coumaric acid                   MISSING     
+ 59. trans-Fertaric acid                 MISSING     
