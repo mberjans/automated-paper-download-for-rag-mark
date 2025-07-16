@@ -14,8 +14,8 @@ from typing import List, Dict, Tuple, Any
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
-# Import the enhanced API wrapper with fallback
-from llm_wrapper_enhanced import LLMWrapper
+# Import the API wrapper
+from llm_wrapper import LLMWrapper
 
 # Configuration
 GLOBAL_OUTPUT_MAX_TOKENS = 512
@@ -48,12 +48,7 @@ def load_api_wrapper():
     
     try:
         api_wrapper = LLMWrapper()
-
-        # Show enhanced wrapper status
-        print(f"🎯 Primary provider: {api_wrapper.current_provider}")
-        print(f"🛡️ Fallback system: Active")
-        print(f"📋 Fallback order: {' → '.join(api_wrapper.fallback_order)}")
-
+        
         # Test the wrapper
         test_response = api_wrapper.generate_single("Test", max_tokens=5)
         if not test_response:

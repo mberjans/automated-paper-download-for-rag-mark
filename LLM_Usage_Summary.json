@@ -1,0 +1,61 @@
+{
+  "total_files": 9,
+  "enhanced_files": 3,
+  "basic_files": 2,
+  "files": [
+    {
+      "file": "llm_wrapper_enhanced.py",
+      "path": "FOODB_LLM_pipeline/llm_wrapper_enhanced.py",
+      "status": "\u2753 Unknown wrapper",
+      "needs_update": false
+    },
+    {
+      "file": "5_LLM_Simple_Sentence_gen_API_original.py",
+      "path": "FOODB_LLM_pipeline/5_LLM_Simple_Sentence_gen_API_original.py",
+      "status": "\u2705 Enhanced (with fallback)",
+      "needs_update": false
+    },
+    {
+      "file": "openrouter_client.py",
+      "path": "FOODB_LLM_pipeline/openrouter_client.py",
+      "status": "\u2753 Unknown wrapper",
+      "needs_update": false
+    },
+    {
+      "file": "llm_wrapper_original.py",
+      "path": "FOODB_LLM_pipeline/llm_wrapper_original.py",
+      "status": "\u2753 Unknown wrapper",
+      "needs_update": false
+    },
+    {
+      "file": "llm_wrapper.py",
+      "path": "FOODB_LLM_pipeline/llm_wrapper.py",
+      "status": "\u2753 Unknown wrapper",
+      "needs_update": false
+    },
+    {
+      "file": "simple_sentenceRE3_API_original_backup.py",
+      "path": "FOODB_LLM_pipeline/simple_sentenceRE3_API_original_backup.py",
+      "status": "\u274c Basic (no fallback)",
+      "needs_update": true
+    },
+    {
+      "file": "5_LLM_Simple_Sentence_gen_API_original_original_backup.py",
+      "path": "FOODB_LLM_pipeline/5_LLM_Simple_Sentence_gen_API_original_original_backup.py",
+      "status": "\u274c Basic (no fallback)",
+      "needs_update": true
+    },
+    {
+      "file": "simple_sentenceRE3_API.py",
+      "path": "FOODB_LLM_pipeline/simple_sentenceRE3_API.py",
+      "status": "\u2705 Enhanced (with fallback)",
+      "needs_update": false
+    },
+    {
+      "file": "5_LLM_Simple_Sentence_gen_API.py",
+      "path": "FOODB_LLM_pipeline/5_LLM_Simple_Sentence_gen_API.py",
+      "status": "\u2705 Enhanced (with fallback)",
+      "needs_update": false
+    }
+  ]
+}
