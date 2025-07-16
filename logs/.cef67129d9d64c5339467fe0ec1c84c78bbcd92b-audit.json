@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/Mark/Research/automated-paper-download-for-rag-and-llm-fine-tuning/logs/.cef67129d9d64c5339467fe0ec1c84c78bbcd92b-audit.json",
+    "files": [
+        {
+            "date": 1752620297932,
+            "name": "/Users/Mark/Research/automated-paper-download-for-rag-and-llm-fine-tuning/logs/mcp-puppeteer-2025-07-15.log",
+            "hash": "0a99d8d7ef30aeb7c364b493ce3708e0c76b5b13b2be8d9eaf747c4525496a7e"
+        }
+    ],
+    "hashType": "sha256"
+}

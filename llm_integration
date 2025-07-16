@@ -1,0 +1,94 @@
+# Author: Amandeep Singh Hira
+# Desc: This code is to use gemmma:7b model to add more keywords to the dictonary. use this code after declearing the keywords in the main pipeline. 
+
+
+
+import pandas as pd
+import requests
+import json
+
+
+
+#reading csv 
+df = pd.read_csv(r"your_csv_file_directory")
+
+
+
+
+disease_keywords = [
+        {"name": "potato", "keywords": ["potato", "N-acetyl-S-(2-carbamoylethyl)-cysteine","consumption"]},
+        {"name": "potato", "keywords": ["potato", "consumption"]},
+        
+        
+
+        # Add more diseases with associated keywords as needed
+    ]
+
+url = "your_llm_api"
+
+headers = {
+    "Content-Type": "application/json"
+}
+
+
+
+# for other words that can be used instead of food
+for index, row in df.iterrows():
+    data = {
+    "model": "gemma:7b",
+    "prompt": "answer in only one word that can be used instead of " + row['food'],
+    "stream": False 
+    }
+
+
+    
+    response = requests.post(url, headers=headers, data= json.dumps(data) )
+    
+    if response.status_code == 200:
+        response_text = response.text
+        data = json.loads(response_text)
+        actual_response = data["response"]
+
+               
+        
+        # Add the new disease to the list
+        disease_keywords.append({"name": row['food'], "keywords": ["consumption",row['chemical'], actual_response]})
+
+
+
+
+# for chemical and food in keywords.
+for index, row in df.iterrows():
+    disease_keywords.append({"name": row['food'], "keywords": [row['chemical'], row['food']]})
+
+
+
+
+
+# for other words that can be used instead of chemical
+for index, row in df.iterrows():
+    data = {
+    "model": "gemma:7b",
+    "prompt": "answer in only one word that can be used instead of " + row['chemical'],
+    "stream": False 
+    }
+
+
+    
+    response = requests.post(url, headers=headers, data= json.dumps(data) )
+    
+    if response.status_code == 200:
+        response_text = response.text
+        data = json.loads(response_text)
+        actual_response = data["response"]
+
+               
+        
+        # Add the new disease to the list
+        disease_keywords.append({"name": row['food'], "keywords": ["consumption",row['food'], actual_response]})
+
+
+
+    
+print(disease_keywords)
+

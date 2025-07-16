@@ -1,0 +1,258 @@
+# Author: Omolola Fatokun
+# csv input and Groq integration: Amandeep Singh Hira
+
+# Description: 
+# The script is an addition to the main ADHD pipeline script. This script takes input from csv file and uses Groq ai api to generate key words for the keywords dictionary.
+
+# To use this change the following data:
+#     - api_key: make a free account on groq.ai and generate api key. Use that api key in the variable api_key.
+#     - model: The Ai model that you want to use. the default is set to "llama3-8b-8192"
+#     - Entrez.email: use your university email.
+#     - biomarkers_data: use the location of the input csv file
+#     - food: first row label of the csv that you used.
+#     - chemical: second row label of the csv that you used.
+
+# Change the set keywords in the "for" loops with groq integration to make the search less or more stringent.  
+     
+
+
+
+
+
+import os
+import pandas as pd
+from Bio import Entrez
+import xml.etree.ElementTree as ET
+import time
+from groq import Groq
+
+#set up for GROQ
+client = Groq(
+    api_key = "api key",
+)
+
+# CSV Retrieval Functions
+def search_pubmed(query, max_results, year_range=None, article_type=None):
+    Entrez.email = "university@email.com"  # Set your email address for identification
+    if year_range:
+        query += f" AND {year_range[0]}:{year_range[1]}[PDAT]"
+    if article_type:
+        query += f" AND {article_type}[Filter]"
+    handle = Entrez.esearch(db="pubmed", term=query, retmax=max_results)
+    record = Entrez.read(handle)
+    handle.close()
+    return record["IdList"], int(record["Count"])
+
+def fetch_article_details_csv(article_ids):
+    Entrez.email = "university@email.com"  # Set your email address for identification
+    handle = Entrez.efetch(db="pubmed", id=article_ids, rettype="csv", retmode="text")
+    return handle.read()
+
+def fetch_article_details_xml(article_ids):
+    Entrez.email = "university@email.com"  # Set your email address for identification
+    handle = Entrez.efetch(db="pubmed", id=article_ids, rettype="xml", retmode="text")
+    data = handle.read()
+    handle.close()
+    return data
+
+def count_pmc_full_text(xml_data):
+    root = ET.fromstring(xml_data)
+    pmc_count = 0
+    for article in root.findall(".//PubmedArticle"):
+        if article.find(".//PubmedData/ArticleIdList/ArticleId[@IdType='pmc']") is not None:
+            pmc_count += 1
+    return pmc_count
+
+def save_csv(data, filename):
+    with open(filename, "w", newline="", encoding="utf-8") as f:
+        f.write(data)
+
+#reading csv 
+biomarkers_data = pd.read_csv(r"input_csv_file_address")
+
+def retrieve_csvs():
+    # Create the folder for storing CSV files
+    folder_name = "MarkerDBinput2"
+    if not os.path.exists(folder_name):
+        os.makedirs(folder_name)
+
+    # Define a list of dictionaries for each disease
+    disease_keywords = [
+        {"name": "potato", "keywords": ["consumption", "cysteine"]},
+        
+        
+
+        # Add more diseases with associated keywords as needed
+    ]
+
+
+
+    
+
+    # for other words that can be used instead of food
+    for index, row in biomarkers_data.iterrows():
+        
+        chat_completion = client.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                "content": "answer in only one word that are used instead of " + row['food'] + " in a scientific paper.",
+            }
+        ],
+        model="llama3-8b-8192",
+        )
+
+
+        
+        actual_response = chat_completion.choices[0].message.content
+                                
+            
+        # Add the new disease to the list. change the keywords to make search more or less stringent. 
+        disease_keywords.append({"name": row['food'] + "1", "keywords": ["consumption", "biomarker",row['chemical'], actual_response]})
+    
+    # for chemical and food in keywords.
+    for index, row in biomarkers_data.iterrows():
+        disease_keywords.append({"name": row['food'] + "2", "keywords": [row['chemical'], row['food']]})
+
+
+    # for other words that can be used instead of chemical
+    for index, row in biomarkers_data.iterrows():
+        
+        chat_completion = client.chat.completions.create( 
+        messages=[
+            {
+                "role": "user",
+                "content": "answer in only one word that are used instead of " + row['chemical'] + " in a scientific paper.",
+            }
+        ],
+        model="llama3-8b-8192",
+        )
+
+
+        
+        actual_response = chat_completion.choices[0].message.content
+                                
+            
+        # Add the new disease to the list. change the keywords to make search more or less stringent.
+        disease_keywords.append({"name": row['food'] + "3", "keywords": ["consumption",row['food'], actual_response, "human", "biomarker"]})
+
+
+    print(disease_keywords)
+
+    max_results = 10000  # Maximum number of results to retrieve
+    year_range = (2000, 2024)  # Filter by Publication date for the articles (optional)
+    article_type = None  # Filter by desired article type(s) e.g. Meta-Analysis, Systematic Review, Review, Clinical Trial (CT), Randomized CT
+    retry_attempts = 5  # Define the number of retry attempts
+    retry_delay = 10  # Delay between retry attempts (in seconds)
+
+    # Attempt to retrieve PubMed results for each disease with retry logic
+    for disease in disease_keywords:
+        try:
+            # Construct the query for the current disease
+            query = " AND ".join(disease["keywords"])
+
+            # Search PubMed for articles matching the query within the specified time frame and article type
+            article_ids, total_results = search_pubmed(query, max_results, year_range, article_type)
+
+            print(f"Total results for {disease['name']}: {total_results}")
+
+            # Fetch details of the articles in CSV format
+            csv_data = fetch_article_details_csv(article_ids)
+
+            print(f"CSV data for {disease['name']}: {csv_data[:100]}...")
+
+            # Save the retrieved data to a CSV file with the filename based on the disease name
+            save_csv(csv_data, os.path.join(folder_name, f"{disease['name']}_results.csv"))
+
+            # Fetch XML details of the articles to count PMC full text
+            xml_data = fetch_article_details_xml(article_ids)
+            pmc_count = count_pmc_full_text(xml_data)
+            non_pmc_count = total_results - pmc_count
+
+            print(f"Full text in PMC for {disease['name']}: {pmc_count}")
+            print(f"Not in PMC for {disease['name']}: {non_pmc_count}")
+
+            # Print success message with the actual number of results obtained
+            print(f"{total_results} results for {disease['name']} successfully downloaded.")
+        except Exception as e:
+            # Print error message
+            print(f"Error: {e}")
+            if "429" in str(e):  # Check if error is 429 (rate limit exceeded)
+                print("Rate limit exceeded. Waiting before retrying...")
+                time.sleep(retry_delay)
+                continue  # Retry the request
+            else:
+                break  # Exit the loop if the error is not 429 or if the maximum number of retry attempts is reached
+
+    # Remove duplicates from the list of all article IDs
+    # all_article_ids = list(set(all_article_ids))
+
+# CSV Processing Function
+def process_csv_files():
+    # Directory containing the CSV files
+    input_dir = 'MarkerDBinput2'
+
+    # Directory to save the TXT files
+    output_dir = 'MarkerDBtxt'
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    # Process each CSV file in the directory
+    for csv_file in os.listdir(input_dir):
+        if csv_file.endswith('.csv'):
+            csv_path = os.path.join(input_dir, csv_file)
+            
+            print(f"Processing file: {csv_file}")
+            
+            # Read the CSV file without headers
+            try:
+                df = pd.read_csv(csv_path, header=None)
+            except Exception as e:
+                print(f"Error reading {csv_file}: {e}")
+                continue
+            
+            # Check if Column K (11th column, index 10) exists
+            if df.shape[1] < 11:
+                print(f"Column K not found in {csv_file}.")
+                continue
+            
+            # Get the content of Column K
+            column_k_data = df.iloc[:, 10].dropna().reset_index(drop=True)
+            
+            # Skip if no data in Column K
+            if column_k_data.empty:
+                print(f"No content in Column K of {csv_file}.")
+                continue
+            
+            print(f"Found {len(column_k_data)} rows in Column K of {csv_file}.")
+            
+            # Split data if more than 1000 rows
+            num_files = (len(column_k_data) // 1000) + 1
+            base_filename = os.path.splitext(csv_file)[0]
+            
+            for i in range(num_files):
+                start_row = i * 1000
+                end_row = start_row + 1000
+                chunk = column_k_data[start_row:end_row]
+                
+                if not chunk.empty:
+                    # Create a filename based on the original CSV file name and chunk index
+                    txt_file = f"{base_filename}_{i+1}.txt"
+                    txt_path = os.path.join(output_dir, txt_file)
+                    
+                    # Write the data to a text file
+                    with open(txt_path, 'w') as f:
+                        for doi in chunk:
+                            f.write(f"{doi}\n")
+                    
+                    print(f"Written {len(chunk)} rows to {txt_file}")
+                else:
+                    print(f"No more data to write for {csv_file} in chunk {i+1}.")
+            
+            print(f"Finished processing {csv_file}.\n")
+
+# Main Script
+if __name__ == "__main__":
+    retrieve_csvs()
+    process_csv_files()
+    os.system('./Download.sh')
