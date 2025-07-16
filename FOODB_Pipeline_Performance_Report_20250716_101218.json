@@ -1,0 +1,142 @@
+{
+  "timestamp": "20250716_101218",
+  "test_type": "foodb_pipeline_performance_accuracy",
+  "sentence_generation": {
+    "total_duration": 1.7114348411560059,
+    "success_rate": 1.0,
+    "avg_response_time": 0.3422374725341797,
+    "throughput": 2.921525190303301,
+    "results": [
+      {
+        "prompt": "Extract metabolites from: Red wine contains resveratrol and anthocyanins.",
+        "response": "The metabolites extracted from the given text are:\n\n1. Resveratrol\n2. Anthocyanins",
+        "duration": 0.44454288482666016,
+        "success": true,
+        "provider": "cerebras"
+      },
+      {
+        "prompt": "Extract metabolites from: Green tea contains catechins and EGCG.",
+        "response": "The metabolites mentioned in the given text are:\n\n1. Catechins\n2. EGCG (Epigallocatechin gallate)",
+        "duration": 0.22743511199951172,
+        "success": true,
+        "provider": "cerebras"
+      },
+      {
+        "prompt": "Extract metabolites from: Blueberries contain anthocyanins and vitamin C.",
+        "response": "The metabolites mentioned are:\n\n1. Anthocyanins\n2. Vitamin C",
+        "duration": 0.19935011863708496,
+        "success": true,
+        "provider": "cerebras"
+      },
+      {
+        "prompt": "Extract metabolites from: Turmeric contains curcumin and other compounds.",
+        "response": "The metabolite extracted from the given text is:\n\n1. Curcumin",
+        "duration": 0.21665310859680176,
+        "success": true,
+        "provider": "cerebras"
+      },
+      {
+        "prompt": "Extract metabolites from: Dark chocolate contains flavonoids and epicatechin.",
+        "response": "The metabolites mentioned in the given text are:\n\n1. Flavonoids\n2. Epicatechin",
+        "duration": 0.6232061386108398,
+        "success": true,
+        "provider": "groq"
+      }
+    ],
+    "stats": {
+      "total_requests": 5,
+      "successful_requests": 5,
+      "failed_requests": 0,
+      "rate_limited_requests": 1,
+      "fallback_switches": 1,
+      "success_rate": 1.0,
+      "failure_rate": 0.0
+    }
+  },
+  "accuracy_testing": {
+    "overall_accuracy": 0.7692307692307693,
+    "avg_case_accuracy": 0.8166666666666667,
+    "perfect_cases": 2,
+    "results": [
+      {
+        "case": "Simple compound extraction",
+        "expected_count": 2,
+        "found_count": 2,
+        "found_compounds": [
+          "resveratrol",
+          "anthocyanins"
+        ],
+        "accuracy": 1.0,
+        "response_time": 0.316845178604126,
+        "response": "The metabolites mentioned in the given text are:\n\n1. Resveratrol\n2. Anthocyanins"
+      },
+      {
+        "case": "Multiple compounds with abbreviation",
+        "expected_count": 3,
+        "found_count": 2,
+        "found_compounds": [
+          "epigallocatechin gallate",
+          "EGCG"
+        ],
+        "accuracy": 0.6666666666666666,
+        "response_time": 0.17015886306762695,
+        "response": "The metabolite extracted from the given text is:\n\n1. Epigallocatechin gallate (EGCG)"
+      },
+      {
+        "case": "Single compound with description",
+        "expected_count": 1,
+        "found_count": 1,
+        "found_compounds": [
+          "curcumin"
+        ],
+        "accuracy": 1.0,
+        "response_time": 0.204880952835083,
+        "response": "The metabolite mentioned in the given text is:\n\n1. Curcumin"
+      },
+      {
+        "case": "Compound class and specific compounds",
+        "expected_count": 3,
+        "found_count": 2,
+        "found_compounds": [
+          "epicatechin",
+          "procyanidins"
+        ],
+        "accuracy": 0.6666666666666666,
+        "response_time": 0.4808821678161621,
+        "response": "The metabolites mentioned in the given text are:\n\n1. Epicatechin\n2. Procyanidins"
+      },
+      {
+        "case": "Vitamins and specific flavonoids",
+        "expected_count": 4,
+        "found_count": 3,
+        "found_compounds": [
+          "vitamin C",
+          "hesperidin",
+          "naringin"
+        ],
+        "accuracy": 0.75,
+        "response_time": 0.35082221031188965,
+        "response": "The metabolites mentioned in the given text are:\n\n1. Vitamin C\n2. Hesperidin\n3. Naringin"
+      }
+    ]
+  },
+  "stress_testing": {
+    "total_time": 8.795920133590698,
+    "success_rate": 1.0,
+    "avg_response_time": 0.4397358775138855,
+    "throughput": 2.2737814459708536,
+    "provider_switches": 1,
+    "final_stats": {
+      "total_requests": 20,
+      "successful_requests": 20,
+      "failed_requests": 0,
+      "rate_limited_requests": 1,
+      "fallback_switches": 1,
+      "success_rate": 1.0,
+      "failure_rate": 0.0
+    }
+  },
+  "summary": {
+    "overall_performance": "needs_improvement"
+  }
+}

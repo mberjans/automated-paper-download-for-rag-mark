@@ -1,0 +1,121 @@
+{
+  "timestamp": "20250716_101336",
+  "test_type": "triple_extraction_performance",
+  "wrapper_test": true,
+  "performance_test": {
+    "total_duration": 3.1843740940093994,
+    "success_rate": 1.0,
+    "avg_response_time": 0.3979984223842621,
+    "throughput": 2.512267643129616,
+    "provider_switches": 1,
+    "results": [
+      {
+        "prompt": "Extract relationships: Resveratrol is found in red wine and has antioxidant properties.",
+        "response": "The relationships that can be extracted from the given statement are:\n\n1. Resveratrol is found in: Red wine\n2. Resveratrol has: Antioxidant properties",
+        "duration": 0.1741318702697754,
+        "success": true,
+        "provider_before": "cerebras",
+        "provider_after": "cerebras"
+      },
+      {
+        "prompt": "Extract relationships: Curcumin is present in turmeric and exhibits anti-inflammatory effects.",
+        "response": "The relationship extracted from the given statement is:\n\n- Curcumin is present in turmeric. \n- Curcumin exhibits anti-inflammatory effects.",
+        "duration": 0.6407039165496826,
+        "success": true,
+        "provider_before": "cerebras",
+        "provider_after": "groq"
+      },
+      {
+        "prompt": "Extract relationships: Green tea contains catechins which provide health benefits.",
+        "response": "From the given statement, we can extract the following relationship:\n\n- Green tea (subject) \n- Catechins (attribute or component)\n- Health benefits (attribute or effect)",
+        "duration": 0.3903372287750244,
+        "success": true,
+        "provider_before": "groq",
+        "provider_after": "groq"
+      },
+      {
+        "prompt": "Extract relationships: Anthocyanins are found in blueberries and give them blue color.",
+        "response": "From the given statement, we can extract the following relationship:\n\n- Anthocyanins are found in blueberries.\n- Anthocyanins give blueberries their blue color.\n\nThis relationship can be represented as a cause-and-effect relationship, where the presence of anthocyanins (cause) results in the blue color of blueberries (effect).",
+        "duration": 0.4221980571746826,
+        "success": true,
+        "provider_before": "groq",
+        "provider_after": "groq"
+      },
+      {
+        "prompt": "Extract relationships: Lycopene is a carotenoid present in tomatoes.",
+        "response": "The relationship extracted is:\n\n- Lycopene (a carotenoid) \n- is present in (has a relationship with) \n- tomatoes.",
+        "duration": 0.36896204948425293,
+        "success": true,
+        "provider_before": "groq",
+        "provider_after": "groq"
+      },
+      {
+        "prompt": "Extract relationships: Quercetin is a flavonoid found in onions and apples.",
+        "response": "The relationships extracted from the given statement are:\n\n1. Quercetin is a flavonoid.\n2. Quercetin is found in onions.\n3. Quercetin is found in apples.",
+        "duration": 0.4321260452270508,
+        "success": true,
+        "provider_before": "groq",
+        "provider_after": "groq"
+      },
+      {
+        "prompt": "Extract relationships: Sulforaphane is present in broccoli and has protective effects.",
+        "response": "Based on the given statement, the relationships can be extracted as follows:\n\n1. Sulforaphane is present in: Broccoli\n2. Sulforaphane has: Protective effects",
+        "duration": 0.3806803226470947,
+        "success": true,
+        "provider_before": "groq",
+        "provider_after": "groq"
+      },
+      {
+        "prompt": "Extract relationships: Allicin is found in garlic and has antimicrobial properties.",
+        "response": "From the given statement, we can extract the following relationship:\n\n- Allicin is found in garlic. (Composition or source relationship)\n- Allicin has antimicrobial properties. (Property or characteristic relationship)",
+        "duration": 0.3748478889465332,
+        "success": true,
+        "provider_before": "groq",
+        "provider_after": "groq"
+      }
+    ]
+  },
+  "accuracy_test": {
+    "avg_accuracy": 0.8333333333333334,
+    "perfect_cases": 2,
+    "total_cases": 3,
+    "results": [
+      {
+        "case": "Simple compound-source relationship",
+        "entity_accuracy": 1.0,
+        "relation_found": false,
+        "overall_accuracy": 0.5,
+        "response_time": 0.22017979621887207,
+        "found_entities": [
+          "resveratrol",
+          "red wine"
+        ]
+      },
+      {
+        "case": "Compound-property relationship",
+        "entity_accuracy": 1.0,
+        "relation_found": true,
+        "overall_accuracy": 1.0,
+        "response_time": 0.22640776634216309,
+        "found_entities": [
+          "curcumin",
+          "anti-inflammatory properties"
+        ]
+      },
+      {
+        "case": "Source-compound relationship",
+        "entity_accuracy": 1.0,
+        "relation_found": true,
+        "overall_accuracy": 1.0,
+        "response_time": 0.15511012077331543,
+        "found_entities": [
+          "green tea",
+          "catechins"
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "performance_rating": "excellent"
+  }
+}

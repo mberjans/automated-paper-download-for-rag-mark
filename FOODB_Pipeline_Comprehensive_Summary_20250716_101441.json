@@ -1,0 +1,49 @@
+{
+  "timestamp": "2025-07-16 10:14:41",
+  "test_date": "2025-07-16",
+  "pipeline_components": {
+    "sentence_generation": {
+      "success_rate": 1.0,
+      "avg_response_time": 0.3422374725341797,
+      "throughput": 2.921525190303301,
+      "status": "excellent",
+      "accuracy": 0.7692307692307693
+    },
+    "triple_extraction": {
+      "success_rate": 1.0,
+      "avg_response_time": 0.3979984223842621,
+      "throughput": 2.512267643129616,
+      "provider_switches": 1,
+      "status": "excellent",
+      "accuracy": 0.8333333333333334
+    }
+  },
+  "overall_metrics": {
+    "avg_success_rate": 1.0,
+    "avg_response_time": 0.3701179474592209,
+    "avg_throughput": 2.7168964167164584
+  },
+  "fallback_system_performance": {
+    "stress_test": {
+      "success_rate": 1.0,
+      "provider_switches": 1,
+      "handled_rate_limits": true
+    },
+    "overall_status": {
+      "active": true,
+      "handles_rate_limits": true,
+      "resilience_rating": "excellent"
+    }
+  },
+  "recommendations": [
+    "Sentence generation accuracy needs improvement - consider prompt optimization",
+    "Fallback system working well - provides excellent resilience"
+  ],
+  "overall_assessment": {
+    "rating": "EXCELLENT",
+    "excellent_performance": true,
+    "good_accuracy": true,
+    "resilient_system": true,
+    "production_ready": true
+  }
+}
