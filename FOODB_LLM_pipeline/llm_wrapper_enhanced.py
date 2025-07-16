@@ -66,9 +66,10 @@ class ProviderHealth:
 class LLMWrapper:
     """Enhanced LLM Wrapper with fallback capabilities for FOODB pipeline"""
     
-    def __init__(self, retry_config: RetryConfig = None):
+    def __init__(self, retry_config: RetryConfig = None, document_only_mode: bool = False):
         self.logger = logging.getLogger(__name__)
         self.retry_config = retry_config or RetryConfig()
+        self.document_only_mode = document_only_mode
         
         # Load API keys from .env file only
         self.api_keys = {
@@ -348,3 +349,54 @@ class LLMWrapper:
             'success_rate': self.stats['successful_requests'] / total if total > 0 else 0,
             'failure_rate': self.stats['failed_requests'] / total if total > 0 else 0
         }
+
+    def extract_metabolites_document_only(self, text_chunk: str, max_tokens: int = 200) -> str:
+        """Extract metabolites using strict document-only prompt to prevent training data contamination"""
+
+        prompt = f"""EXTRACT COMPOUNDS FROM TEXT ONLY
+
+TASK: Find and list all chemical compound names that are explicitly mentioned in this text.
+
+TEXT TO ANALYZE:
+{text_chunk}
+
+INSTRUCTIONS:
+- Look for specific chemical compound names in the text
+- Include any compound with a chemical name (e.g., "malvidin-3-glucoside", "caffeic acid")
+- Include metabolites, biomarkers, and chemical substances mentioned by name
+- DO NOT add compounds not mentioned in the text
+- DO NOT use your general knowledge about wine or metabolites
+- List each compound on a separate line
+- If no compounds are mentioned, write "No compounds found"
+
+RESPONSE FORMAT:
+[compound name 1]
+[compound name 2]
+[etc.]"""
+
+        return self.generate_single_with_fallback(prompt, max_tokens)
+
+    def verify_compounds_in_text(self, text_chunk: str, compounds: List[str], max_tokens: int = 300) -> str:
+        """Verify which compounds are actually mentioned in the text to eliminate training data contamination"""
+
+        compounds_list = "\n".join(compounds)
+
+        prompt = f"""COMPOUND VERIFICATION TASK
+
+STRICT RULES:
+1. Only mark as "FOUND" if the exact compound name appears in the text
+2. Partial matches or similar compounds should be marked "NOT_FOUND"
+3. Do not use your training knowledge - only what's in the text
+4. Be extremely conservative in your verification
+
+TEXT CHUNK:
+{text_chunk}
+
+COMPOUNDS TO VERIFY:
+{compounds_list}
+
+RESPONSE FORMAT:
+For each compound, respond with:
+COMPOUND_NAME: FOUND/NOT_FOUND"""
+
+        return self.generate_single_with_fallback(prompt, max_tokens)

@@ -1,0 +1,171 @@
+{
+  "timestamp": "20250716_123739",
+  "test_type": "document_only_vs_original_extraction",
+  "analysis_summary": {
+    "total_chunks": 5,
+    "original_total": 65,
+    "document_only_total": 0,
+    "reduction_count": 65,
+    "reduction_percentage": 1.0,
+    "contamination_indicators": 6
+  },
+  "detailed_results": {
+    "original_extractions": [
+      {
+        "chunk_id": 1,
+        "chunk_text": "The main urinary biomarkers identified were malvidin-3-glucoside, caffeic acid ethyl ester, and quercetin-3-glucuronide.",
+        "extracted_compounds": [
+          "Based on the given text, the wine biomarkers and metabolites found in urine after wine consumption are:",
+          "1. Malvidin-3-glucoside",
+          "2. Caffeic acid ethyl ester",
+          "3. Quercetin-3-glucuronide",
+          "These compounds are likely derived from the polyphenols present in wine, such as anthocyanins (malvidin-3-glucoside) and phenolic acids (caffeic acid ethyl ester). Quercetin-3-glucuronide is a metabolite of quercetin, a flavonoid found in various plant-based foods, including grapes."
+        ],
+        "compound_count": 5
+      },
+      {
+        "chunk_id": 2,
+        "chunk_text": "Analysis revealed significant levels of resveratrol and its metabolites in urine samples.",
+        "extracted_compounds": [
+          "Based on the given text, the wine biomarkers and metabolites mentioned are:",
+          "1. Resveratrol",
+          "2. Its metabolites (unspecified, but likely including resveratrol glucuronides and sulfates)",
+          "Other wine biomarkers and metabolites that could be found in urine after wine consumption include:",
+          "1. Tyrosol",
+          "2. Hydroxytyrosol",
+          "3. Quercetin",
+          "4. Kaempferol",
+          "5. Catechin",
+          "6. Epicatechin",
+          "7. Malvidin",
+          "8. Malvidin-3-glucoside",
+          "9. Resveratrol-3-glucoside",
+          "10. Resveratrol-3-sulfate",
+          "11. Resveratrol-3-glucuronide",
+          "12. Quercetin-3-glucuronide",
+          "13. Quercetin-3-sulfate",
+          "14. Kaempferol-3-glucuronide",
+          "15. Kaempfer"
+        ],
+        "compound_count": 19
+      },
+      {
+        "chunk_id": 3,
+        "chunk_text": "Phenolic compounds including gallic acid, protocatechuic acid, and vanillic acid were detected.",
+        "extracted_compounds": [
+          "Based on the given text, the following phenolic compounds were detected in wine:",
+          "1. Gallic acid",
+          "2. Protocatechuic acid",
+          "3. Vanillic acid",
+          "These compounds can potentially be found in urine after wine consumption as their metabolites. However, the exact metabolites are not mentioned in the given text.",
+          "Some possible metabolites of these compounds that could be found in urine include:",
+          "1. Gallic acid:",
+          "- Gallic acid glucuronide",
+          "- Gallic acid sulfate",
+          "- Methyl gallate",
+          "2. Protocatechuic acid:",
+          "- Protocatechuic acid glucuronide",
+          "- Protocatechuic acid sulfate",
+          "- Protocatechuic aldehyde",
+          "3. Vanillic acid:",
+          "- Vanillic acid glucuronide",
+          "- Vanillic acid sulfate",
+          "- Vanillylmandelic acid (a metabolite of vanillylamine, which is derived from vanillic acid"
+        ],
+        "compound_count": 18
+      },
+      {
+        "chunk_id": 4,
+        "chunk_text": "The study identified anthocyanins such as cyanidin-3-glucoside and peonidin-3-glucoside as key biomarkers.",
+        "extracted_compounds": [
+          "Unfortunately, the provided text does not contain information about wine biomarkers and metabolites in urine. However, I can provide you with a list of potential wine biomarkers and metabolites that could be found in urine after wine consumption, based on general knowledge:",
+          "1. Anthocyanins and their metabolites:",
+          "- Cyanidin-3-glucoside",
+          "- Peonidin-3-glucoside",
+          "- Malvidin-3-glucoside",
+          "- Delphinidin-3-glucoside",
+          "- Petunidin-3-glucoside",
+          "- Their aglycones (anthocyanidins) and their methylated forms",
+          "2. Phenolic acids:",
+          "- Caffeic acid",
+          "- Ferulic acid",
+          "- Sinapic acid",
+          "- Gallic acid",
+          "- Protocatechuic acid",
+          "- Vanillic acid",
+          "3. Flavonoids:"
+        ],
+        "compound_count": 16
+      },
+      {
+        "chunk_id": 5,
+        "chunk_text": "Mass spectrometry analysis detected various sulfate and glucuronide conjugates of wine polyphenols.",
+        "extracted_compounds": [
+          "Based on the given text, we can infer that the wine polyphenols are being conjugated with sulfate and glucuronide groups. Here are some common wine polyphenols and their conjugates that could be found in urine after wine consumption:",
+          "1. Sulfate conjugates:",
+          "- Sulfate conjugate of resveratrol (3,4',5-trihydroxy-trans-stilbene)",
+          "- Sulfate conjugate of quercetin (3,4',5,7-tetrahydroxyflavone)",
+          "- Sulfate conjugate of kaempferol (3,4',5,7-tetrahydroxyflavone)",
+          "- Sulfate conjugate of myricetin (3,4',5,7-tetrahydroxyflavone)",
+          "- Sulfate conjugate of epicatechin (3,4',5-trihydroxy-2-(3,4-dihydro"
+        ],
+        "compound_count": 7
+      }
+    ],
+    "document_only_extractions": [
+      {
+        "chunk_id": 1,
+        "chunk_text": "The main urinary biomarkers identified were malvidin-3-glucoside, caffeic acid ethyl ester, and quercetin-3-glucuronide.",
+        "extracted_compounds": [],
+        "compound_count": 0
+      },
+      {
+        "chunk_id": 2,
+        "chunk_text": "Analysis revealed significant levels of resveratrol and its metabolites in urine samples.",
+        "extracted_compounds": [],
+        "compound_count": 0
+      },
+      {
+        "chunk_id": 3,
+        "chunk_text": "Phenolic compounds including gallic acid, protocatechuic acid, and vanillic acid were detected.",
+        "extracted_compounds": [],
+        "compound_count": 0
+      },
+      {
+        "chunk_id": 4,
+        "chunk_text": "The study identified anthocyanins such as cyanidin-3-glucoside and peonidin-3-glucoside as key biomarkers.",
+        "extracted_compounds": [],
+        "compound_count": 0
+      },
+      {
+        "chunk_id": 5,
+        "chunk_text": "Mass spectrometry analysis detected various sulfate and glucuronide conjugates of wine polyphenols.",
+        "extracted_compounds": [],
+        "compound_count": 0
+      }
+    ],
+    "verification_results": [
+      {
+        "chunk_id": 1,
+        "verification_text": "No compounds to verify"
+      },
+      {
+        "chunk_id": 2,
+        "verification_text": "No compounds to verify"
+      },
+      {
+        "chunk_id": 3,
+        "verification_text": "No compounds to verify"
+      },
+      {
+        "chunk_id": 4,
+        "verification_text": "No compounds to verify"
+      },
+      {
+        "chunk_id": 5,
+        "verification_text": "No compounds to verify"
+      }
+    ],
+    "comparison_analysis": {}
+  }
+}
