@@ -58,3 +58,4 @@ venv/
 env/
 .venv/
 parallel_workspaces/
+.env
