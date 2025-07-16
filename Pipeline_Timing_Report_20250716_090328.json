@@ -1,0 +1,870 @@
+{
+  "timing_analysis": {
+    "timestamp": "2025-07-16T09:03:28.205638",
+    "total_time": 22.678810834884644,
+    "step_breakdown": [
+      {
+        "step_name": "pdf_dependency_check",
+        "duration": 0.06292581558227539,
+        "percentage": 0.2774652341360096,
+        "details": "Installing PyPDF2 if needed"
+      },
+      {
+        "step_name": "pdf_text_extraction",
+        "duration": 0.4696199893951416,
+        "percentage": 2.0707434477683027,
+        "details": "Extracting text from Wine-consumptionbiomarkers-HMDB.pdf (9 pages)"
+      },
+      {
+        "step_name": "csv_loading",
+        "duration": 0.0005369186401367188,
+        "percentage": 0.002367490271186654,
+        "details": "Loading expected metabolites from urinary_wine_biomarkers.csv (59 metabolites)"
+      },
+      {
+        "step_name": "wrapper_initialization",
+        "duration": 0.5111961364746094,
+        "percentage": 2.254069405121918,
+        "details": "Loading LLM wrapper and model (Llama 4 Scout)"
+      },
+      {
+        "step_name": "text_chunking",
+        "duration": 0.00119781494140625,
+        "percentage": 0.005281647922931506,
+        "details": "Splitting text into chunks (size: 1500) (45 chunks created)"
+      },
+      {
+        "step_name": "metabolite_extraction",
+        "duration": 21.630011081695557,
+        "percentage": 95.37541998641385,
+        "details": "Processing 45 chunks in batches (356 unique metabolites)"
+      },
+      {
+        "step_name": "result_analysis",
+        "duration": 0.003003835678100586,
+        "percentage": 0.013245119860870628,
+        "details": "Analyzing 356 extracted vs 59 expected (59 matches found)"
+      }
+    ],
+    "chunk_statistics": {
+      "total_chunks": 45,
+      "total_api_time": 13.580559968948364,
+      "total_processing_time": 0.010037660598754883,
+      "total_metabolites": 778,
+      "avg_chunk_time": 0.30201328065660266,
+      "avg_api_time": 0.3017902215321859,
+      "avg_metabolites_per_chunk": 17.288888888888888,
+      "fastest_chunk": {
+        "chunk_number": 34,
+        "total_time": 0.13003206253051758,
+        "api_time": 0.12998199462890625,
+        "processing_time": 5.0067901611328125e-05,
+        "metabolites_found": 0,
+        "chunk_size": 1498,
+        "efficiency": 0.0
+      },
+      "slowest_chunk": {
+        "chunk_number": 1,
+        "total_time": 0.5902280807495117,
+        "api_time": 0.5898740291595459,
+        "processing_time": 0.0003540515899658203,
+        "metabolites_found": 53,
+        "chunk_size": 1493,
+        "efficiency": 89.79579543673523
+      },
+      "most_efficient_chunk": {
+        "chunk_number": 10,
+        "total_time": 0.4618668556213379,
+        "api_time": 0.4610297679901123,
+        "processing_time": 0.0008370876312255859,
+        "metabolites_found": 75,
+        "chunk_size": 1500,
+        "efficiency": 162.3844601256446
+      }
+    },
+    "batch_statistics": {
+      "total_batches": 9,
+      "avg_batch_time": 1.5105422602759466,
+      "fastest_batch": {
+        "batch_number": 8,
+        "batch_size": 5,
+        "batch_time": 0.6890239715576172,
+        "avg_chunk_time": 0.13780479431152343
+      },
+      "slowest_batch": {
+        "batch_number": 1,
+        "batch_size": 5,
+        "batch_time": 2.1313469409942627,
+        "avg_chunk_time": 0.4262693881988525
+      }
+    },
+    "detailed_chunk_timings": [
+      {
+        "chunk_number": 1,
+        "total_time": 0.5902280807495117,
+        "api_time": 0.5898740291595459,
+        "processing_time": 0.0003540515899658203,
+        "metabolites_found": 53,
+        "chunk_size": 1493,
+        "efficiency": 89.79579543673523
+      },
+      {
+        "chunk_number": 2,
+        "total_time": 0.388826847076416,
+        "api_time": 0.3885471820831299,
+        "processing_time": 0.0002796649932861328,
+        "metabolites_found": 30,
+        "chunk_size": 1498,
+        "efficiency": 77.15516617633172
+      },
+      {
+        "chunk_number": 3,
+        "total_time": 0.3901360034942627,
+        "api_time": 0.38967394828796387,
+        "processing_time": 0.0004620552062988281,
+        "metabolites_found": 45,
+        "chunk_size": 1490,
+        "efficiency": 115.34439169150346
+      },
+      {
+        "chunk_number": 4,
+        "total_time": 0.3757040500640869,
+        "api_time": 0.3750021457672119,
+        "processing_time": 0.000701904296875,
+        "metabolites_found": 15,
+        "chunk_size": 1495,
+        "efficiency": 39.92504205754856
+      },
+      {
+        "chunk_number": 5,
+        "total_time": 0.38615918159484863,
+        "api_time": 0.38582706451416016,
+        "processing_time": 0.00033211708068847656,
+        "metabolites_found": 24,
+        "chunk_size": 1492,
+        "efficiency": 62.150535695873664
+      },
+      {
+        "chunk_number": 6,
+        "total_time": 0.5467019081115723,
+        "api_time": 0.5462210178375244,
+        "processing_time": 0.00048089027404785156,
+        "metabolites_found": 37,
+        "chunk_size": 1497,
+        "efficiency": 67.67856385906184
+      },
+      {
+        "chunk_number": 7,
+        "total_time": 0.31856703758239746,
+        "api_time": 0.3184671401977539,
+        "processing_time": 9.989738464355469e-05,
+        "metabolites_found": 5,
+        "chunk_size": 1496,
+        "efficiency": 15.69528359853222
+      },
+      {
+        "chunk_number": 8,
+        "total_time": 0.34017109870910645,
+        "api_time": 0.3399941921234131,
+        "processing_time": 0.00017690658569335938,
+        "metabolites_found": 6,
+        "chunk_size": 1498,
+        "efficiency": 17.63818273442105
+      },
+      {
+        "chunk_number": 9,
+        "total_time": 0.37281107902526855,
+        "api_time": 0.3726041316986084,
+        "processing_time": 0.00020694732666015625,
+        "metabolites_found": 10,
+        "chunk_size": 1499,
+        "efficiency": 26.823237190658208
+      },
+      {
+        "chunk_number": 10,
+        "total_time": 0.4618668556213379,
+        "api_time": 0.4610297679901123,
+        "processing_time": 0.0008370876312255859,
+        "metabolites_found": 75,
+        "chunk_size": 1500,
+        "efficiency": 162.3844601256446
+      },
+      {
+        "chunk_number": 11,
+        "total_time": 0.36742496490478516,
+        "api_time": 0.36682605743408203,
+        "processing_time": 0.000598907470703125,
+        "metabolites_found": 40,
+        "chunk_size": 1496,
+        "efficiency": 108.86576531446532
+      },
+      {
+        "chunk_number": 12,
+        "total_time": 0.532426118850708,
+        "api_time": 0.5321469306945801,
+        "processing_time": 0.0002791881561279297,
+        "metabolites_found": 14,
+        "chunk_size": 1501,
+        "efficiency": 26.294728046438294
+      },
+      {
+        "chunk_number": 13,
+        "total_time": 0.3470420837402344,
+        "api_time": 0.34682512283325195,
+        "processing_time": 0.00021696090698242188,
+        "metabolites_found": 9,
+        "chunk_size": 1500,
+        "efficiency": 25.93345424567189
+      },
+      {
+        "chunk_number": 14,
+        "total_time": 0.36572790145874023,
+        "api_time": 0.36531519889831543,
+        "processing_time": 0.0004127025604248047,
+        "metabolites_found": 27,
+        "chunk_size": 1497,
+        "efficiency": 73.82537644053942
+      },
+      {
+        "chunk_number": 15,
+        "total_time": 0.28980398178100586,
+        "api_time": 0.2895810604095459,
+        "processing_time": 0.00022292137145996094,
+        "metabolites_found": 18,
+        "chunk_size": 1495,
+        "efficiency": 62.110947853028236
+      },
+      {
+        "chunk_number": 16,
+        "total_time": 0.47640490531921387,
+        "api_time": 0.4757401943206787,
+        "processing_time": 0.0006647109985351562,
+        "metabolites_found": 64,
+        "chunk_size": 1493,
+        "efficiency": 134.33950676288055
+      },
+      {
+        "chunk_number": 17,
+        "total_time": 0.279876708984375,
+        "api_time": 0.27979588508605957,
+        "processing_time": 8.082389831542969e-05,
+        "metabolites_found": 14,
+        "chunk_size": 1482,
+        "efficiency": 50.02202595136844
+      },
+      {
+        "chunk_number": 18,
+        "total_time": 0.33417820930480957,
+        "api_time": 0.33405494689941406,
+        "processing_time": 0.0001232624053955078,
+        "metabolites_found": 26,
+        "chunk_size": 1500,
+        "efficiency": 77.80279885420346
+      },
+      {
+        "chunk_number": 19,
+        "total_time": 0.35117578506469727,
+        "api_time": 0.35057687759399414,
+        "processing_time": 0.000598907470703125,
+        "metabolites_found": 33,
+        "chunk_size": 1498,
+        "efficiency": 93.97003268297783
+      },
+      {
+        "chunk_number": 20,
+        "total_time": 0.32566189765930176,
+        "api_time": 0.3253791332244873,
+        "processing_time": 0.0002827644348144531,
+        "metabolites_found": 22,
+        "chunk_size": 1500,
+        "efficiency": 67.5547251862291
+      },
+      {
+        "chunk_number": 21,
+        "total_time": 0.3512418270111084,
+        "api_time": 0.3510429859161377,
+        "processing_time": 0.00019884109497070312,
+        "metabolites_found": 14,
+        "chunk_size": 1492,
+        "efficiency": 39.85857868674973
+      },
+      {
+        "chunk_number": 22,
+        "total_time": 0.35153913497924805,
+        "api_time": 0.3512399196624756,
+        "processing_time": 0.00029921531677246094,
+        "metabolites_found": 25,
+        "chunk_size": 1500,
+        "efficiency": 71.11583750547658
+      },
+      {
+        "chunk_number": 23,
+        "total_time": 0.33507704734802246,
+        "api_time": 0.33468008041381836,
+        "processing_time": 0.00039696693420410156,
+        "metabolites_found": 34,
+        "chunk_size": 1500,
+        "efficiency": 101.46920020065248
+      },
+      {
+        "chunk_number": 24,
+        "total_time": 0.3132050037384033,
+        "api_time": 0.31304073333740234,
+        "processing_time": 0.00016427040100097656,
+        "metabolites_found": 12,
+        "chunk_size": 1499,
+        "efficiency": 38.31356414095703
+      },
+      {
+        "chunk_number": 25,
+        "total_time": 0.3086097240447998,
+        "api_time": 0.3085319995880127,
+        "processing_time": 7.772445678710938e-05,
+        "metabolites_found": 11,
+        "chunk_size": 1491,
+        "efficiency": 35.643724558734796
+      },
+      {
+        "chunk_number": 26,
+        "total_time": 0.41797590255737305,
+        "api_time": 0.4177980422973633,
+        "processing_time": 0.00017786026000976562,
+        "metabolites_found": 32,
+        "chunk_size": 1492,
+        "efficiency": 76.5594375278789
+      },
+      {
+        "chunk_number": 27,
+        "total_time": 0.4197402000427246,
+        "api_time": 0.4195902347564697,
+        "processing_time": 0.0001499652862548828,
+        "metabolites_found": 30,
+        "chunk_size": 1499,
+        "efficiency": 71.47278244244023
+      },
+      {
+        "chunk_number": 28,
+        "total_time": 0.35471582412719727,
+        "api_time": 0.3544759750366211,
+        "processing_time": 0.00023984909057617188,
+        "metabolites_found": 16,
+        "chunk_size": 1493,
+        "efficiency": 45.106530105808226
+      },
+      {
+        "chunk_number": 29,
+        "total_time": 0.3479950428009033,
+        "api_time": 0.34786009788513184,
+        "processing_time": 0.00013494491577148438,
+        "metabolites_found": 16,
+        "chunk_size": 1501,
+        "efficiency": 45.97766643806475
+      },
+      {
+        "chunk_number": 30,
+        "total_time": 0.37923717498779297,
+        "api_time": 0.37896108627319336,
+        "processing_time": 0.0002760887145996094,
+        "metabolites_found": 21,
+        "chunk_size": 1500,
+        "efficiency": 55.3743181972494
+      },
+      {
+        "chunk_number": 31,
+        "total_time": 0.13367795944213867,
+        "api_time": 0.13363289833068848,
+        "processing_time": 4.506111145019531e-05,
+        "metabolites_found": 0,
+        "chunk_size": 1496,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 32,
+        "total_time": 0.13313722610473633,
+        "api_time": 0.1331169605255127,
+        "processing_time": 2.0265579223632812e-05,
+        "metabolites_found": 0,
+        "chunk_size": 1484,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 33,
+        "total_time": 0.1799018383026123,
+        "api_time": 0.17987990379333496,
+        "processing_time": 2.193450927734375e-05,
+        "metabolites_found": 0,
+        "chunk_size": 1493,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 34,
+        "total_time": 0.13003206253051758,
+        "api_time": 0.12998199462890625,
+        "processing_time": 5.0067901611328125e-05,
+        "metabolites_found": 0,
+        "chunk_size": 1498,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 35,
+        "total_time": 0.1408231258392334,
+        "api_time": 0.14076900482177734,
+        "processing_time": 5.412101745605469e-05,
+        "metabolites_found": 0,
+        "chunk_size": 1500,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 36,
+        "total_time": 0.14013218879699707,
+        "api_time": 0.14009809494018555,
+        "processing_time": 3.409385681152344e-05,
+        "metabolites_found": 0,
+        "chunk_size": 1500,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 37,
+        "total_time": 0.13660597801208496,
+        "api_time": 0.13657903671264648,
+        "processing_time": 2.6941299438476562e-05,
+        "metabolites_found": 0,
+        "chunk_size": 1499,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 38,
+        "total_time": 0.13028502464294434,
+        "api_time": 0.130263090133667,
+        "processing_time": 2.193450927734375e-05,
+        "metabolites_found": 0,
+        "chunk_size": 1499,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 39,
+        "total_time": 0.1425628662109375,
+        "api_time": 0.14254093170166016,
+        "processing_time": 2.193450927734375e-05,
+        "metabolites_found": 0,
+        "chunk_size": 1498,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 40,
+        "total_time": 0.1391429901123047,
+        "api_time": 0.13913607597351074,
+        "processing_time": 6.9141387939453125e-06,
+        "metabolites_found": 0,
+        "chunk_size": 1470,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 41,
+        "total_time": 0.14842486381530762,
+        "api_time": 0.14829802513122559,
+        "processing_time": 0.00012683868408203125,
+        "metabolites_found": 0,
+        "chunk_size": 1490,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 42,
+        "total_time": 0.13932180404663086,
+        "api_time": 0.13930082321166992,
+        "processing_time": 2.09808349609375e-05,
+        "metabolites_found": 0,
+        "chunk_size": 1489,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 43,
+        "total_time": 0.1657881736755371,
+        "api_time": 0.16576313972473145,
+        "processing_time": 2.5033950805664062e-05,
+        "metabolites_found": 0,
+        "chunk_size": 1464,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 44,
+        "total_time": 0.1756889820098877,
+        "api_time": 0.17567682266235352,
+        "processing_time": 1.2159347534179688e-05,
+        "metabolites_found": 0,
+        "chunk_size": 1499,
+        "efficiency": 0.0
+      },
+      {
+        "chunk_number": 45,
+        "total_time": 0.1348409652709961,
+        "api_time": 0.13481998443603516,
+        "processing_time": 2.09808349609375e-05,
+        "metabolites_found": 0,
+        "chunk_size": 220,
+        "efficiency": 0.0
+      }
+    ],
+    "detailed_batch_timings": [
+      {
+        "batch_number": 1,
+        "batch_size": 5,
+        "batch_time": 2.1313469409942627,
+        "avg_chunk_time": 0.4262693881988525
+      },
+      {
+        "batch_number": 2,
+        "batch_size": 5,
+        "batch_time": 2.0406510829925537,
+        "avg_chunk_time": 0.40813021659851073
+      },
+      {
+        "batch_number": 3,
+        "batch_size": 5,
+        "batch_time": 1.9027960300445557,
+        "avg_chunk_time": 0.38055920600891113
+      },
+      {
+        "batch_number": 4,
+        "batch_size": 5,
+        "batch_time": 1.7675609588623047,
+        "avg_chunk_time": 0.35351219177246096
+      },
+      {
+        "batch_number": 5,
+        "batch_size": 5,
+        "batch_time": 1.6600430011749268,
+        "avg_chunk_time": 0.33200860023498535
+      },
+      {
+        "batch_number": 6,
+        "batch_size": 5,
+        "batch_time": 1.9199681282043457,
+        "avg_chunk_time": 0.38399362564086914
+      },
+      {
+        "batch_number": 7,
+        "batch_size": 5,
+        "batch_time": 0.7189531326293945,
+        "avg_chunk_time": 0.1437906265258789
+      },
+      {
+        "batch_number": 8,
+        "batch_size": 5,
+        "batch_time": 0.6890239715576172,
+        "avg_chunk_time": 0.13780479431152343
+      },
+      {
+        "batch_number": 9,
+        "batch_size": 5,
+        "batch_time": 0.7645370960235596,
+        "avg_chunk_time": 0.1529074192047119
+      }
+    ]
+  },
+  "pipeline_results": {
+    "total_expected": 59,
+    "total_extracted": 356,
+    "total_matches": 59,
+    "precision": 0.16573033707865167,
+    "recall": 1.0,
+    "f1_score": 0.28433734939759037,
+    "matches": [
+      {
+        "expected": "Malvidin-3-glucoside",
+        "extracted": "Glucoside,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Malvidin-3-glucuronide",
+        "extracted": "Glucuronide,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Cyanidin-3-glucuronide",
+        "extracted": "Glucuronide,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Peonidin-3-glucoside",
+        "extracted": "Glucoside,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Peonidin-3-(6\u2033-acetyl)-glucoside",
+        "extracted": "Glucoside,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Peonidin-3-glucuronide",
+        "extracted": "Glucuronide,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Peonidin-diglucuronide",
+        "extracted": "Glucuronide,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Methyl-peonidin-3-glucuronide-sulfate",
+        "extracted": "Glucuronide,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Delphinidin-3-arabinoside",
+        "extracted": "Delphinidin",
+        "match_type": "partial"
+      },
+      {
+        "expected": "trans-Delphinidin-3-(6\u2033-coumaroyl)-glucoside",
+        "extracted": "Glucoside,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Caffeic acid ethyl ester",
+        "extracted": "Caffeic acid ethyl ester",
+        "match_type": "exact"
+      },
+      {
+        "expected": "cis-Coumaric acid",
+        "extracted": "cis-Coumaric acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "trans-Fertaric acid",
+        "extracted": "trans-Fertaric acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "4-Hydroxybenzoic acid",
+        "extracted": "4-Hydroxybenzoic acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "4-Hydroxybenzoic acid sulfate",
+        "extracted": "+ sulfate:",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Protocatechuic acid ethyl ester",
+        "extracted": "Protocatechuic acid",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Ethyl-gallate",
+        "extracted": "Ethyl-gallate",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Gallic acid",
+        "extracted": "Gallic acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Gallic acid sulfate",
+        "extracted": "Gallic acid",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Syringic acid",
+        "extracted": "Syringic acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Syringic acid glucuronide",
+        "extracted": "Glucuronide,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "5-(3\u2032,4\u2032-dihydroxyphenyl)-valeric acid",
+        "extracted": "5-(3\u2032,4\u2032-dihydroxyphenyl)-",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Catechin sulfate",
+        "extracted": "Catechin",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Methylcatechin sulfate",
+        "extracted": "Catechin",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Methylepicatechin glucuronide",
+        "extracted": "Catechin",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Methylepicatechin sulfate",
+        "extracted": "Catechin",
+        "match_type": "partial"
+      },
+      {
+        "expected": "trans-Resveratrol glucoside",
+        "extracted": "Glucoside,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "trans-Resveratrol glucuronide",
+        "extracted": "Glucuronide,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "trans-Resveratrol sulfate",
+        "extracted": "+ sulfate:",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Dihydroresveratrol",
+        "extracted": "+ Resveratrol",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Dihydroresveratrol sulfate",
+        "extracted": "+ sulfate:",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Dihydroresveratrol sulfate-glucuronide",
+        "extracted": "Glucuronide,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Urolithin A",
+        "extracted": "Urolithin A",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Dihydroferulic acid sulfate",
+        "extracted": "+ sulfate:",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Equol",
+        "extracted": "Equol",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Resveratrol",
+        "extracted": "Resveratrol-3-glucoside (resveratrol glucoside)",
+        "match_type": "partial"
+      },
+      {
+        "expected": "6-Hydroxy-4\u2032,5,7-trimethoxyflavone",
+        "extracted": "+ 6-Hydroxy-4\u2032,5,7-trimethoxyflavone",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Isohelenol",
+        "extracted": "+ Isohelenol",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Valine-Histidine (Val-His)",
+        "extracted": "+ Valine-Histidine (Val-His)",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Gravolenic acid",
+        "extracted": "+ Gravolenic acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Luteolin 7-sulfate",
+        "extracted": "+ sulfate:",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Citramalic acid",
+        "extracted": "Citramalic acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Beta-lactic acid",
+        "extracted": "Beta-lactic acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Erythro-3-methylmalic acid",
+        "extracted": "Erythro-3-methylmalic acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Threo-3-methylmalic acid",
+        "extracted": "Threo-3-methylmalic acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "p-Coumaryl alcohol 4-O-glucoside",
+        "extracted": "Glucoside,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "2-amino-3-oxoadipic acid",
+        "extracted": "2-Amino-3-oxoadipic acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "N-formyl-L-glutamic acid",
+        "extracted": "N-Formyl-L-glutamic acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Galactopinitol A",
+        "extracted": "Galactopinitol A",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Galactopinitol B",
+        "extracted": "Galactopinitol B",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Methyl (2E)-5-(5-methyl-2-thienyl)-2-penten-4-ynoate",
+        "extracted": "Methyl (2E)-5-(5-methyl-2-thienyl)-2-penten-4-ynoate",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Vanillic acid-4-O-glucuronide",
+        "extracted": "Glucuronide,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "1-Caffeoyl-beta-D-glucose",
+        "extracted": "1-Caffeoyl-beta-D-glucose",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Caffeic acid 3-glucoside",
+        "extracted": "Glucoside,",
+        "match_type": "partial"
+      },
+      {
+        "expected": "1-O-[3-(2,4-Dihydroxy-methoxyphenyl)propanoyl]hexopyranuronic acid",
+        "extracted": "1-O-[3-(2,4-Dihydroxy-methoxyphenyl)propanoyl]hexopyranuronic acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "4-(2-Carboxyethyl)-3-hydroxy-2-methoxyphenyl hexopyranosiduronic acid",
+        "extracted": "4-(2-Carboxyethyl)-3-hydroxy-2-methoxyphenyl hexopyranosiduronic acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Xanthine",
+        "extracted": "Xanthine",
+        "match_type": "exact"
+      },
+      {
+        "expected": "O-adipoylcarnitine",
+        "extracted": "O-adipoylcarnitine",
+        "match_type": "exact"
+      },
+      {
+        "expected": "3-Methylglutarylcarnitine",
+        "extracted": "3-Methylglutarylcarnitine",
+        "match_type": "exact"
+      }
+    ]
+  }
+}

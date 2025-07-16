@@ -1,0 +1,128 @@
+================================================================================
+                    FOODB PIPELINE COMPREHENSIVE TIMING REPORT
+================================================================================
+
+Generated: 2025-07-16T09:03:28.205638
+Total Pipeline Time: 22.68 seconds
+
+PIPELINE STEP BREAKDOWN:
+--------------------------------------------------
+ 1. Pdf Dependency Check         0.063s (  0.3%)
+    Details: Installing PyPDF2 if needed
+
+ 2. Pdf Text Extraction          0.470s (  2.1%)
+    Details: Extracting text from Wine-consumptionbiomarkers-HMDB.pdf (9 pages)
+
+ 3. Csv Loading                  0.001s (  0.0%)
+    Details: Loading expected metabolites from urinary_wine_biomarkers.csv (59 metabolites)
+
+ 4. Wrapper Initialization       0.511s (  2.3%)
+    Details: Loading LLM wrapper and model (Llama 4 Scout)
+
+ 5. Text Chunking                0.001s (  0.0%)
+    Details: Splitting text into chunks (size: 1500) (45 chunks created)
+
+ 6. Metabolite Extraction       21.630s ( 95.4%)
+    Details: Processing 45 chunks in batches (356 unique metabolites)
+
+ 7. Result Analysis              0.003s (  0.0%)
+    Details: Analyzing 356 extracted vs 59 expected (59 matches found)
+
+CHUNK PROCESSING STATISTICS:
+----------------------------------------
+Total Chunks Processed: 45
+Total API Time: 13.58s
+Total Processing Time: 0.01s
+Average Chunk Time: 0.302s
+Average API Time: 0.302s
+Total Metabolites Found: 778
+Average Metabolites per Chunk: 17.3
+
+Fastest Chunk: #34 (0.130s)
+Slowest Chunk: #1 (0.590s)
+Most Efficient: #10 (162.4 metabolites/s)
+
+BATCH PROCESSING STATISTICS:
+----------------------------------------
+Total Batches: 9
+Average Batch Time: 1.51s
+Fastest Batch: #8 (0.69s)
+Slowest Batch: #1 (2.13s)
+
+PIPELINE PERFORMANCE RESULTS:
+----------------------------------------
+Expected Metabolites: 59
+Extracted Metabolites: 356
+Matches Found: 59
+Precision: 16.6%
+Recall: 100.0%
+F1-Score: 28.4%
+
+DETAILED CHUNK TIMINGS:
+----------------------------------------
+Chunk  Total(s)  API(s)  Proc(s)  Metabolites  Efficiency(met/s)
+----------------------------------------------------------------------
+    1    0.590   0.590    0.000          53           89.8
+    2    0.389   0.389    0.000          30           77.2
+    3    0.390   0.390    0.000          45          115.3
+    4    0.376   0.375    0.001          15           39.9
+    5    0.386   0.386    0.000          24           62.2
+    6    0.547   0.546    0.000          37           67.7
+    7    0.319   0.318    0.000           5           15.7
+    8    0.340   0.340    0.000           6           17.6
+    9    0.373   0.373    0.000          10           26.8
+   10    0.462   0.461    0.001          75          162.4
+   11    0.367   0.367    0.001          40          108.9
+   12    0.532   0.532    0.000          14           26.3
+   13    0.347   0.347    0.000           9           25.9
+   14    0.366   0.365    0.000          27           73.8
+   15    0.290   0.290    0.000          18           62.1
+   16    0.476   0.476    0.001          64          134.3
+   17    0.280   0.280    0.000          14           50.0
+   18    0.334   0.334    0.000          26           77.8
+   19    0.351   0.351    0.001          33           94.0
+   20    0.326   0.325    0.000          22           67.6
+   21    0.351   0.351    0.000          14           39.9
+   22    0.352   0.351    0.000          25           71.1
+   23    0.335   0.335    0.000          34          101.5
+   24    0.313   0.313    0.000          12           38.3
+   25    0.309   0.309    0.000          11           35.6
+   26    0.418   0.418    0.000          32           76.6
+   27    0.420   0.420    0.000          30           71.5
+   28    0.355   0.354    0.000          16           45.1
+   29    0.348   0.348    0.000          16           46.0
+   30    0.379   0.379    0.000          21           55.4
+   31    0.134   0.134    0.000           0            0.0
+   32    0.133   0.133    0.000           0            0.0
+   33    0.180   0.180    0.000           0            0.0
+   34    0.130   0.130    0.000           0            0.0
+   35    0.141   0.141    0.000           0            0.0
+   36    0.140   0.140    0.000           0            0.0
+   37    0.137   0.137    0.000           0            0.0
+   38    0.130   0.130    0.000           0            0.0
+   39    0.143   0.143    0.000           0            0.0
+   40    0.139   0.139    0.000           0            0.0
+   41    0.148   0.148    0.000           0            0.0
+   42    0.139   0.139    0.000           0            0.0
+   43    0.166   0.166    0.000           0            0.0
+   44    0.176   0.176    0.000           0            0.0
+   45    0.135   0.135    0.000           0            0.0
+
+================================================================================
+PERFORMANCE ANALYSIS:
+================================================================================
+
+Time Distribution:
+  API Calls: 13.58s (59.9%)
+  Local Processing: 0.01s (0.0%)
+  Setup/Analysis: 9.09s (40.1%)
+
+Throughput Metrics:
+  Metabolites per second: 34.3
+  Chunks per second: 1.98
+  API calls per second: 3.31
+
+Efficiency Analysis:
+  API efficiency: 59.9% of total time
+  Processing overhead: 0.1% of API time
+  Average metabolites per API call: 17.3
