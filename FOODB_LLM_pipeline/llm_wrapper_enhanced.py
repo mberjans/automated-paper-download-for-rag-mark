@@ -49,8 +49,8 @@ class ProviderStatus(Enum):
 
 @dataclass
 class RetryConfig:
-    max_attempts: int = 3
-    base_delay: float = 1.0
+    max_attempts: int = 5  # Increased to 5 attempts for better rate limit handling
+    base_delay: float = 2.0  # Start with 2 seconds
     max_delay: float = 60.0
     exponential_base: float = 2.0
     jitter: bool = True
@@ -265,44 +265,73 @@ class LLMWrapper:
         return self.generate_single_with_fallback(prompt, max_tokens)
     
     def generate_single_with_fallback(self, prompt: str, max_tokens: int = 500) -> str:
-        """Generate single response with fallback and retry logic"""
+        """Generate single response with exponential backoff BEFORE provider switching"""
         self.stats['total_requests'] += 1
-        
+
         for attempt in range(self.retry_config.max_attempts):
             if not self.current_provider:
                 break
-            
+
             # Make API request
             response, success, is_rate_limit = self._make_api_request(
                 self.current_provider, prompt, max_tokens
             )
-            
+
             # Update provider health
             self._update_provider_health(self.current_provider, success, is_rate_limit)
-            
+
             if success:
                 self.stats['successful_requests'] += 1
                 return response
-            
-            # Handle rate limiting
+
+            # Handle rate limiting with exponential backoff FIRST
             if is_rate_limit:
                 self.stats['rate_limited_requests'] += 1
-                
-                # Try to switch provider immediately
-                if self._switch_provider():
-                    continue
-                
-                # If no alternative, wait with exponential backoff
+
+                # Try exponential backoff with same provider BEFORE switching
                 if attempt < self.retry_config.max_attempts - 1:
                     delay = self._calculate_delay(attempt)
+                    print(f"⚠️ {self.current_provider} rate limited, retrying in {delay:.1f}s (attempt {attempt + 1}/{self.retry_config.max_attempts})...")
                     time.sleep(delay)
+                    continue
+
+                # Only switch provider after exhausting all retry attempts
+                print(f"🔄 {self.current_provider} exhausted all {self.retry_config.max_attempts} retry attempts, switching providers...")
+                if self._switch_provider():
+                    # Reset attempt counter for new provider
+                    for new_attempt in range(self.retry_config.max_attempts):
+                        response, success, is_rate_limit = self._make_api_request(
+                            self.current_provider, prompt, max_tokens
+                        )
+                        self._update_provider_health(self.current_provider, success, is_rate_limit)
+
+                        if success:
+                            self.stats['successful_requests'] += 1
+                            return response
+
+                        if is_rate_limit and new_attempt < self.retry_config.max_attempts - 1:
+                            delay = self._calculate_delay(new_attempt)
+                            print(f"⚠️ {self.current_provider} rate limited, retrying in {delay:.1f}s (attempt {new_attempt + 1}/{self.retry_config.max_attempts})...")
+                            time.sleep(delay)
+                        elif not is_rate_limit:
+                            break  # Non-rate-limit error, try next provider
+
+                    # If new provider also failed, try next one
+                    continue
+
             else:
-                # Non-rate-limit error, try switching provider
+                # Non-rate-limit error, try exponential backoff first
+                if attempt < self.retry_config.max_attempts - 1:
+                    delay = self._calculate_delay(attempt)
+                    print(f"❌ {self.current_provider} error, retrying in {delay:.1f}s (attempt {attempt + 1}/{self.retry_config.max_attempts})...")
+                    time.sleep(delay)
+                    continue
+
+                # After exhausting retries, try switching provider
+                print(f"🔄 {self.current_provider} exhausted all retry attempts, switching providers...")
                 if not self._switch_provider():
-                    if attempt < self.retry_config.max_attempts - 1:
-                        delay = self._calculate_delay(attempt)
-                        time.sleep(delay)
-        
+                    break
+
         self.stats['failed_requests'] += 1
         return ""
     
