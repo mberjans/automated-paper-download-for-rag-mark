@@ -1,0 +1,176 @@
+{
+  "total_time": 3.7882299423217773,
+  "steps": [
+    {
+      "name": "pdf_dependency_check",
+      "duration": 0.07582402229309082,
+      "percentage": 2.00156863357188,
+      "details": "Installing PyPDF2 if needed"
+    },
+    {
+      "name": "pdf_text_extraction",
+      "duration": 0.48894524574279785,
+      "percentage": 12.90695795100355,
+      "details": "Extracting text from Wine-consumptionbiomarkers-HMDB.pdf (9 pages)"
+    },
+    {
+      "name": "csv_loading",
+      "duration": 0.0003769397735595703,
+      "percentage": 0.009950287582821512,
+      "details": "Loading expected metabolites from urinary_wine_biomarkers.csv (59 metabolites)"
+    },
+    {
+      "name": "wrapper_initialization",
+      "duration": 0.4870262145996094,
+      "percentage": 12.856300225036357,
+      "details": "Loading LLM wrapper and model (Llama 4 Scout)"
+    },
+    {
+      "name": "text_chunking",
+      "duration": 0.0012669563293457031,
+      "percentage": 0.033444546625625245,
+      "details": "Splitting text into chunks (size: 1500) (45 chunks created)"
+    },
+    {
+      "name": "metabolite_extraction",
+      "duration": 2.733055830001831,
+      "percentage": 72.14598563483086,
+      "details": "Processing 5 chunks (62 unique metabolites)"
+    },
+    {
+      "name": "result_comparison",
+      "duration": 0.001603841781616211,
+      "percentage": 0.04233749814651506,
+      "details": "Comparing 62 extracted vs 59 expected (13 matches found)"
+    }
+  ],
+  "summary": {
+    "total_steps": 7,
+    "fastest_step": {
+      "name": "csv_loading",
+      "time": 0.0003769397735595703
+    },
+    "slowest_step": {
+      "name": "metabolite_extraction",
+      "time": 2.733055830001831
+    },
+    "average_step_time": 0.5411570072174072
+  },
+  "chunk_details": [
+    {
+      "chunk_number": 1,
+      "total_time": 0.5839369297027588,
+      "api_time": 0.5834522247314453,
+      "processing_time": 0.00048470497131347656,
+      "metabolites_found": 15,
+      "chunk_size": 1493
+    },
+    {
+      "chunk_number": 2,
+      "total_time": 0.6332859992980957,
+      "api_time": 0.6328129768371582,
+      "processing_time": 0.0004730224609375,
+      "metabolites_found": 18,
+      "chunk_size": 1498
+    },
+    {
+      "chunk_number": 3,
+      "total_time": 0.540647029876709,
+      "api_time": 0.5404407978057861,
+      "processing_time": 0.00020623207092285156,
+      "metabolites_found": 35,
+      "chunk_size": 1490
+    },
+    {
+      "chunk_number": 4,
+      "total_time": 0.5133600234985352,
+      "api_time": 0.5127801895141602,
+      "processing_time": 0.000579833984375,
+      "metabolites_found": 18,
+      "chunk_size": 1495
+    },
+    {
+      "chunk_number": 5,
+      "total_time": 0.4616999626159668,
+      "api_time": 0.461622953414917,
+      "processing_time": 7.700920104980469e-05,
+      "metabolites_found": 4,
+      "chunk_size": 1492
+    }
+  ],
+  "results": {
+    "total_expected": 59,
+    "total_extracted": 62,
+    "total_matches": 13,
+    "precision": 0.20967741935483872,
+    "recall": 0.22033898305084745,
+    "f1_score": 0.21487603305785125,
+    "matches": [
+      {
+        "expected": "Gallic acid",
+        "extracted": "Gallic acid",
+        "match_type": "exact"
+      },
+      {
+        "expected": "Gallic acid sulfate",
+        "extracted": "Gallic acid",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Catechin sulfate",
+        "extracted": "Catechin",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Methylcatechin sulfate",
+        "extracted": "Catechin",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Methylepicatechin glucuronide",
+        "extracted": "Catechin",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Methylepicatechin sulfate",
+        "extracted": "Catechin",
+        "match_type": "partial"
+      },
+      {
+        "expected": "trans-Resveratrol glucoside",
+        "extracted": "Resveratrol",
+        "match_type": "partial"
+      },
+      {
+        "expected": "trans-Resveratrol glucuronide",
+        "extracted": "Resveratrol",
+        "match_type": "partial"
+      },
+      {
+        "expected": "trans-Resveratrol sulfate",
+        "extracted": "Resveratrol",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Dihydroresveratrol",
+        "extracted": "Resveratrol",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Dihydroresveratrol sulfate",
+        "extracted": "Resveratrol",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Dihydroresveratrol sulfate-glucuronide",
+        "extracted": "Resveratrol",
+        "match_type": "partial"
+      },
+      {
+        "expected": "Resveratrol",
+        "extracted": "Resveratrol",
+        "match_type": "exact"
+      }
+    ]
+  }
+}
