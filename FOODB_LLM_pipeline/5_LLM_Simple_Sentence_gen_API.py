@@ -15,8 +15,8 @@ from datetime import datetime
 from sentence_transformers import SentenceTransformer, util
 from global_prompt import global_output_max_new_tokens, simple_sentence_prompt, food_entity_prompt
 
-# Import the API wrapper
-from llm_wrapper import LLMWrapper
+# Import the enhanced API wrapper with fallback
+from llm_wrapper_enhanced import LLMWrapper
 
 logging.basicConfig(
     filename='sentence_processor_api.log',  
@@ -28,9 +28,19 @@ logging.basicConfig(
 # Suppress warnings
 warnings.filterwarnings("ignore", category=FutureWarning, module="transformers.tokenization_utils_base")
 
-# Initialize API wrapper instead of local model
-print("Initializing API-based LLM wrapper...")
+# Initialize enhanced API wrapper with fallback
+print("Initializing enhanced LLM wrapper with fallback...")
 api_wrapper = LLMWrapper()
+
+# Show enhanced wrapper status
+print(f"🎯 Primary provider: {api_wrapper.current_provider}")
+print(f"🛡️ Fallback system: Active")
+print(f"📋 Fallback order: {' → '.join(api_wrapper.fallback_order)}")
+stats = api_wrapper.get_statistics()
+if stats['total_requests'] > 0:
+    print(f"📊 Success rate: {stats['success_rate']:.1%}")
+    if stats['fallback_switches'] > 0:
+        print(f"🔄 Provider switches: {stats['fallback_switches']}")
 
 # Load sentence transformer for deduplication (keep this local)
 model_to_find_unique_sentences = SentenceTransformer('paraphrase-MiniLM-L6-v2')
