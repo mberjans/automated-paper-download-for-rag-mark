@@ -1,0 +1,146 @@
+{
+  "timestamp": "20250716_094320",
+  "test_type": "rate_limiting_behavior",
+  "results": [
+    {
+      "request_num": 1,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.46133995056152344,
+      "success": true,
+      "response_length": 85
+    },
+    {
+      "request_num": 2,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.4423861503601074,
+      "success": true,
+      "response_length": 359
+    },
+    {
+      "request_num": 3,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.4458909034729004,
+      "success": true,
+      "response_length": 460
+    },
+    {
+      "request_num": 4,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.34732794761657715,
+      "success": true,
+      "response_length": 83
+    },
+    {
+      "request_num": 5,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.4971771240234375,
+      "success": true,
+      "response_length": 511
+    },
+    {
+      "request_num": 6,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.4320039749145508,
+      "success": true,
+      "response_length": 215
+    },
+    {
+      "request_num": 7,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.3440718650817871,
+      "success": true,
+      "response_length": 79
+    },
+    {
+      "request_num": 8,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.5015909671783447,
+      "success": true,
+      "response_length": 458
+    },
+    {
+      "request_num": 9,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.47389888763427734,
+      "success": true,
+      "response_length": 398
+    },
+    {
+      "request_num": 10,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.3582618236541748,
+      "success": true,
+      "response_length": 88
+    },
+    {
+      "request_num": 11,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.36682701110839844,
+      "success": true,
+      "response_length": 86
+    },
+    {
+      "request_num": 12,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.39412903785705566,
+      "success": true,
+      "response_length": 69
+    },
+    {
+      "request_num": 13,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.4068150520324707,
+      "success": true,
+      "response_length": 75
+    },
+    {
+      "request_num": 14,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.46805620193481445,
+      "success": true,
+      "response_length": 515
+    },
+    {
+      "request_num": 15,
+      "provider_before": "groq",
+      "provider_after": "groq",
+      "request_time": 0.4509761333465576,
+      "success": true,
+      "response_length": 431
+    }
+  ],
+  "statistics": {
+    "total_requests": 15,
+    "successful_requests": 15,
+    "failed_requests": 0,
+    "rate_limited_requests": 0,
+    "fallback_switches": 0,
+    "retry_attempts": 0,
+    "success_rate": 1.0,
+    "failure_rate": 0.0,
+    "rate_limit_rate": 0.0
+  },
+  "summary": {
+    "total_requests": 15,
+    "successful_requests": 15,
+    "rate_limited_requests": 0,
+    "fallback_switches": 0,
+    "providers_used": [
+      "groq"
+    ]
+  }
+}

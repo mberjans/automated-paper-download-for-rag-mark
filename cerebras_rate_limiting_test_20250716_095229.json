@@ -1,0 +1,373 @@
+{
+  "timestamp": "20250716_095229",
+  "test_type": "cerebras_rate_limiting",
+  "sequential_test": {
+    "results": [
+      {
+        "request": 1,
+        "provider_before": "cerebras",
+        "provider_after": "cerebras",
+        "success": true,
+        "time": 0.291104793548584,
+        "response_length": 432
+      },
+      {
+        "request": 2,
+        "provider_before": "cerebras",
+        "provider_after": "cerebras",
+        "success": true,
+        "time": 0.2705261707305908,
+        "response_length": 423
+      },
+      {
+        "request": 3,
+        "provider_before": "cerebras",
+        "provider_after": "cerebras",
+        "success": true,
+        "time": 0.18268799781799316,
+        "response_length": 411
+      },
+      {
+        "request": 4,
+        "provider_before": "cerebras",
+        "provider_after": "cerebras",
+        "success": true,
+        "time": 0.23298311233520508,
+        "response_length": 425
+      },
+      {
+        "request": 5,
+        "provider_before": "cerebras",
+        "provider_after": "cerebras",
+        "success": true,
+        "time": 0.2092881202697754,
+        "response_length": 425
+      },
+      {
+        "request": 6,
+        "provider_before": "cerebras",
+        "provider_after": "cerebras",
+        "success": true,
+        "time": 0.1936817169189453,
+        "response_length": 425
+      },
+      {
+        "request": 7,
+        "provider_before": "cerebras",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.813654899597168,
+        "response_length": 409
+      },
+      {
+        "request": 8,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.4759700298309326,
+        "response_length": 408
+      },
+      {
+        "request": 9,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.4743061065673828,
+        "response_length": 408
+      },
+      {
+        "request": 10,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.4827420711517334,
+        "response_length": 409
+      },
+      {
+        "request": 11,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.46534180641174316,
+        "response_length": 407
+      },
+      {
+        "request": 12,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.47243404388427734,
+        "response_length": 428
+      },
+      {
+        "request": 13,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.4704861640930176,
+        "response_length": 366
+      },
+      {
+        "request": 14,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.4921081066131592,
+        "response_length": 360
+      },
+      {
+        "request": 15,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.46315598487854004,
+        "response_length": 447
+      },
+      {
+        "request": 16,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.37595582008361816,
+        "response_length": 190
+      },
+      {
+        "request": 17,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.47388601303100586,
+        "response_length": 433
+      },
+      {
+        "request": 18,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.484652042388916,
+        "response_length": 483
+      },
+      {
+        "request": 19,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.49875307083129883,
+        "response_length": 333
+      },
+      {
+        "request": 20,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.5123519897460938,
+        "response_length": 381
+      },
+      {
+        "request": 21,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.46562790870666504,
+        "response_length": 399
+      },
+      {
+        "request": 22,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.4698629379272461,
+        "response_length": 462
+      },
+      {
+        "request": 23,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.4821047782897949,
+        "response_length": 352
+      },
+      {
+        "request": 24,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.4704930782318115,
+        "response_length": 369
+      },
+      {
+        "request": 25,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.4799489974975586,
+        "response_length": 340
+      },
+      {
+        "request": 26,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.4793989658355713,
+        "response_length": 433
+      },
+      {
+        "request": 27,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.48267078399658203,
+        "response_length": 403
+      },
+      {
+        "request": 28,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.45650386810302734,
+        "response_length": 361
+      },
+      {
+        "request": 29,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.5113019943237305,
+        "response_length": 408
+      },
+      {
+        "request": 30,
+        "provider_before": "groq",
+        "provider_after": "groq",
+        "success": true,
+        "time": 0.41933512687683105,
+        "response_length": 309
+      }
+    ],
+    "statistics": {
+      "total_requests": 30,
+      "successful_requests": 30,
+      "failed_requests": 0,
+      "rate_limited_requests": 1,
+      "fallback_switches": 1,
+      "retry_attempts": 1,
+      "success_rate": 1.0,
+      "failure_rate": 0.0,
+      "rate_limit_rate": 0.03333333333333333
+    }
+  },
+  "concurrent_test": [
+    {
+      "id": 1,
+      "success": true,
+      "time": 0.25406813621520996,
+      "provider": "groq",
+      "response_length": 193
+    },
+    {
+      "id": 2,
+      "success": true,
+      "time": 0.19308805465698242,
+      "provider": "groq",
+      "response_length": 236
+    },
+    {
+      "id": 3,
+      "success": true,
+      "time": 0.19838261604309082,
+      "provider": "groq",
+      "response_length": 255
+    },
+    {
+      "id": 4,
+      "success": false,
+      "time": 3.8154399394989014,
+      "provider": "openrouter",
+      "response_length": 0
+    },
+    {
+      "id": 5,
+      "success": false,
+      "time": 2.893298387527466,
+      "provider": "openrouter",
+      "response_length": 0
+    },
+    {
+      "id": 6,
+      "success": false,
+      "time": 3.6367220878601074,
+      "provider": "openrouter",
+      "response_length": 0
+    },
+    {
+      "id": 7,
+      "success": false,
+      "time": 4.377367973327637,
+      "provider": "openrouter",
+      "response_length": 0
+    },
+    {
+      "id": 8,
+      "success": true,
+      "time": 0.5552740097045898,
+      "provider": "openrouter",
+      "response_length": 255
+    },
+    {
+      "id": 9,
+      "success": true,
+      "time": 0.37642812728881836,
+      "provider": "openrouter",
+      "response_length": 260
+    },
+    {
+      "id": 10,
+      "success": true,
+      "time": 0.40889978408813477,
+      "provider": "openrouter",
+      "response_length": 245
+    },
+    {
+      "id": 11,
+      "success": true,
+      "time": 0.4071669578552246,
+      "provider": "openrouter",
+      "response_length": 262
+    },
+    {
+      "id": 12,
+      "success": false,
+      "time": 4.429506063461304,
+      "provider": "openrouter",
+      "response_length": 0
+    },
+    {
+      "id": 13,
+      "success": false,
+      "time": 3.791667938232422,
+      "provider": "openrouter",
+      "response_length": 0
+    },
+    {
+      "id": 14,
+      "success": false,
+      "time": 4.312740802764893,
+      "provider": "openrouter",
+      "response_length": 0
+    },
+    {
+      "id": 15,
+      "success": false,
+      "time": 4.810650110244751,
+      "provider": "openrouter",
+      "response_length": 0
+    }
+  ],
+  "summary": {
+    "sequential_requests": 30,
+    "concurrent_requests": 15,
+    "total_rate_limited": 1,
+    "total_fallback_switches": 1,
+    "cerebras_performance": "triggered_fallback"
+  }
+}
