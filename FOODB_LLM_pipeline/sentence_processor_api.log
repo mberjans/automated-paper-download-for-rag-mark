@@ -1,0 +1,23 @@
+2025-07-16 01:30:35,024 - ERROR - Config file free_models_reasoning_ranked.json not found
+2025-07-16 01:30:35,098 - INFO - Use pytorch device_name: mps
+2025-07-16 01:30:35,098 - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-16 01:30:35,107 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-07-16 01:30:35,289 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 401 0
+2025-07-16 01:30:35,290 - WARNING - No sentence-transformers model found with name sentence-transformers/paraphrase-MiniLM-L6-v2. Creating a new one with mean pooling.
+2025-07-16 01:30:35,414 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 401 0
+2025-07-16 01:30:35,421 - ERROR - Config file free_models_reasoning_ranked.json not found
+2025-07-16 01:30:35,421 - ERROR - Error loading API wrapper: No model set. Call set_model() first.
+2025-07-16 01:30:35,422 - ERROR - Config file free_models_reasoning_ranked.json not found
+2025-07-16 01:30:35,423 - INFO - Use pytorch device_name: mps
+2025-07-16 01:30:35,423 - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-16 01:30:35,542 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 401 0
+2025-07-16 01:30:35,543 - WARNING - No sentence-transformers model found with name sentence-transformers/paraphrase-MiniLM-L6-v2. Creating a new one with mean pooling.
+2025-07-16 01:30:35,689 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 401 0
+2025-07-16 01:30:35,698 - INFO - Loaded 11 model configurations
+2025-07-16 01:30:35,699 - INFO - Set model: Llama 4 Scout
+2025-07-16 01:30:35,699 - DEBUG - Starting new HTTPS connection (1): api.cerebras.ai:443
+2025-07-16 01:30:36,139 - DEBUG - https://api.cerebras.ai:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2025-07-16 01:30:36,140 - DEBUG - Starting new HTTPS connection (1): api.cerebras.ai:443
+2025-07-16 01:30:36,473 - DEBUG - https://api.cerebras.ai:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2025-07-16 01:30:36,477 - DEBUG - Starting new HTTPS connection (1): api.cerebras.ai:443
+2025-07-16 01:30:36,954 - DEBUG - https://api.cerebras.ai:443 "POST /v1/chat/completions HTTP/1.1" 200 None
