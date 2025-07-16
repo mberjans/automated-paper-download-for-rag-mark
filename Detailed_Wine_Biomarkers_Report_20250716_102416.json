@@ -1,0 +1,54 @@
+{
+  "timestamp": "2025-07-16 10:24:16",
+  "test_type": "detailed_wine_biomarkers",
+  "timing": {
+    "total_time": 6.961910009384155,
+    "sentence_processing_time": 6.87320613861084,
+    "avg_time_per_sentence": 0.40424243141623106,
+    "min_time": 0.22350072860717773,
+    "max_time": 0.813831090927124
+  },
+  "database": {
+    "total_biomarkers": 59,
+    "biomarkers_in_document": 6,
+    "ground_truth_biomarkers": [
+      "4-hydroxybenzoic acid",
+      "gallic acid",
+      "malvidin-3-glucoside",
+      "peonidin-3-glucoside",
+      "resveratrol",
+      "syringic acid"
+    ]
+  },
+  "pipeline_performance": {
+    "sentences_processed": 17,
+    "success_rate": 1.0,
+    "provider_switches": 1,
+    "detected_biomarkers": [
+      "4-hydroxybenzoic acid",
+      "gallic acid",
+      "malvidin-3-glucoside",
+      "peonidin-3-glucoside",
+      "resveratrol",
+      "syringic acid"
+    ]
+  },
+  "detection_metrics": {
+    "true_positives": 6,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "correctly_detected": [
+      "4-hydroxybenzoic acid",
+      "gallic acid",
+      "malvidin-3-glucoside",
+      "peonidin-3-glucoside",
+      "resveratrol",
+      "syringic acid"
+    ],
+    "missed_biomarkers": [],
+    "extra_detections": []
+  }
+}

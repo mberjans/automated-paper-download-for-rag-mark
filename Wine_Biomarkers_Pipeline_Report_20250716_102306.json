@@ -1,0 +1,91 @@
+{
+  "timestamp": "2025-07-16 10:23:06",
+  "test_type": "wine_biomarkers_pipeline",
+  "total_processing_time": 0.5267031192779541,
+  "step_times": {
+    "database_loading": 0.008911848068237305,
+    "document_creation": 0.000263214111328125,
+    "ground_truth_extraction": 0.0004229545593261719,
+    "pipeline_analysis": 0.5168149471282959,
+    "metrics_calculation": 0.0002880096435546875
+  },
+  "wine_biomarkers_database": {
+    "file": "urinary_wine_biomarkers.csv",
+    "compound_count": 59
+  },
+  "ground_truth_metrics": {
+    "extraction_time": 0.0003921985626220703,
+    "database_size": 59,
+    "found_count": 4,
+    "found_biomarkers": [
+      "syringic acid",
+      "4-hydroxybenzoic acid",
+      "gallic acid",
+      "resveratrol"
+    ],
+    "positions": {
+      "resveratrol": [
+        1156,
+        1246,
+        1278,
+        2925
+      ],
+      "syringic acid": [
+        2290
+      ],
+      "4-hydroxybenzoic acid": [
+        1929
+      ],
+      "gallic acid": [
+        660
+      ]
+    }
+  },
+  "pipeline_metrics": {
+    "total_time": 0.5167889595031738,
+    "paragraph_count": 1,
+    "avg_time_per_paragraph": 0.36126208305358887,
+    "success_rate": 1.0,
+    "provider_switches": 0,
+    "processing_times": [
+      0.36126208305358887
+    ],
+    "wrapper_stats": {
+      "total_requests": 1,
+      "successful_requests": 1,
+      "failed_requests": 0,
+      "rate_limited_requests": 0,
+      "fallback_switches": 0,
+      "success_rate": 1.0,
+      "failure_rate": 0.0
+    }
+  },
+  "detection_performance": {
+    "ground_truth_count": 4,
+    "pipeline_detected_count": 2,
+    "true_positives": 2,
+    "false_positives": 0,
+    "false_negatives": 2,
+    "precision": 1.0,
+    "recall": 0.5,
+    "f1_score": 0.6666666666666666,
+    "ground_truth_biomarkers": [
+      "4-hydroxybenzoic acid",
+      "gallic acid",
+      "resveratrol",
+      "syringic acid"
+    ],
+    "pipeline_biomarkers": [
+      "gallic acid",
+      "resveratrol"
+    ],
+    "correctly_detected": [
+      "gallic acid",
+      "resveratrol"
+    ],
+    "missed_biomarkers": [
+      "4-hydroxybenzoic acid",
+      "syringic acid"
+    ]
+  }
+}
