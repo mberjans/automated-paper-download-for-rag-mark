@@ -252,17 +252,19 @@ def test_wine_biomarkers_pdf():
         
         # Step 3: Initialize FOODB wrapper
         print(f"\n🔬 Initializing FOODB wrapper...")
-        from llm_wrapper import LLMWrapper
+        from llm_wrapper_enhanced import LLMWrapper
         
         wrapper = LLMWrapper()
-        print(f"✅ Using model: {wrapper.current_model.get('model_name', 'Unknown')}")
+        print(f"✅ Using enhanced wrapper with fallback")
+        print(f"🎯 Primary provider: {wrapper.current_provider}")
+        print(f"📋 Fallback order: {' → '.join(wrapper.fallback_order)}")
         
         # Step 4: Process PDF text
         text_chunks = chunk_text(pdf_text, chunk_size=1500)
         
-        # Process a subset of chunks for testing (to avoid long processing time)
-        test_chunks = text_chunks[:5]  # Test first 5 chunks
-        print(f"🧪 Testing with first {len(test_chunks)} chunks (out of {len(text_chunks)})")
+        # Process ALL chunks for complete analysis
+        test_chunks = text_chunks  # Process all chunks
+        print(f"🧪 Processing ALL {len(test_chunks)} chunks for complete analysis")
         
         start_time = time.time()
         extracted_metabolites = extract_metabolites_with_wrapper(wrapper, test_chunks)

@@ -1,0 +1,17 @@
+{
+  "pdf_file": "Wine-consumptionbiomarkers-HMDB.pdf",
+  "pages": 9,
+  "text_length": 68509,
+  "chunks_total": 45,
+  "chunks_successful": 16,
+  "expected_biomarkers": 59,
+  "extracted_metabolites": 171,
+  "matches_found": 32,
+  "precision": 0.1871,
+  "recall": 0.5424,
+  "f1_score": 0.2783,
+  "processing_time": 87.65,
+  "success_rate": 0.356,
+  "fallback_switches": 2,
+  "api_issues": "OpenRouter 404 errors"
+}
