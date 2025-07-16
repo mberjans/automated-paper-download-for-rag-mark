@@ -1,0 +1,48 @@
+{
+  "timestamp": "20250716_093955",
+  "test_results": [
+    {
+      "request_num": 1,
+      "provider": "groq",
+      "response_time": 1.2739858627319336,
+      "success": true,
+      "response_length": 102
+    },
+    {
+      "request_num": 2,
+      "provider": "groq",
+      "response_time": 0.35227179527282715,
+      "success": true,
+      "response_length": 108
+    },
+    {
+      "request_num": 3,
+      "provider": "groq",
+      "response_time": 1.3867859840393066,
+      "success": true,
+      "response_length": 601
+    },
+    {
+      "request_num": 4,
+      "provider": "groq",
+      "response_time": 1.501600980758667,
+      "success": true,
+      "response_length": 83
+    },
+    {
+      "request_num": 5,
+      "provider": "groq",
+      "response_time": 0.5290720462799072,
+      "success": true,
+      "response_length": 709
+    }
+  ],
+  "summary": {
+    "total_requests": 5,
+    "successful_requests": 5,
+    "average_response_time": 1.0087433338165284,
+    "providers_used": [
+      "groq"
+    ]
+  }
+}
