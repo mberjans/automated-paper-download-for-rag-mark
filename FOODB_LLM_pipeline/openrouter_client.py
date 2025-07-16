@@ -3,7 +3,7 @@ OpenRouter API Client for FOODB LLM Pipeline
 Replaces local Gemma model with fast API-based inference
 """
 
-import openai
+from openai import OpenAI
 import asyncio
 import aiohttp
 import json
@@ -20,19 +20,21 @@ class OpenRouterClient:
         self.model = model
         self.base_url = "https://openrouter.ai/api/v1"
 
-        # Configure OpenAI client for OpenRouter
-        openai.api_key = self.api_key
-        openai.api_base = self.base_url
+        # Configure OpenAI client for OpenRouter (new API format)
+        self.client = OpenAI(
+            api_key=self.api_key,
+            base_url=self.base_url
+        )
 
     def generate_single(self, prompt: str, max_tokens: int = 512, temperature: float = 0.1) -> str:
         """Generate single response using OpenRouter API"""
         try:
-            response = openai.ChatCompletion.create(
+            response = self.client.chat.completions.create(
                 model=self.model,
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=max_tokens,
                 temperature=temperature,
-                headers={
+                extra_headers={
                     "HTTP-Referer": "https://github.com/foodb-pipeline",
                     "X-Title": "FOODB LLM Pipeline"
                 }

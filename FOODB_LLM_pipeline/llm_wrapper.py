@@ -13,6 +13,22 @@ from dataclasses import dataclass
 from enum import Enum
 import time
 
+# Load environment variables
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    # Manual loading if python-dotenv is not available
+    from pathlib import Path
+    env_file = Path(".env")
+    if env_file.exists():
+        with open(env_file, "r") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    key, value = line.split("=", 1)
+                    os.environ[key.strip()] = value.strip()
+
 # Import API clients
 try:
     from openrouter_client import OpenRouterClient, FREE_MODELS
