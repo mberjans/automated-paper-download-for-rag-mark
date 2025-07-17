@@ -1,6 +1,10 @@
 {
   "output_dir": "./production_results",
+  "output_prefix": "foodb",
+  "timestamp_files": true,
+  "timestamp_format": "%Y%m%d_%H%M%S",
   "csv_database": "urinary_wine_biomarkers.csv",
+  "csv_column": "Compound Name",
   "chunk_size": 2000,
   "chunk_overlap": 100,
   "min_chunk_size": 200,

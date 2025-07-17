@@ -80,6 +80,28 @@ Examples:
         action='store_true',
         help='Save raw LLM responses for debugging'
     )
+    output_group.add_argument(
+        '--timestamp-files',
+        action='store_true',
+        default=True,
+        help='Add timestamp to output filenames to preserve old files (default: True)'
+    )
+    output_group.add_argument(
+        '--no-timestamp',
+        action='store_true',
+        help='Disable timestamp in filenames (will overwrite existing files)'
+    )
+    output_group.add_argument(
+        '--timestamp-format',
+        type=str,
+        default='%Y%m%d_%H%M%S',
+        help='Timestamp format for filenames (default: %%Y%%m%%d_%%H%%M%%S)'
+    )
+    output_group.add_argument(
+        '--custom-timestamp',
+        type=str,
+        help='Custom timestamp string to use instead of current time'
+    )
     
     # Database configuration
     db_group = parser.add_argument_group('Database Configuration')
@@ -291,8 +313,14 @@ def save_config_file(args: argparse.Namespace, config_path: str):
     """Save configuration to JSON file"""
     config = {
         'output_dir': args.output_dir,
+        'output_prefix': args.output_prefix,
+        'timestamp_files': getattr(args, 'timestamp_files', True),
+        'timestamp_format': getattr(args, 'timestamp_format', '%Y%m%d_%H%M%S'),
         'csv_database': args.csv_database,
+        'csv_column': args.csv_column,
         'chunk_size': args.chunk_size,
+        'chunk_overlap': args.chunk_overlap,
+        'min_chunk_size': args.min_chunk_size,
         'max_tokens': args.max_tokens,
         'document_only': args.document_only,
         'verify_compounds': args.verify_compounds,
@@ -303,7 +331,10 @@ def save_config_file(args: argparse.Namespace, config_path: str):
         'providers': args.providers,
         'batch_mode': args.batch_mode,
         'calculate_metrics': args.calculate_metrics,
-        'export_format': args.export_format
+        'export_format': args.export_format,
+        'save_chunks': args.save_chunks,
+        'save_timing': args.save_timing,
+        'save_raw_responses': args.save_raw_responses
     }
     
     try:
@@ -408,6 +439,14 @@ def print_configuration(args: argparse.Namespace):
     print(f"   Output directory: {args.output_dir}")
     print(f"   Output prefix: {args.output_prefix or 'none'}")
     print(f"   Export format: {args.export_format}")
+    print(f"   Timestamp files: {getattr(args, 'timestamp_files', True) and not getattr(args, 'no_timestamp', False)}")
+    if getattr(args, 'timestamp_files', True) and not getattr(args, 'no_timestamp', False):
+        print(f"   Timestamp format: {getattr(args, 'timestamp_format', '%Y%m%d_%H%M%S')}")
+        if hasattr(args, 'custom_timestamp') and args.custom_timestamp:
+            print(f"   Custom timestamp: {args.custom_timestamp}")
+    print(f"   Save chunks: {args.save_chunks}")
+    print(f"   Save timing: {args.save_timing}")
+    print(f"   Save raw responses: {args.save_raw_responses}")
     
     print(f"\n📊 Database Configuration:")
     print(f"   CSV database: {args.csv_database}")

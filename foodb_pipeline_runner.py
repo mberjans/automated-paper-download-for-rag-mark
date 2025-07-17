@@ -415,8 +415,8 @@ def calculate_metrics(matching_result: Dict[str, Any], args, logger) -> Dict[str
         logger.error(f"❌ Metrics calculation failed: {e}")
         raise
 
-def get_output_filename(input_file: str, args) -> Path:
-    """Generate output filename based on input file and arguments"""
+def get_output_filename(input_file: str, args, extension: str = '.json') -> Path:
+    """Generate output filename based on input file and arguments with timestamp support"""
     input_path = Path(input_file)
     output_dir = Path(args.output_dir)
 
@@ -425,17 +425,27 @@ def get_output_filename(input_file: str, args) -> Path:
     if args.output_prefix:
         base_name = f"{args.output_prefix}_{base_name}"
 
-    # Add timestamp if batch mode
-    if args.batch_mode:
-        timestamp = time.strftime('%Y%m%d_%H%M%S')
+    # Add timestamp to preserve old files (unless explicitly disabled)
+    use_timestamp = getattr(args, 'timestamp_files', True) and not getattr(args, 'no_timestamp', False)
+
+    if use_timestamp:
+        if hasattr(args, 'custom_timestamp') and args.custom_timestamp:
+            # Use custom timestamp
+            timestamp = args.custom_timestamp
+        else:
+            # Generate timestamp using specified format
+            timestamp_format = getattr(args, 'timestamp_format', '%Y%m%d_%H%M%S')
+            timestamp = time.strftime(timestamp_format)
+
         base_name = f"{base_name}_{timestamp}"
 
-    return output_dir / f"{base_name}_results.json"
+    return output_dir / f"{base_name}_results{extension}"
 
 def save_results(result: Dict[str, Any], input_file: str, args, logger):
-    """Save results to output files"""
+    """Save results to output files with timestamp support"""
     try:
-        output_file = get_output_filename(input_file, args)
+        # Generate base output filename with timestamp
+        output_file = get_output_filename(input_file, args, '.json')
 
         # Save JSON results
         if args.export_format in ['json', 'all']:
@@ -445,27 +455,62 @@ def save_results(result: Dict[str, Any], input_file: str, args, logger):
 
         # Save CSV results
         if args.export_format in ['csv', 'all']:
-            csv_file = output_file.with_suffix('.csv')
+            csv_file = get_output_filename(input_file, args, '.csv')
             save_csv_results(result, csv_file, logger)
 
         # Save Excel results
         if args.export_format in ['xlsx', 'all']:
-            xlsx_file = output_file.with_suffix('.xlsx')
+            xlsx_file = get_output_filename(input_file, args, '.xlsx')
             save_xlsx_results(result, xlsx_file, logger)
 
         # Save timing analysis if requested
         if args.save_timing:
-            timing_file = output_file.with_name(f"{output_file.stem}_timing.json")
+            timing_file = get_timestamped_filename(output_file, '_timing', '.json')
             save_timing_analysis(result, timing_file, logger)
+
+        # Save raw responses if requested
+        if args.save_raw_responses:
+            raw_file = get_timestamped_filename(output_file, '_raw_responses', '.json')
+            save_raw_responses(result, raw_file, logger)
 
         # Save chunks if requested
         if args.save_chunks and isinstance(result['chunks'], list):
-            chunks_dir = output_file.parent / f"{output_file.stem}_chunks"
+            chunks_dir = get_timestamped_filename(output_file, '_chunks', '')
             save_chunks(result['chunks'], chunks_dir, logger)
 
     except Exception as e:
         logger.error(f"❌ Failed to save results: {e}")
         raise
+
+def get_timestamped_filename(base_file: Path, suffix: str, extension: str) -> Path:
+    """Generate timestamped filename with suffix"""
+    if extension:
+        return base_file.with_name(f"{base_file.stem}{suffix}{extension}")
+    else:
+        return base_file.with_name(f"{base_file.stem}{suffix}")
+
+def save_raw_responses(result: Dict[str, Any], raw_file: Path, logger):
+    """Save raw LLM responses for debugging"""
+    try:
+        raw_responses = []
+
+        if 'extraction_result' in result and 'chunk_results' in result['extraction_result']:
+            for chunk_result in result['extraction_result']['chunk_results']:
+                if 'raw_response' in chunk_result and chunk_result['raw_response']:
+                    raw_responses.append({
+                        'chunk_id': chunk_result['chunk_id'],
+                        'success': chunk_result['success'],
+                        'processing_time': chunk_result['processing_time'],
+                        'raw_response': chunk_result['raw_response']
+                    })
+
+        with open(raw_file, 'w') as f:
+            json.dump(raw_responses, f, indent=2)
+
+        logger.info(f"💾 Saved raw responses: {raw_file}")
+
+    except Exception as e:
+        logger.error(f"❌ Failed to save raw responses: {e}")
 
 def save_csv_results(result: Dict[str, Any], csv_file: Path, logger):
     """Save results in CSV format"""
@@ -553,9 +598,20 @@ def save_chunks(chunks: List[str], chunks_dir: Path, logger):
         logger.error(f"❌ Failed to save chunks: {e}")
 
 def generate_batch_summary(results: List[Dict[str, Any]], args, logger):
-    """Generate summary for batch processing"""
+    """Generate summary for batch processing with timestamp"""
     try:
-        summary_file = Path(args.output_dir) / "batch_summary.json"
+        # Generate timestamped batch summary filename
+        use_timestamp = getattr(args, 'timestamp_files', True) and not getattr(args, 'no_timestamp', False)
+
+        if use_timestamp:
+            if hasattr(args, 'custom_timestamp') and args.custom_timestamp:
+                timestamp = args.custom_timestamp
+            else:
+                timestamp_format = getattr(args, 'timestamp_format', '%Y%m%d_%H%M%S')
+                timestamp = time.strftime(timestamp_format)
+            summary_file = Path(args.output_dir) / f"batch_summary_{timestamp}.json"
+        else:
+            summary_file = Path(args.output_dir) / "batch_summary.json"
 
         # Calculate batch statistics
         total_files = len(results)

@@ -33,6 +33,10 @@ python foodb_pipeline_cli.py input.pdf \
 ### Output Configuration
 - `--output-dir, -o`: Output directory (default: ./foodb_results)
 - `--output-prefix`: Prefix for output files
+- `--timestamp-files`: Add timestamp to filenames to preserve old files (default: True)
+- `--no-timestamp`: Disable timestamp in filenames (will overwrite existing files)
+- `--timestamp-format`: Timestamp format for filenames (default: %Y%m%d_%H%M%S)
+- `--custom-timestamp`: Custom timestamp string instead of current time
 - `--save-chunks`: Save text chunks to separate files
 - `--save-timing`: Save detailed timing analysis
 - `--save-raw-responses`: Save raw LLM responses for debugging
@@ -153,6 +157,38 @@ python foodb_pipeline_cli.py paper.pdf \
   --primary-provider groq \
   --providers groq cerebras \
   --max-attempts 3
+```
+
+### 9. Timestamp Configuration
+```bash
+# Default timestamp (preserves old files)
+python foodb_pipeline_cli.py paper.pdf --timestamp-files
+
+# Custom timestamp format
+python foodb_pipeline_cli.py paper.pdf --timestamp-format "%Y-%m-%d_%H-%M-%S"
+
+# Custom timestamp string
+python foodb_pipeline_cli.py paper.pdf --custom-timestamp "experiment_v1"
+
+# Disable timestamps (overwrites existing files)
+python foodb_pipeline_cli.py paper.pdf --no-timestamp
+```
+
+### 10. File Preservation Examples
+```bash
+# Run multiple times - each creates new timestamped files
+python foodb_pipeline_cli.py paper.pdf --document-only
+# Creates: paper_20241217_143022_results.json
+
+python foodb_pipeline_cli.py paper.pdf --document-only
+# Creates: paper_20241217_143156_results.json (preserves previous)
+
+# Custom experiment naming
+python foodb_pipeline_cli.py paper.pdf --custom-timestamp "baseline"
+# Creates: paper_baseline_results.json
+
+python foodb_pipeline_cli.py paper.pdf --custom-timestamp "optimized"
+# Creates: paper_optimized_results.json
 ```
 
 ## Configuration File Format
