@@ -280,7 +280,8 @@ def extract_metabolites(chunks: List[str], args, logger) -> Dict[str, Any]:
         # Initialize wrapper
         wrapper = LLMWrapper(
             retry_config=retry_config,
-            document_only_mode=args.document_only
+            document_only_mode=args.document_only,
+            groq_model=getattr(args, 'groq_model', None)
         )
         
         # Set provider order

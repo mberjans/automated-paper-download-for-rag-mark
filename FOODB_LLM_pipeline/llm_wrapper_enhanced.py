@@ -66,10 +66,11 @@ class ProviderHealth:
 class LLMWrapper:
     """Enhanced LLM Wrapper with fallback capabilities for FOODB pipeline"""
     
-    def __init__(self, retry_config: RetryConfig = None, document_only_mode: bool = False):
+    def __init__(self, retry_config: RetryConfig = None, document_only_mode: bool = False, groq_model: str = None):
         self.logger = logging.getLogger(__name__)
         self.retry_config = retry_config or RetryConfig()
         self.document_only_mode = document_only_mode
+        self.preferred_groq_model = groq_model  # Allow custom Groq model selection
         
         # Load API keys from .env file only
         self.api_keys = {
@@ -142,13 +143,41 @@ class LLMWrapper:
         """Switch to the next best available provider"""
         old_provider = self.current_provider
         new_provider = self._get_best_available_provider()
-        
+
         if new_provider and new_provider != old_provider:
             self.current_provider = new_provider
             self.stats['fallback_switches'] += 1
             print(f"🔄 Switched provider: {old_provider} → {new_provider}")
             return True
         return False
+
+    def _get_best_groq_model(self) -> str:
+        """Get the best available Groq model based on testing results"""
+        # If user specified a preferred model, use it
+        if self.preferred_groq_model:
+            return self.preferred_groq_model
+
+        # Ranked by performance (speed and accuracy) from testing
+        groq_models = [
+            "moonshotai/kimi-k2-instruct",           # Fastest (0.57s) with excellent extraction (13 compounds)
+            "meta-llama/llama-4-scout-17b-16e-instruct",  # Fast (0.88s) with excellent extraction (13 compounds)
+            "meta-llama/llama-4-maverick-17b-128e-instruct",  # Good (1.37s) with excellent extraction (13 compounds)
+            "llama-3.1-8b-instant",                 # Original fallback model
+            "qwen/qwen3-32b"                        # Slower but functional (1.34s, some parsing issues)
+        ]
+
+        # Return the first model (best performing)
+        return groq_models[0]
+
+    def get_available_groq_models(self) -> List[str]:
+        """Get list of all available Groq models for metabolite extraction"""
+        return [
+            "moonshotai/kimi-k2-instruct",
+            "meta-llama/llama-4-scout-17b-16e-instruct",
+            "meta-llama/llama-4-maverick-17b-128e-instruct",
+            "llama-3.1-8b-instant",
+            "qwen/qwen3-32b"
+        ]
     
     def _make_api_request(self, provider: str, prompt: str, max_tokens: int = 500) -> tuple:
         """Make API request to specific provider"""
@@ -203,8 +232,11 @@ class LLMWrapper:
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json"
         }
+        # Select best available Groq model
+        groq_model = self._get_best_groq_model()
+
         data = {
-            "model": "llama-3.1-8b-instant",
+            "model": groq_model,
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": max_tokens,
             "temperature": 0.1

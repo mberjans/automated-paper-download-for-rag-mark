@@ -239,6 +239,18 @@ Examples:
         choices=['cerebras', 'groq', 'openrouter'],
         help='Primary provider to use (overrides providers order)'
     )
+    provider_group.add_argument(
+        '--groq-model',
+        type=str,
+        choices=[
+            'moonshotai/kimi-k2-instruct',
+            'meta-llama/llama-4-scout-17b-16e-instruct',
+            'meta-llama/llama-4-maverick-17b-128e-instruct',
+            'llama-3.1-8b-instant',
+            'qwen/qwen3-32b'
+        ],
+        help='Specific Groq model to use (default: moonshotai/kimi-k2-instruct)'
+    )
     
     # Processing configuration
     process_group = parser.add_argument_group('Processing Configuration')

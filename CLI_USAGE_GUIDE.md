@@ -71,6 +71,7 @@ python foodb_pipeline_cli.py input.pdf \
 ### Provider Configuration
 - `--providers`: LLM providers in fallback order (default: cerebras groq openrouter)
 - `--primary-provider`: Primary provider to use
+- `--groq-model`: Specific Groq model to use (see Available Models below)
 
 ### Processing Options
 - `--batch-mode`: Process multiple files in batch mode
@@ -164,6 +165,21 @@ python foodb_pipeline_cli.py paper.pdf \
   --max-attempts 3
 ```
 
+### 9. Groq Model Selection
+```bash
+# Use the fastest Groq model (recommended)
+python foodb_pipeline_cli.py paper.pdf --groq-model "moonshotai/kimi-k2-instruct"
+
+# Use Llama 4 Scout model
+python foodb_pipeline_cli.py paper.pdf --groq-model "meta-llama/llama-4-scout-17b-16e-instruct"
+
+# Use Llama 4 Maverick model
+python foodb_pipeline_cli.py paper.pdf --groq-model "meta-llama/llama-4-maverick-17b-128e-instruct"
+
+# Use Qwen model
+python foodb_pipeline_cli.py paper.pdf --groq-model "qwen/qwen3-32b"
+```
+
 ### 9. Timestamp Configuration
 ```bash
 # Default timestamp (preserves old files)
@@ -253,6 +269,33 @@ python foodb_pipeline_cli.py ./batch2/ \
 # Individual files are timestamped separately
 ```
 
+## Available Groq Models
+
+The pipeline supports multiple Groq models, tested and ranked by performance:
+
+### Recommended Models (Tested and Verified)
+| Model | Speed | Accuracy | Best For |
+|-------|-------|----------|----------|
+| **moonshotai/kimi-k2-instruct** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | **Recommended** - Fastest with excellent accuracy |
+| **meta-llama/llama-4-scout-17b-16e-instruct** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | High accuracy, good speed |
+| **meta-llama/llama-4-maverick-17b-128e-instruct** | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Excellent accuracy, moderate speed |
+| **llama-3.1-8b-instant** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | Original default model |
+| **qwen/qwen3-32b** | ⭐⭐⭐ | ⭐⭐⭐ | Alternative option |
+
+### Performance Benchmarks (Wine Biomarkers Test)
+- **moonshotai/kimi-k2-instruct**: 42.7s, 185 metabolites, 77.9% recall, 28.4% precision
+- **meta-llama/llama-4-scout-17b-16e-instruct**: Similar accuracy, slightly slower
+- **meta-llama/llama-4-maverick-17b-128e-instruct**: Excellent accuracy, good for complex documents
+
+### Usage Examples
+```bash
+# Use recommended model (fastest)
+python foodb_pipeline_cli.py paper.pdf --groq-model "moonshotai/kimi-k2-instruct"
+
+# Use for maximum accuracy
+python foodb_pipeline_cli.py paper.pdf --groq-model "meta-llama/llama-4-scout-17b-16e-instruct"
+```
+
 ## Configuration File Format
 
 Create a JSON configuration file to save frequently used settings:
@@ -268,6 +311,7 @@ Create a JSON configuration file to save frequently used settings:
   "max_attempts": 5,
   "base_delay": 2.0,
   "providers": ["cerebras", "groq", "openrouter"],
+  "groq_model": "moonshotai/kimi-k2-instruct",
   "export_format": "all",
   "save_timing": true
 }

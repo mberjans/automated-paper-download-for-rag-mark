@@ -1,0 +1,72 @@
+2025-07-17 00:09:48,907 - INFO - 🧪 Starting Groq model testing for metabolite extraction
+2025-07-17 00:09:48,908 - INFO - 📋 Testing 6 models
+2025-07-17 00:09:48,912 - INFO - 
+🔬 Testing model 1/6: deepseek-r1-distill-llama-70b
+2025-07-17 00:09:50,701 - INFO - ✅ deepseek-r1-distill-llama-70b: SUCCESS - 1 compounds extracted
+2025-07-17 00:09:50,701 - INFO -    Response time: 1.79s
+2025-07-17 00:09:50,701 - INFO -    Sample compounds: ['<think>']
+2025-07-17 00:09:52,703 - INFO - 
+🔬 Testing model 2/6: meta-llama/llama-4-maverick-17b-128e-instruct
+2025-07-17 00:09:54,074 - INFO - ✅ meta-llama/llama-4-maverick-17b-128e-instruct: SUCCESS - 13 compounds extracted
+2025-07-17 00:09:54,074 - INFO -    Response time: 1.37s
+2025-07-17 00:09:54,075 - INFO -    Sample compounds: ['resveratrol', 'quercetin', 'catechin']
+2025-07-17 00:09:56,080 - INFO - 
+🔬 Testing model 3/6: meta-llama/llama-4-scout-17b-16e-instruct
+2025-07-17 00:09:56,961 - INFO - ✅ meta-llama/llama-4-scout-17b-16e-instruct: SUCCESS - 13 compounds extracted
+2025-07-17 00:09:56,962 - INFO -    Response time: 0.88s
+2025-07-17 00:09:56,962 - INFO -    Sample compounds: ['Resveratrol', 'Quercetin', 'Catechin']
+2025-07-17 00:09:58,967 - INFO - 
+🔬 Testing model 4/6: mistral-saba-24b
+2025-07-17 00:09:59,326 - ERROR - ❌ mistral-saba-24b: FAILED - HTTP 400: {"error":{"message":"The model `mistral-saba-24b` requires terms acceptance. Please have the org admin accept the terms at https://console.groq.com/playground?model=mistral-saba-24b","type":"invalid_request_error","code":"model_terms_required"}}
+
+2025-07-17 00:10:01,332 - INFO - 
+🔬 Testing model 5/6: moonshotai/kimi-k2-instruct
+2025-07-17 00:10:01,899 - INFO - ✅ moonshotai/kimi-k2-instruct: SUCCESS - 13 compounds extracted
+2025-07-17 00:10:01,899 - INFO -    Response time: 0.57s
+2025-07-17 00:10:01,899 - INFO -    Sample compounds: ['resveratrol', 'quercetin', 'catechin']
+2025-07-17 00:10:03,905 - INFO - 
+🔬 Testing model 6/6: qwen/qwen3-32b
+2025-07-17 00:10:05,250 - INFO - ✅ qwen/qwen3-32b: SUCCESS - 4 compounds extracted
+2025-07-17 00:10:05,250 - INFO -    Response time: 1.34s
+2025-07-17 00:10:05,250 - INFO -    Sample compounds: ['<think>', "Okay, let's see. The user wants me to extract any metabolites, biomarkers, or chemical compounds mentioned in the provided text. They specified to list each on a separate line and not include any not explicitly mentioned.", 'Next, it mentions metabolites produced in the body: 3-hydroxyphenylacetic acid, vanillic acid, and hippuric acid. Those are metabolites, so they go on the list.']
+2025-07-17 00:10:07,256 - INFO - 
+📊 GROQ MODEL TESTING REPORT
+2025-07-17 00:10:07,256 - INFO - ==================================================
+2025-07-17 00:10:07,256 - INFO - ✅ Successful models: 5/6
+2025-07-17 00:10:07,256 - INFO - ❌ Failed models: 1/6
+2025-07-17 00:10:07,256 - INFO - 
+🎯 SUCCESSFUL MODELS:
+2025-07-17 00:10:07,256 - INFO -    • deepseek-r1-distill-llama-70b
+2025-07-17 00:10:07,256 - INFO -      Response time: 1.79s
+2025-07-17 00:10:07,256 - INFO -      Compounds extracted: 1
+2025-07-17 00:10:07,256 - INFO -      Sample: ['<think>']
+2025-07-17 00:10:07,256 - INFO -    • meta-llama/llama-4-maverick-17b-128e-instruct
+2025-07-17 00:10:07,256 - INFO -      Response time: 1.37s
+2025-07-17 00:10:07,257 - INFO -      Compounds extracted: 13
+2025-07-17 00:10:07,257 - INFO -      Sample: ['resveratrol', 'quercetin']
+2025-07-17 00:10:07,257 - INFO -    • meta-llama/llama-4-scout-17b-16e-instruct
+2025-07-17 00:10:07,257 - INFO -      Response time: 0.88s
+2025-07-17 00:10:07,257 - INFO -      Compounds extracted: 13
+2025-07-17 00:10:07,257 - INFO -      Sample: ['Resveratrol', 'Quercetin']
+2025-07-17 00:10:07,257 - INFO -    • moonshotai/kimi-k2-instruct
+2025-07-17 00:10:07,257 - INFO -      Response time: 0.57s
+2025-07-17 00:10:07,257 - INFO -      Compounds extracted: 13
+2025-07-17 00:10:07,257 - INFO -      Sample: ['resveratrol', 'quercetin']
+2025-07-17 00:10:07,257 - INFO -    • qwen/qwen3-32b
+2025-07-17 00:10:07,257 - INFO -      Response time: 1.34s
+2025-07-17 00:10:07,257 - INFO -      Compounds extracted: 4
+2025-07-17 00:10:07,257 - INFO -      Sample: ['<think>', "Okay, let's see. The user wants me to extract any metabolites, biomarkers, or chemical compounds mentioned in the provided text. They specified to list each on a separate line and not include any not explicitly mentioned."]
+2025-07-17 00:10:07,257 - INFO - 
+❌ FAILED MODELS:
+2025-07-17 00:10:07,257 - INFO -    • mistral-saba-24b: HTTP 400: {"error":{"message":"The model `mistral-saba-24b` requires terms acceptance. Please have the org admin accept the terms at https://console.groq.com/playground?model=mistral-saba-24b","type":"invalid_request_error","code":"model_terms_required"}}
+
+2025-07-17 00:10:07,257 - INFO - 
+⚡ PERFORMANCE COMPARISON:
+2025-07-17 00:10:07,257 - INFO -    Ranked by speed (fastest first):
+2025-07-17 00:10:07,257 - INFO -    1. moonshotai/kimi-k2-instruct: 0.57s (13 compounds)
+2025-07-17 00:10:07,258 - INFO -    2. meta-llama/llama-4-scout-17b-16e-instruct: 0.88s (13 compounds)
+2025-07-17 00:10:07,258 - INFO -    3. qwen/qwen3-32b: 1.34s (4 compounds)
+2025-07-17 00:10:07,258 - INFO -    4. meta-llama/llama-4-maverick-17b-128e-instruct: 1.37s (13 compounds)
+2025-07-17 00:10:07,258 - INFO -    5. deepseek-r1-distill-llama-70b: 1.79s (1 compounds)
+2025-07-17 00:10:07,260 - INFO - 
+💾 Detailed results saved to: groq_model_testing_results_20250717_001007.json

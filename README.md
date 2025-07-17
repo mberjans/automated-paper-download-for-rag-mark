@@ -176,6 +176,7 @@ The pipeline supports 40+ configurable parameters organized into groups:
 - **100% success rate** through retry mechanisms
 - **Rate limiting handling** with intelligent provider switching
 - **Document-only mode** prevents training data contamination
+- **Multiple Groq models** including latest Llama 4 and Kimi models
 
 ### 📊 Comprehensive Analysis
 - **Performance metrics**: Precision, recall, F1 scores
