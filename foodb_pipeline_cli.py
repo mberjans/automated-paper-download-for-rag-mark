@@ -48,7 +48,7 @@ Examples:
     parser.add_argument(
         'input_files',
         nargs='+',
-        help='Input PDF file(s) to process'
+        help='Input PDF file(s) or directory containing PDF files to process'
     )
     
     # Output configuration
@@ -101,6 +101,35 @@ Examples:
         '--custom-timestamp',
         type=str,
         help='Custom timestamp string to use instead of current time'
+    )
+    output_group.add_argument(
+        '--directory-mode',
+        action='store_true',
+        help='Process directory of PDF files with organized output structure'
+    )
+    output_group.add_argument(
+        '--consolidated-output',
+        action='store_true',
+        default=True,
+        help='Create consolidated output files (append mode, no timestamps) (default: True)'
+    )
+    output_group.add_argument(
+        '--individual-output',
+        action='store_true',
+        default=True,
+        help='Create individual paper-specific output files (timestamped) (default: True)'
+    )
+    output_group.add_argument(
+        '--individual-subdir',
+        type=str,
+        default='individual_papers',
+        help='Subdirectory for individual paper results (default: individual_papers)'
+    )
+    output_group.add_argument(
+        '--consolidated-subdir',
+        type=str,
+        default='consolidated',
+        help='Subdirectory for consolidated results (default: consolidated)'
     )
     
     # Database configuration
@@ -380,13 +409,21 @@ def setup_logging(args: argparse.Namespace):
 def validate_arguments(args: argparse.Namespace) -> bool:
     """Validate command line arguments"""
     errors = []
-    
-    # Check input files exist
-    for input_file in args.input_files:
-        if not os.path.exists(input_file):
-            errors.append(f"Input file not found: {input_file}")
-        elif not input_file.lower().endswith('.pdf'):
-            errors.append(f"Input file must be PDF: {input_file}")
+
+    # Check input files/directories exist
+    for input_path in args.input_files:
+        if not os.path.exists(input_path):
+            errors.append(f"Input path not found: {input_path}")
+        elif os.path.isfile(input_path):
+            if not input_path.lower().endswith('.pdf'):
+                errors.append(f"Input file must be PDF: {input_path}")
+        elif os.path.isdir(input_path):
+            # Check if directory contains PDF files
+            pdf_files = list(Path(input_path).glob("*.pdf"))
+            if not pdf_files:
+                errors.append(f"Directory contains no PDF files: {input_path}")
+        else:
+            errors.append(f"Input path must be file or directory: {input_path}")
     
     # Check CSV database exists
     if not os.path.exists(args.csv_database):
@@ -439,6 +476,12 @@ def print_configuration(args: argparse.Namespace):
     print(f"   Output directory: {args.output_dir}")
     print(f"   Output prefix: {args.output_prefix or 'none'}")
     print(f"   Export format: {args.export_format}")
+    print(f"   Directory mode: {getattr(args, 'directory_mode', False)}")
+    if getattr(args, 'directory_mode', False):
+        print(f"   Consolidated output: {getattr(args, 'consolidated_output', True)}")
+        print(f"   Individual output: {getattr(args, 'individual_output', True)}")
+        print(f"   Individual subdir: {getattr(args, 'individual_subdir', 'individual_papers')}")
+        print(f"   Consolidated subdir: {getattr(args, 'consolidated_subdir', 'consolidated')}")
     print(f"   Timestamp files: {getattr(args, 'timestamp_files', True) and not getattr(args, 'no_timestamp', False)}")
     if getattr(args, 'timestamp_files', True) and not getattr(args, 'no_timestamp', False):
         print(f"   Timestamp format: {getattr(args, 'timestamp_format', '%Y%m%d_%H%M%S')}")

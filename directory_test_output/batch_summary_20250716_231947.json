@@ -1,0 +1,27 @@
+{
+  "batch_statistics": {
+    "total_files_processed": 2,
+    "total_metabolites_extracted": 344,
+    "total_database_matches": 86,
+    "average_detection_rate": 0.7288135593220338,
+    "total_processing_time": 164.92883920669556,
+    "average_time_per_file": 82.46441960334778
+  },
+  "file_results": [
+    {
+      "file": "test_pdfs/study1.pdf",
+      "metabolites": 183,
+      "matches": 43,
+      "detection_rate": 0.7288135593220338,
+      "processing_time": 11.005046129226685
+    },
+    {
+      "file": "test_pdfs/study2.pdf",
+      "metabolites": 161,
+      "matches": 43,
+      "detection_rate": 0.7288135593220338,
+      "processing_time": 153.92379307746887
+    }
+  ],
+  "timestamp": "2025-07-16 23:19:47"
+}

@@ -1,0 +1,81 @@
+{
+  "processing_summaries": [
+    {
+      "timestamp": "2025-07-16 23:19:47",
+      "summary_stats": {
+        "total_papers": 2,
+        "total_metabolites": 344,
+        "total_unique_metabolites": 190,
+        "total_matches": 0,
+        "average_detection_rate": 0.7288135593220338,
+        "total_unique_matches": 43,
+        "processing_timestamp": "2025-07-16 23:19:47"
+      },
+      "paper_count": 2,
+      "top_metabolites": [
+        "hydrochloric acid",
+        "polyphenol-targeted metabolomics",
+        "cardiovascular risk",
+        "formic acid",
+        "Valine-Histidine (Val-His)",
+        "flavan-3-ols",
+        "ellagic acid",
+        "catechin sulfate",
+        "Caffeic acid ethyl ester",
+        "luteolin 7-sulfate",
+        "3-[1-Hydroxy-2-(2-hydroxyphenyl) ethyl]-5-methoxyphenol",
+        "urolithins",
+        "daidzein",
+        "sorafenib",
+        "ChemSpider",
+        "bioavailability and metabolism of phenolic compounds",
+        "anthocyanins",
+        "p-coumaric acid",
+        "[M \u0087H]\u0087\u0088556.2771",
+        "Equol"
+      ],
+      "paper_names": [
+        "study1",
+        "study2"
+      ]
+    },
+    {
+      "timestamp": "2025-07-16 23:20:41",
+      "summary_stats": {
+        "total_papers": 1,
+        "total_metabolites": 146,
+        "total_unique_metabolites": 146,
+        "total_matches": 0,
+        "average_detection_rate": 0.7627118644067796,
+        "total_unique_matches": 45,
+        "processing_timestamp": "2025-07-16 23:20:41"
+      },
+      "paper_count": 1,
+      "top_metabolites": [
+        "Human Metabolome Database (HMDB)",
+        "peonidin-3-glucoside",
+        "1-caffeoyl-beta",
+        "dihydroresveratrol sulfate",
+        "3-Methylglutarylcarnitine",
+        "acetic acid",
+        "curcuma longa L. extract",
+        "[M-2H]",
+        "caffeic acid ethyl ester",
+        "gallic acid",
+        "apigenin",
+        "7H-Purine-6,8-diol",
+        "syringic acid",
+        "Valine-Histidine (Val-His)",
+        "dihydrocaffeic acid 3-sulfate",
+        "citramalic acid",
+        "genistein",
+        "caffeic acid",
+        "trans-resveratrol",
+        "trans-delphinidin-3-(6\u2033-coumaroyl)-glucoside"
+      ],
+      "paper_names": [
+        "study3"
+      ]
+    }
+  ]
+}

@@ -37,6 +37,11 @@ python foodb_pipeline_cli.py input.pdf \
 - `--no-timestamp`: Disable timestamp in filenames (will overwrite existing files)
 - `--timestamp-format`: Timestamp format for filenames (default: %Y%m%d_%H%M%S)
 - `--custom-timestamp`: Custom timestamp string instead of current time
+- `--directory-mode`: Process directory of PDFs with organized output structure
+- `--consolidated-output`: Create consolidated output files (append mode, no timestamps) (default: True)
+- `--individual-output`: Create individual paper-specific output files (timestamped) (default: True)
+- `--individual-subdir`: Subdirectory for individual paper results (default: individual_papers)
+- `--consolidated-subdir`: Subdirectory for consolidated results (default: consolidated)
 - `--save-chunks`: Save text chunks to separate files
 - `--save-timing`: Save detailed timing analysis
 - `--save-raw-responses`: Save raw LLM responses for debugging
@@ -191,6 +196,63 @@ python foodb_pipeline_cli.py paper.pdf --custom-timestamp "optimized"
 # Creates: paper_optimized_results.json
 ```
 
+### 11. Directory Processing
+```bash
+# Process entire directory of PDFs
+python foodb_pipeline_cli.py /path/to/pdf_directory --directory-mode --document-only
+
+# Directory with custom output structure
+python foodb_pipeline_cli.py ./papers/ \
+  --directory-mode \
+  --output-dir ./results \
+  --individual-subdir "papers" \
+  --consolidated-subdir "combined" \
+  --document-only
+
+# Process directory with all export formats
+python foodb_pipeline_cli.py ./papers/ \
+  --directory-mode \
+  --export-format all \
+  --save-timing \
+  --document-only
+```
+
+### 12. Consolidated vs Individual Output
+```bash
+# Both consolidated and individual (default)
+python foodb_pipeline_cli.py ./papers/ --directory-mode
+
+# Individual papers only (timestamped files)
+python foodb_pipeline_cli.py ./papers/ \
+  --directory-mode \
+  --individual-output \
+  --consolidated-output false
+
+# Consolidated only (append mode, no timestamps)
+python foodb_pipeline_cli.py ./papers/ \
+  --directory-mode \
+  --consolidated-output \
+  --individual-output false
+```
+
+### 13. Multiple Directory Runs (Append Mode)
+```bash
+# First batch of papers
+python foodb_pipeline_cli.py ./batch1/ \
+  --directory-mode \
+  --custom-timestamp "batch1" \
+  --output-dir ./study_results
+
+# Second batch - appends to consolidated files
+python foodb_pipeline_cli.py ./batch2/ \
+  --directory-mode \
+  --custom-timestamp "batch2" \
+  --output-dir ./study_results
+
+# Results: consolidated files contain data from both batches
+# Individual files are timestamped separately
+```
+
 ## Configuration File Format
 
 Create a JSON configuration file to save frequently used settings:
@@ -213,29 +275,48 @@ Create a JSON configuration file to save frequently used settings:
 
 ## Output Files
 
-The pipeline generates several output files:
+The pipeline generates different output structures depending on the processing mode:
 
-### JSON Results
+### Standard Mode (Single Files)
 - `{filename}_results.json`: Complete results with all data
-- Contains: extracted metabolites, database matches, metrics, timing
+- `{filename}_results.csv`: Metabolites with database match status (if CSV format)
+- `{filename}_results.xlsx`: Multi-sheet workbook (if Excel format)
+- `{filename}_results_timing.json`: Detailed timing breakdown (if --save-timing)
 
-### CSV Results (if --export-format csv or all)
-- `{filename}_results.csv`: Metabolites with database match status
+### Directory Mode Output Structure
+```
+output_directory/
+├── individual_papers/          # Individual paper results (timestamped)
+│   ├── paper1_20241217_143022.json
+│   ├── paper1_20241217_143022.csv
+│   ├── paper1_20241217_143022_timing.json
+│   ├── paper2_20241217_143156.json
+│   └── ...
+├── consolidated/               # Consolidated results (append mode)
+│   ├── consolidated_results.json      # All runs combined
+│   ├── consolidated_metabolites.csv   # All metabolites from all papers
+│   ├── consolidated_results.xlsx      # Multi-sheet workbook
+│   └── processing_summary.json       # Summary of all processing runs
+└── batch_summary_20241217_143200.json # Current batch summary
+```
 
-### Excel Results (if --export-format xlsx or all)
-- `{filename}_results.xlsx`: Multi-sheet workbook with:
-  - Metabolites sheet
-  - Metrics sheet
-  - Summary sheet
+### Consolidated Files (Directory Mode)
+- **consolidated_results.json**: Contains all processing runs with timestamps
+  - `processing_runs[]`: Array of all runs
+  - Each run contains: summary stats, paper results, unique metabolites
+- **consolidated_metabolites.csv**: All metabolites from all papers with metadata
+  - Columns: Processing_Timestamp, Paper_Name, Metabolite, In_Database, etc.
+- **consolidated_results.xlsx**: Multi-sheet Excel workbook
+  - `All_Runs`: Historical data from all processing runs
+  - `Current_Run`: Data from the current processing run
+  - `Summary`: Summary statistics
+  - `All_Metabolites`: Unique metabolites across all papers
+- **processing_summary.json**: High-level summaries of all runs
 
-### Timing Analysis (if --save-timing)
-- `{filename}_results_timing.json`: Detailed timing breakdown
-
-### Text Chunks (if --save-chunks)
-- `{filename}_results_chunks/`: Directory with individual chunk files
-
-### Batch Summary (if --batch-mode)
-- `batch_summary.json`: Summary statistics for all processed files
+### Individual Files (Directory Mode)
+- Each paper gets its own timestamped files in `individual_papers/`
+- Same format as standard mode but with timestamps
+- Preserves individual paper analysis for detailed review
 
 ## Performance Optimization
 

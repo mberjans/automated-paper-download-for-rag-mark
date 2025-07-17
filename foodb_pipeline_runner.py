@@ -20,55 +20,140 @@ sys.path.append('FOODB_LLM_pipeline')
 def run_pipeline(args, logger):
     """Run the complete FOODB pipeline with given arguments"""
     logger.info("🚀 Starting FOODB pipeline execution")
-    
-    # Create output directory
-    output_dir = Path(args.output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
-    logger.info(f"📁 Output directory: {output_dir}")
-    
+
+    # Expand input files to handle directories
+    pdf_files = expand_input_files(args.input_files, logger)
+
+    # Detect directory mode automatically if processing multiple files from directories
+    if not getattr(args, 'directory_mode', False) and len(pdf_files) > 1:
+        # Check if any input was a directory
+        for input_path in args.input_files:
+            if os.path.isdir(input_path):
+                args.directory_mode = True
+                logger.info("🗂️ Directory mode automatically enabled")
+                break
+
+    # Create output directory structure
+    setup_output_directories(args, logger)
+
     # Initialize progress tracking
-    total_files = len(args.input_files)
+    total_files = len(pdf_files)
     results = []
-    
-    # Process each input file
-    for i, input_file in enumerate(args.input_files, 1):
+
+    # Initialize consolidated output structures
+    if getattr(args, 'directory_mode', False) and getattr(args, 'consolidated_output', True):
+        consolidated_data = initialize_consolidated_data()
+
+    # Process each PDF file
+    for i, pdf_file in enumerate(pdf_files, 1):
         if not args.quiet:
-            print(f"\n📄 Processing file {i}/{total_files}: {input_file}")
-        
-        logger.info(f"Processing file {i}/{total_files}: {input_file}")
-        
+            print(f"\n📄 Processing file {i}/{total_files}: {pdf_file}")
+
+        logger.info(f"Processing file {i}/{total_files}: {pdf_file}")
+
         # Check if should skip existing
         if args.skip_existing:
-            output_file = get_output_filename(input_file, args)
+            output_file = get_output_filename(pdf_file, args)
             if output_file.exists():
                 logger.info(f"⏭️ Skipping existing result: {output_file}")
                 continue
-        
+
         try:
-            result = process_single_file(input_file, args, logger)
+            result = process_single_file(pdf_file, args, logger)
             results.append(result)
-            
-            # Save individual result
-            save_results(result, input_file, args, logger)
-            
+
+            # Save results based on mode
+            if getattr(args, 'directory_mode', False):
+                # Directory mode: dual output
+                save_directory_mode_results(result, pdf_file, args, logger, consolidated_data if getattr(args, 'consolidated_output', True) else None)
+            else:
+                # Standard mode: individual files only
+                save_results(result, pdf_file, args, logger)
+
             if not args.quiet:
-                print(f"✅ Successfully processed {input_file}")
-            logger.info(f"✅ Successfully processed {input_file}")
-            
+                print(f"✅ Successfully processed {pdf_file}")
+            logger.info(f"✅ Successfully processed {pdf_file}")
+
         except Exception as e:
-            error_msg = f"❌ Failed to process {input_file}: {e}"
+            error_msg = f"❌ Failed to process {pdf_file}: {e}"
             print(error_msg)
             logger.error(error_msg)
-            
+
             if args.debug:
                 import traceback
                 traceback.print_exc()
-    
+
+    # Finalize consolidated output
+    if getattr(args, 'directory_mode', False) and getattr(args, 'consolidated_output', True) and results:
+        finalize_consolidated_output(consolidated_data, results, args, logger)
+
     # Generate batch summary if processing multiple files
-    if args.batch_mode and len(results) > 1:
+    if (args.batch_mode or getattr(args, 'directory_mode', False)) and len(results) > 1:
         generate_batch_summary(results, args, logger)
-    
+
     logger.info(f"🎉 Pipeline execution completed. Processed {len(results)}/{total_files} files successfully.")
+
+def expand_input_files(input_paths: List[str], logger) -> List[str]:
+    """Expand input paths to include all PDF files from directories"""
+    pdf_files = []
+
+    for input_path in input_paths:
+        if os.path.isfile(input_path):
+            if input_path.lower().endswith('.pdf'):
+                pdf_files.append(input_path)
+            else:
+                logger.warning(f"⚠️ Skipping non-PDF file: {input_path}")
+        elif os.path.isdir(input_path):
+            dir_path = Path(input_path)
+            dir_pdfs = list(dir_path.glob("*.pdf"))
+            dir_pdfs.extend(list(dir_path.glob("**/*.pdf")))  # Include subdirectories
+
+            if dir_pdfs:
+                logger.info(f"📁 Found {len(dir_pdfs)} PDF files in directory: {input_path}")
+                pdf_files.extend([str(pdf) for pdf in dir_pdfs])
+            else:
+                logger.warning(f"⚠️ No PDF files found in directory: {input_path}")
+        else:
+            logger.warning(f"⚠️ Invalid input path: {input_path}")
+
+    # Remove duplicates and sort
+    pdf_files = sorted(list(set(pdf_files)))
+    logger.info(f"📊 Total PDF files to process: {len(pdf_files)}")
+
+    return pdf_files
+
+def setup_output_directories(args, logger):
+    """Setup output directory structure for different modes"""
+    output_dir = Path(args.output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    logger.info(f"📁 Main output directory: {output_dir}")
+
+    if getattr(args, 'directory_mode', False):
+        # Create subdirectories for directory mode
+        if getattr(args, 'individual_output', True):
+            individual_dir = output_dir / getattr(args, 'individual_subdir', 'individual_papers')
+            individual_dir.mkdir(parents=True, exist_ok=True)
+            logger.info(f"📁 Individual papers directory: {individual_dir}")
+
+        if getattr(args, 'consolidated_output', True):
+            consolidated_dir = output_dir / getattr(args, 'consolidated_subdir', 'consolidated')
+            consolidated_dir.mkdir(parents=True, exist_ok=True)
+            logger.info(f"📁 Consolidated results directory: {consolidated_dir}")
+
+def initialize_consolidated_data():
+    """Initialize data structures for consolidated output"""
+    return {
+        'all_metabolites': set(),
+        'all_matches': set(),
+        'paper_results': [],
+        'summary_stats': {
+            'total_papers': 0,
+            'total_metabolites': 0,
+            'total_unique_metabolites': 0,
+            'total_matches': 0,
+            'average_detection_rate': 0.0
+        }
+    }
 
 def process_single_file(input_file: str, args, logger) -> Dict[str, Any]:
     """Process a single PDF file through the pipeline"""
@@ -335,6 +420,303 @@ def parse_verification_response(verification: str, original_metabolites: List[st
             verified.append(metabolite)
     
     return verified
+
+def save_directory_mode_results(result: Dict[str, Any], input_file: str, args, logger, consolidated_data: Optional[Dict] = None):
+    """Save results in directory mode with dual output structure"""
+    try:
+        # Save individual paper-specific results (with timestamps)
+        if getattr(args, 'individual_output', True):
+            save_individual_paper_results(result, input_file, args, logger)
+
+        # Update consolidated data
+        if consolidated_data is not None:
+            update_consolidated_data(consolidated_data, result, input_file)
+
+    except Exception as e:
+        logger.error(f"❌ Failed to save directory mode results: {e}")
+        raise
+
+def save_individual_paper_results(result: Dict[str, Any], input_file: str, args, logger):
+    """Save individual paper results in timestamped files"""
+    try:
+        # Create individual output directory
+        output_dir = Path(args.output_dir) / getattr(args, 'individual_subdir', 'individual_papers')
+
+        # Generate timestamped filename for individual paper
+        input_path = Path(input_file)
+        base_name = input_path.stem
+        if args.output_prefix:
+            base_name = f"{args.output_prefix}_{base_name}"
+
+        # Always use timestamp for individual files
+        if hasattr(args, 'custom_timestamp') and args.custom_timestamp:
+            timestamp = args.custom_timestamp
+        else:
+            timestamp_format = getattr(args, 'timestamp_format', '%Y%m%d_%H%M%S')
+            timestamp = time.strftime(timestamp_format)
+
+        base_filename = f"{base_name}_{timestamp}"
+
+        # Save in all requested formats
+        if args.export_format in ['json', 'all']:
+            json_file = output_dir / f"{base_filename}.json"
+            with open(json_file, 'w') as f:
+                json.dump(result, f, indent=2)
+            logger.info(f"💾 Saved individual JSON: {json_file}")
+
+        if args.export_format in ['csv', 'all']:
+            csv_file = output_dir / f"{base_filename}.csv"
+            save_csv_results(result, csv_file, logger)
+
+        if args.export_format in ['xlsx', 'all']:
+            xlsx_file = output_dir / f"{base_filename}.xlsx"
+            save_xlsx_results(result, xlsx_file, logger)
+
+        # Save timing if requested
+        if args.save_timing:
+            timing_file = output_dir / f"{base_filename}_timing.json"
+            save_timing_analysis(result, timing_file, logger)
+
+        # Save raw responses if requested
+        if args.save_raw_responses:
+            raw_file = output_dir / f"{base_filename}_raw_responses.json"
+            save_raw_responses(result, raw_file, logger)
+
+    except Exception as e:
+        logger.error(f"❌ Failed to save individual paper results: {e}")
+        raise
+
+def update_consolidated_data(consolidated_data: Dict, result: Dict[str, Any], input_file: str):
+    """Update consolidated data structures with new result"""
+    try:
+        # Extract data from result
+        metabolites = set(result['extraction_result']['metabolites'])
+        matches = set(result['matching_result']['matched_biomarkers'])
+
+        # Update consolidated sets
+        consolidated_data['all_metabolites'].update(metabolites)
+        consolidated_data['all_matches'].update(matches)
+
+        # Add paper-specific result
+        paper_result = {
+            'paper_file': input_file,
+            'paper_name': Path(input_file).stem,
+            'processing_time': result['processing_time'],
+            'metabolites_count': len(metabolites),
+            'matches_count': len(matches),
+            'detection_rate': result['matching_result']['detection_rate'],
+            'precision': result['metrics'].get('precision', 0) if 'metrics' in result else 0,
+            'recall': result['metrics'].get('recall', 0) if 'metrics' in result else 0,
+            'f1_score': result['metrics'].get('f1_score', 0) if 'metrics' in result else 0,
+            'metabolites': list(metabolites),
+            'matched_biomarkers': list(matches)
+        }
+
+        consolidated_data['paper_results'].append(paper_result)
+
+        # Update summary stats
+        consolidated_data['summary_stats']['total_papers'] += 1
+        consolidated_data['summary_stats']['total_metabolites'] += len(metabolites)
+
+    except Exception as e:
+        print(f"❌ Error updating consolidated data: {e}")
+
+def finalize_consolidated_output(consolidated_data: Dict, results: List[Dict], args, logger):
+    """Finalize and save consolidated output files"""
+    try:
+        output_dir = Path(args.output_dir) / getattr(args, 'consolidated_subdir', 'consolidated')
+
+        # Calculate final summary statistics
+        total_papers = len(results)
+        unique_metabolites = len(consolidated_data['all_metabolites'])
+        unique_matches = len(consolidated_data['all_matches'])
+        avg_detection_rate = sum(r['matching_result']['detection_rate'] for r in results) / total_papers if total_papers > 0 else 0
+
+        consolidated_data['summary_stats'].update({
+            'total_papers': total_papers,
+            'total_unique_metabolites': unique_metabolites,
+            'total_unique_matches': unique_matches,
+            'average_detection_rate': avg_detection_rate,
+            'processing_timestamp': time.strftime('%Y-%m-%d %H:%M:%S')
+        })
+
+        # Save consolidated JSON (append mode)
+        consolidated_json = output_dir / "consolidated_results.json"
+        save_consolidated_json(consolidated_data, consolidated_json, logger)
+
+        # Save consolidated CSV (append mode)
+        if args.export_format in ['csv', 'all']:
+            consolidated_csv = output_dir / "consolidated_metabolites.csv"
+            save_consolidated_csv(consolidated_data, consolidated_csv, logger)
+
+        # Save consolidated Excel (append mode)
+        if args.export_format in ['xlsx', 'all']:
+            consolidated_xlsx = output_dir / "consolidated_results.xlsx"
+            save_consolidated_xlsx(consolidated_data, consolidated_xlsx, logger)
+
+        # Save summary report
+        summary_file = output_dir / "processing_summary.json"
+        save_processing_summary(consolidated_data, summary_file, logger)
+
+    except Exception as e:
+        logger.error(f"❌ Failed to finalize consolidated output: {e}")
+        raise
+
+def save_consolidated_json(consolidated_data: Dict, output_file: Path, logger):
+    """Save consolidated JSON with append mode"""
+    try:
+        # Load existing data if file exists
+        existing_data = {'processing_runs': []}
+        if output_file.exists():
+            try:
+                with open(output_file, 'r') as f:
+                    existing_data = json.load(f)
+                if 'processing_runs' not in existing_data:
+                    existing_data = {'processing_runs': [existing_data]}  # Convert old format
+            except Exception as e:
+                logger.warning(f"⚠️ Could not load existing consolidated data: {e}")
+
+        # Add new run data
+        new_run = {
+            'timestamp': consolidated_data['summary_stats']['processing_timestamp'],
+            'summary_stats': consolidated_data['summary_stats'],
+            'paper_results': consolidated_data['paper_results'],
+            'all_unique_metabolites': sorted(list(consolidated_data['all_metabolites'])),
+            'all_unique_matches': sorted(list(consolidated_data['all_matches']))
+        }
+
+        existing_data['processing_runs'].append(new_run)
+
+        # Save updated data
+        with open(output_file, 'w') as f:
+            json.dump(existing_data, f, indent=2)
+
+        logger.info(f"💾 Saved consolidated JSON: {output_file}")
+
+    except Exception as e:
+        logger.error(f"❌ Failed to save consolidated JSON: {e}")
+
+def save_consolidated_csv(consolidated_data: Dict, output_file: Path, logger):
+    """Save consolidated CSV with append mode"""
+    try:
+        # Prepare data for CSV
+        csv_data = []
+        timestamp = consolidated_data['summary_stats']['processing_timestamp']
+
+        for paper_result in consolidated_data['paper_results']:
+            for metabolite in paper_result['metabolites']:
+                csv_data.append({
+                    'Processing_Timestamp': timestamp,
+                    'Paper_Name': paper_result['paper_name'],
+                    'Paper_File': paper_result['paper_file'],
+                    'Metabolite': metabolite,
+                    'In_Database': metabolite in paper_result['matched_biomarkers'],
+                    'Paper_Detection_Rate': paper_result['detection_rate'],
+                    'Paper_Precision': paper_result['precision'],
+                    'Paper_Recall': paper_result['recall'],
+                    'Paper_F1_Score': paper_result['f1_score']
+                })
+
+        df = pd.DataFrame(csv_data)
+
+        # Append to existing file or create new
+        if output_file.exists():
+            df.to_csv(output_file, mode='a', header=False, index=False)
+        else:
+            df.to_csv(output_file, index=False)
+
+        logger.info(f"💾 Saved consolidated CSV: {output_file}")
+
+    except Exception as e:
+        logger.error(f"❌ Failed to save consolidated CSV: {e}")
+
+def save_consolidated_xlsx(consolidated_data: Dict, output_file: Path, logger):
+    """Save consolidated Excel with multiple sheets"""
+    try:
+        # Load existing workbook or create new
+        existing_data = []
+        if output_file.exists():
+            try:
+                existing_df = pd.read_excel(output_file, sheet_name='All_Runs')
+                existing_data = existing_df.to_dict('records')
+            except Exception:
+                pass  # File doesn't exist or is corrupted
+
+        # Prepare current run data
+        current_run_data = []
+        timestamp = consolidated_data['summary_stats']['processing_timestamp']
+
+        for paper_result in consolidated_data['paper_results']:
+            current_run_data.append({
+                'Processing_Timestamp': timestamp,
+                'Paper_Name': paper_result['paper_name'],
+                'Metabolites_Count': paper_result['metabolites_count'],
+                'Matches_Count': paper_result['matches_count'],
+                'Detection_Rate': paper_result['detection_rate'],
+                'Precision': paper_result['precision'],
+                'Recall': paper_result['recall'],
+                'F1_Score': paper_result['f1_score'],
+                'Processing_Time': paper_result['processing_time']
+            })
+
+        # Combine with existing data
+        all_data = existing_data + current_run_data
+
+        with pd.ExcelWriter(output_file, engine='openpyxl') as writer:
+            # All runs sheet
+            pd.DataFrame(all_data).to_excel(writer, sheet_name='All_Runs', index=False)
+
+            # Current run details
+            pd.DataFrame(current_run_data).to_excel(writer, sheet_name='Current_Run', index=False)
+
+            # Summary statistics
+            summary_df = pd.DataFrame([consolidated_data['summary_stats']])
+            summary_df.to_excel(writer, sheet_name='Summary', index=False)
+
+            # All unique metabolites
+            metabolites_df = pd.DataFrame({
+                'Metabolite': sorted(list(consolidated_data['all_metabolites'])),
+                'In_Database': [m in consolidated_data['all_matches'] for m in sorted(list(consolidated_data['all_metabolites']))]
+            })
+            metabolites_df.to_excel(writer, sheet_name='All_Metabolites', index=False)
+
+        logger.info(f"💾 Saved consolidated Excel: {output_file}")
+
+    except Exception as e:
+        logger.error(f"❌ Failed to save consolidated Excel: {e}")
+
+def save_processing_summary(consolidated_data: Dict, output_file: Path, logger):
+    """Save processing summary with append mode"""
+    try:
+        # Load existing summaries
+        existing_summaries = []
+        if output_file.exists():
+            try:
+                with open(output_file, 'r') as f:
+                    data = json.load(f)
+                    existing_summaries = data.get('processing_summaries', [])
+            except Exception:
+                pass
+
+        # Add current summary
+        current_summary = {
+            'timestamp': consolidated_data['summary_stats']['processing_timestamp'],
+            'summary_stats': consolidated_data['summary_stats'],
+            'paper_count': len(consolidated_data['paper_results']),
+            'top_metabolites': list(consolidated_data['all_metabolites'])[:20],  # Top 20
+            'paper_names': [pr['paper_name'] for pr in consolidated_data['paper_results']]
+        }
+
+        existing_summaries.append(current_summary)
+
+        # Save updated summaries
+        with open(output_file, 'w') as f:
+            json.dump({'processing_summaries': existing_summaries}, f, indent=2)
+
+        logger.info(f"💾 Saved processing summary: {output_file}")
+
+    except Exception as e:
+        logger.error(f"❌ Failed to save processing summary: {e}")
 
 def match_database(metabolites: List[str], args, logger) -> Dict[str, Any]:
     """Match extracted metabolites against CSV database"""
