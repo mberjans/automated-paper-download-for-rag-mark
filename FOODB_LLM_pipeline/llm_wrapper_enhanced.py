@@ -79,9 +79,12 @@ class LLMWrapper:
             'openrouter': ENV_VARS.get('OPENROUTER_API_KEY')
         }
         
-        # Provider management
+        # Provider management with V4 priority order
         self.provider_health = {}
-        self.fallback_order = ["cerebras", "groq", "openrouter"]
+        self.fallback_order = ["cerebras", "groq", "openrouter"]  # Provider order: Cerebras → Groq → OpenRouter
+
+        # Load V4 model priority list for intelligent model selection
+        self.model_priority_list = self._load_v4_priority_list()
         
         # Initialize providers
         self._initialize_providers()
@@ -101,13 +104,31 @@ class LLMWrapper:
             'fallback_switches': 0
         }
     
+    def _load_v4_priority_list(self) -> List[Dict]:
+        """Load V4 model priority list for intelligent fallback"""
+        try:
+            with open('llm_usage_priority_list.json', 'r') as f:
+                data = json.load(f)
+            return data.get('priority_list', [])
+        except Exception as e:
+            print(f"⚠️  Could not load V4 priority list: {e}")
+            return []
+
     def _initialize_providers(self):
         """Initialize all available providers"""
         for provider in self.fallback_order:
             self.provider_health[provider] = ProviderHealth(ProviderStatus.HEALTHY)
-        
+
         self.current_provider = self._get_best_available_provider()
         print(f"🎯 Primary provider: {self.current_provider}")
+
+        # Show available models from V4 priority list
+        if self.model_priority_list:
+            print(f"📋 Loaded {len(self.model_priority_list)} models from V4 priority list")
+            cerebras_count = len([m for m in self.model_priority_list if m.get('provider') == 'Cerebras'])
+            groq_count = len([m for m in self.model_priority_list if m.get('provider') == 'Groq'])
+            openrouter_count = len([m for m in self.model_priority_list if m.get('provider') == 'OpenRouter'])
+            print(f"   Cerebras: {cerebras_count}, Groq: {groq_count}, OpenRouter: {openrouter_count}")
     
     def _get_best_available_provider(self) -> Optional[str]:
         """Get the best available provider"""
@@ -152,32 +173,83 @@ class LLMWrapper:
         return False
 
     def _get_best_groq_model(self) -> str:
-        """Get the best available Groq model based on testing results"""
+        """Get the best available Groq model based on V4 priority list"""
         # If user specified a preferred model, use it
         if self.preferred_groq_model:
             return self.preferred_groq_model
 
-        # Ranked by performance (speed and accuracy) from testing
+        # Get Groq models from V4 priority list (ordered by F1 score)
+        if self.model_priority_list:
+            groq_models = [
+                model for model in self.model_priority_list
+                if model.get('provider') == 'Groq'
+            ]
+            if groq_models:
+                # Return the highest priority (best F1 score) Groq model
+                best_model = groq_models[0]
+                print(f"🏆 Selected best Groq model: {best_model['model_name']} (F1: {best_model.get('performance_score', 'N/A')})")
+                return best_model['model_id']
+
+        # Fallback to hardcoded list if V4 not available
         groq_models = [
-            "llama-3.3-70b-versatile",              # Latest Llama 3.3 model
-            "moonshotai/kimi-k2-instruct",           # Fastest (0.57s) with excellent extraction (13 compounds)
-            "meta-llama/llama-4-scout-17b-16e-instruct",  # Fast (0.88s) with excellent extraction (13 compounds)
-            "meta-llama/llama-4-maverick-17b-128e-instruct",  # Good (1.37s) with excellent extraction (13 compounds)
-            "llama-3.1-8b-instant",                 # Original fallback model
-            "qwen/qwen3-32b"                        # Slower but functional (1.34s, some parsing issues)
+            "meta-llama/llama-4-maverick-17b-128e-instruct",  # Best F1: 0.5104
+            "meta-llama/llama-4-scout-17b-16e-instruct",      # Second best F1: 0.5081
+            "qwen/qwen3-32b",                                 # Third best F1: 0.5056
+            "llama-3.1-8b-instant",                          # Fast fallback
+            "llama-3.3-70b-versatile"                        # Large model fallback
         ]
 
-        # Return the first model (best performing)
         return groq_models[0]
+
+    def _get_best_cerebras_model(self) -> str:
+        """Get the best available Cerebras model based on V4 priority list"""
+        # Get Cerebras models from V4 priority list (ordered by reasoning score)
+        if self.model_priority_list:
+            cerebras_models = [
+                model for model in self.model_priority_list
+                if model.get('provider') == 'Cerebras'
+            ]
+            if cerebras_models:
+                # Return the highest priority Cerebras model
+                best_model = cerebras_models[0]
+                print(f"⚡ Selected best Cerebras model: {best_model['model_name']} (Speed: {best_model.get('speed', 'N/A')}s)")
+                return best_model['model_id']
+
+        # Fallback to hardcoded list if V4 not available
+        return "llama-4-scout-17b-16e-instruct"  # Best Cerebras model
+
+    def _get_best_openrouter_model(self) -> str:
+        """Get the best available OpenRouter model based on V4 priority list"""
+        # Get OpenRouter models from V4 priority list (ordered by F1 score)
+        if self.model_priority_list:
+            openrouter_models = [
+                model for model in self.model_priority_list
+                if model.get('provider') == 'OpenRouter'
+            ]
+            if openrouter_models:
+                # Return the highest priority OpenRouter model
+                best_model = openrouter_models[0]
+                print(f"🌐 Selected best OpenRouter model: {best_model['model_name']} (F1: {best_model.get('performance_score', 'N/A')})")
+                return best_model['model_id']
+
+        # Fallback to hardcoded list if V4 not available
+        return "mistralai/mistral-nemo:free"  # Best OpenRouter model
 
     def get_available_groq_models(self) -> List[str]:
         """Get list of all available Groq models for metabolite extraction"""
+        if self.model_priority_list:
+            return [
+                model['model_id'] for model in self.model_priority_list
+                if model.get('provider') == 'Groq'
+            ]
+
+        # Fallback list
         return [
-            "moonshotai/kimi-k2-instruct",
-            "meta-llama/llama-4-scout-17b-16e-instruct",
             "meta-llama/llama-4-maverick-17b-128e-instruct",
+            "meta-llama/llama-4-scout-17b-16e-instruct",
+            "qwen/qwen3-32b",
             "llama-3.1-8b-instant",
-            "qwen/qwen3-32b"
+            "llama-3.3-70b-versatile"
         ]
     
     def _make_api_request(self, provider: str, prompt: str, max_tokens: int = 500) -> tuple:
@@ -206,8 +278,11 @@ class LLMWrapper:
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json"
         }
+        # Use best Cerebras model from V4 priority list
+        cerebras_model = self._get_best_cerebras_model()
+
         data = {
-            "model": "llama3.1-8b",
+            "model": cerebras_model,
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": max_tokens,
             "temperature": 0.1
@@ -265,8 +340,11 @@ class LLMWrapper:
             "HTTP-Referer": "https://github.com/foodb-pipeline",
             "X-Title": "FOODB Pipeline"
         }
+        # Use best OpenRouter model from V4 priority list
+        openrouter_model = self._get_best_openrouter_model()
+
         data = {
-            "model": "meta-llama/llama-3.1-8b-instruct:free",
+            "model": openrouter_model,
             "messages": [{"role": "user", "content": prompt}],
             "max_tokens": max_tokens,
             "temperature": 0.1
@@ -299,74 +377,76 @@ class LLMWrapper:
         return self.generate_single_with_fallback(prompt, max_tokens)
     
     def generate_single_with_fallback(self, prompt: str, max_tokens: int = 500) -> str:
-        """Generate single response with exponential backoff BEFORE provider switching"""
+        """Generate single response with enhanced rate limiting fallback"""
         self.stats['total_requests'] += 1
 
-        for attempt in range(self.retry_config.max_attempts):
+        # Track consecutive rate limits per provider to trigger faster switching
+        consecutive_rate_limits = {}
+
+        # Try each provider in priority order
+        providers_tried = []
+
+        while len(providers_tried) < len(self.fallback_order):
             if not self.current_provider:
                 break
 
-            # Make API request
-            response, success, is_rate_limit = self._make_api_request(
-                self.current_provider, prompt, max_tokens
-            )
-
-            # Update provider health
-            self._update_provider_health(self.current_provider, success, is_rate_limit)
-
-            if success:
-                self.stats['successful_requests'] += 1
-                return response
-
-            # Handle rate limiting with exponential backoff FIRST
-            if is_rate_limit:
-                self.stats['rate_limited_requests'] += 1
-
-                # Try exponential backoff with same provider BEFORE switching
-                if attempt < self.retry_config.max_attempts - 1:
-                    delay = self._calculate_delay(attempt)
-                    print(f"⚠️ {self.current_provider} rate limited, retrying in {delay:.1f}s (attempt {attempt + 1}/{self.retry_config.max_attempts})...")
-                    time.sleep(delay)
-                    continue
-
-                # Only switch provider after exhausting all retry attempts
-                print(f"🔄 {self.current_provider} exhausted all {self.retry_config.max_attempts} retry attempts, switching providers...")
-                if self._switch_provider():
-                    # Reset attempt counter for new provider
-                    for new_attempt in range(self.retry_config.max_attempts):
-                        response, success, is_rate_limit = self._make_api_request(
-                            self.current_provider, prompt, max_tokens
-                        )
-                        self._update_provider_health(self.current_provider, success, is_rate_limit)
-
-                        if success:
-                            self.stats['successful_requests'] += 1
-                            return response
-
-                        if is_rate_limit and new_attempt < self.retry_config.max_attempts - 1:
-                            delay = self._calculate_delay(new_attempt)
-                            print(f"⚠️ {self.current_provider} rate limited, retrying in {delay:.1f}s (attempt {new_attempt + 1}/{self.retry_config.max_attempts})...")
-                            time.sleep(delay)
-                        elif not is_rate_limit:
-                            break  # Non-rate-limit error, try next provider
-
-                    # If new provider also failed, try next one
-                    continue
-
-            else:
-                # Non-rate-limit error, try exponential backoff first
-                if attempt < self.retry_config.max_attempts - 1:
-                    delay = self._calculate_delay(attempt)
-                    print(f"❌ {self.current_provider} error, retrying in {delay:.1f}s (attempt {attempt + 1}/{self.retry_config.max_attempts})...")
-                    time.sleep(delay)
-                    continue
-
-                # After exhausting retries, try switching provider
-                print(f"🔄 {self.current_provider} exhausted all retry attempts, switching providers...")
+            if self.current_provider in providers_tried:
+                # Switch to next provider if current one already tried
                 if not self._switch_provider():
                     break
+                continue
 
+            providers_tried.append(self.current_provider)
+            provider_name = self.current_provider
+
+            # Try current provider with limited retries
+            for attempt in range(self.retry_config.max_attempts):
+                # Make API request
+                response, success, is_rate_limit = self._make_api_request(
+                    provider_name, prompt, max_tokens
+                )
+
+                # Update provider health
+                self._update_provider_health(provider_name, success, is_rate_limit)
+
+                if success:
+                    self.stats['successful_requests'] += 1
+                    print(f"✅ Success with {provider_name} on attempt {attempt + 1}")
+                    return response
+
+                # Handle rate limiting
+                if is_rate_limit:
+                    self.stats['rate_limited_requests'] += 1
+                    consecutive_rate_limits[provider_name] = consecutive_rate_limits.get(provider_name, 0) + 1
+
+                    # Switch provider immediately after 2 consecutive rate limits
+                    if consecutive_rate_limits[provider_name] >= 2:
+                        print(f"🔄 {provider_name} hit rate limit {consecutive_rate_limits[provider_name]} times, switching providers immediately...")
+                        break
+
+                    # For first rate limit, try exponential backoff
+                    if attempt < self.retry_config.max_attempts - 1:
+                        delay = self._calculate_delay(attempt)
+                        print(f"⚠️  {provider_name} rate limited, retrying in {delay:.1f}s (attempt {attempt + 1}/{self.retry_config.max_attempts})...")
+                        time.sleep(delay)
+                        continue
+                    else:
+                        print(f"🔄 {provider_name} exhausted retry attempts due to rate limiting, switching providers...")
+                        break
+
+                else:
+                    # Non-rate-limit error
+                    print(f"❌ {provider_name} API error on attempt {attempt + 1}: switching providers...")
+                    break
+
+            # Switch to next provider
+            if not self._switch_provider():
+                print(f"❌ No more providers available")
+                break
+
+        # All providers failed
         self.stats['failed_requests'] += 1
+        print(f"❌ All providers failed for prompt: {prompt[:100]}...")
         return ""
     
     def generate_batch(self, prompts: List[str], max_tokens: int = None, 
@@ -382,6 +462,26 @@ class LLMWrapper:
             'success_rate': self.stats['successful_requests'] / total if total > 0 else 0,
             'failure_rate': self.stats['failed_requests'] / total if total > 0 else 0
         }
+
+    def get_provider_status(self) -> Dict:
+        """Get current status of all providers"""
+        status = {
+            'current_provider': self.current_provider,
+            'providers': {}
+        }
+
+        for provider in self.fallback_order:
+            health = self.provider_health.get(provider)
+            status['providers'][provider] = {
+                'status': health.status.value if health else 'unknown',
+                'has_api_key': bool(self.api_keys.get(provider)),
+                'consecutive_failures': health.consecutive_failures if health else 0,
+                'last_success': health.last_success if health else None,
+                'last_failure': health.last_failure if health else None,
+                'rate_limit_reset_time': health.rate_limit_reset_time if health else None
+            }
+
+        return status
 
     def extract_metabolites_document_only(self, text_chunk: str, max_tokens: int = 200) -> str:
         """Extract metabolites using strict document-only prompt to prevent training data contamination"""

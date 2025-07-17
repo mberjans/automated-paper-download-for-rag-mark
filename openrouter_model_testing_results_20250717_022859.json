@@ -1,0 +1,179 @@
+{
+  "google/gemma-3-27b-it:free": {
+    "model_info": {
+      "rank": 5,
+      "model_name": "Google: Gemma 3 27B (free)",
+      "model_id": "google/gemma-3-27b-it:free",
+      "provider": "OpenRouter",
+      "reasoning_score": 9.5,
+      "average_response_time": 7.18,
+      "success_rate": 100.0,
+      "context_tokens": 96000,
+      "api_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "cost": "FREE",
+      "reliability": "Reliable",
+      "strengths": [
+        "Perfect logic (10/10)",
+        "Good math (8/10)",
+        "Perfect patterns (10/10)",
+        "Perfect causal reasoning (10/10)",
+        "Math specialist"
+      ],
+      "test_results": {
+        "logical_deduction": 10,
+        "mathematical_reasoning": 8,
+        "pattern_recognition": 10,
+        "causal_reasoning": 10
+      }
+    },
+    "test_result": {
+      "success": false,
+      "error": "HTTP 401: {\"error\":{\"message\":\"No auth credentials found\",\"code\":401}}",
+      "response_time": 0.8444778919219971,
+      "status_code": 401,
+      "response_text": "{\"error\":{\"message\":\"No auth credentials found\",\"code\":401}}"
+    }
+  },
+  "tngtech/deepseek-r1t-chimera:free": {
+    "model_info": {
+      "rank": 8,
+      "model_name": "TNG: DeepSeek R1T Chimera (free)",
+      "model_id": "tngtech/deepseek-r1t-chimera:free",
+      "provider": "OpenRouter",
+      "reasoning_score": 8.2,
+      "average_response_time": 13.94,
+      "success_rate": 100.0,
+      "context_tokens": 163840,
+      "api_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "cost": "FREE",
+      "reliability": "Reliable",
+      "strengths": [
+        "Large context",
+        "Excellent logic (9/10)",
+        "Strong patterns (9/10)",
+        "Strong causal reasoning (9/10)",
+        "R1 reasoning style"
+      ],
+      "test_results": {
+        "logical_deduction": 9,
+        "mathematical_reasoning": 6,
+        "pattern_recognition": 9,
+        "causal_reasoning": 9
+      }
+    },
+    "test_result": {
+      "success": false,
+      "error": "HTTP 401: {\"error\":{\"message\":\"No auth credentials found\",\"code\":401}}",
+      "response_time": 0.5434670448303223,
+      "status_code": 401,
+      "response_text": "{\"error\":{\"message\":\"No auth credentials found\",\"code\":401}}"
+    }
+  },
+  "deepseek/deepseek-chat:free": {
+    "model_info": {
+      "rank": 9,
+      "model_name": "DeepSeek: DeepSeek V3 (free)",
+      "model_id": "deepseek/deepseek-chat:free",
+      "provider": "OpenRouter",
+      "reasoning_score": 7.8,
+      "average_response_time": 14.66,
+      "success_rate": 100.0,
+      "context_tokens": 163840,
+      "api_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "cost": "FREE",
+      "reliability": "Reliable",
+      "strengths": [
+        "Large context",
+        "Excellent logic (9/10)",
+        "Strong patterns (9/10)",
+        "Strong causal reasoning (9/10)"
+      ],
+      "test_results": {
+        "logical_deduction": 9,
+        "mathematical_reasoning": 4,
+        "pattern_recognition": 9,
+        "causal_reasoning": 9
+      }
+    },
+    "test_result": {
+      "success": false,
+      "error": "HTTP 401: {\"error\":{\"message\":\"No auth credentials found\",\"code\":401}}",
+      "response_time": 0.595465898513794,
+      "status_code": 401,
+      "response_text": "{\"error\":{\"message\":\"No auth credentials found\",\"code\":401}}"
+    }
+  },
+  "deepseek/deepseek-chat-v3-0324:free": {
+    "model_info": {
+      "rank": 10,
+      "model_name": "DeepSeek: DeepSeek V3 0324 (free)",
+      "model_id": "deepseek/deepseek-chat-v3-0324:free",
+      "provider": "OpenRouter",
+      "reasoning_score": 7.5,
+      "average_response_time": 12.38,
+      "success_rate": 100.0,
+      "context_tokens": 163840,
+      "api_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "cost": "FREE",
+      "reliability": "Reliable",
+      "strengths": [
+        "Large context",
+        "Good logic (7/10)",
+        "Strong patterns (9/10)",
+        "Perfect causal reasoning (10/10)"
+      ],
+      "test_results": {
+        "logical_deduction": 7,
+        "mathematical_reasoning": 4,
+        "pattern_recognition": 9,
+        "causal_reasoning": 10
+      }
+    },
+    "test_result": {
+      "success": false,
+      "error": "HTTP 401: {\"error\":{\"message\":\"No auth credentials found\",\"code\":401}}",
+      "response_time": 0.502220869064331,
+      "status_code": 401,
+      "response_text": "{\"error\":{\"message\":\"No auth credentials found\",\"code\":401}}"
+    }
+  },
+  "nvidia/llama-3.3-nemotron-super-49b-v1:free": {
+    "model_info": {
+      "rank": 11,
+      "model_name": "NVIDIA: Llama 3.3 Nemotron Super 49B v1 (free)",
+      "model_id": "nvidia/llama-3.3-nemotron-super-49b-v1:free",
+      "provider": "OpenRouter",
+      "reasoning_score": 7.2,
+      "average_response_time": 7.77,
+      "success_rate": 100.0,
+      "context_tokens": 131072,
+      "api_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "cost": "FREE",
+      "reliability": "Reliable",
+      "strengths": [
+        "Excellent logic (9/10)",
+        "Strong patterns (9/10)",
+        "Good causal reasoning (7/10)",
+        "NVIDIA optimized"
+      ],
+      "test_results": {
+        "logical_deduction": 9,
+        "mathematical_reasoning": 4,
+        "pattern_recognition": 9,
+        "causal_reasoning": 7
+      }
+    },
+    "test_result": {
+      "success": false,
+      "error": "HTTP 401: {\"error\":{\"message\":\"No auth credentials found\",\"code\":401}}",
+      "response_time": 0.4857289791107178,
+      "status_code": 401,
+      "response_text": "{\"error\":{\"message\":\"No auth credentials found\",\"code\":401}}"
+    }
+  }
+}

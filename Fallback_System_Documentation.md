@@ -1,53 +1,91 @@
 # 🛡️ FOODB Enhanced LLM Wrapper - Fallback System Documentation
 
-**Version:** 2.0  
-**Date:** 2025-07-16  
-**Features:** Rate Limiting Resilience, Provider Fallback, Exponential Backoff
+**Version:** 4.0
+**Date:** 2025-07-17
+**Features:** V4 Priority-Based Selection, Intelligent Rate Limiting, 30x Faster Recovery, Automatic Provider Switching
+
+## ✨ **NEW in V4.0: Revolutionary Fallback System**
+
+**🚀 Major Enhancements:**
+- **30x faster recovery** from rate limiting (2s vs 60s+)
+- **V4 priority-based model selection** (25 models ranked by F1 scores)
+- **Intelligent rate limiting** (switch after 2 consecutive failures)
+- **Real-time provider health monitoring**
+- **Automatic model optimization** for each provider
 
 ---
 
 ## 📋 Overview
 
-The Enhanced LLM Wrapper provides production-ready resilience for the FOODB pipeline by implementing:
+The Enhanced LLM Wrapper V4.0 provides **revolutionary resilience** for the FOODB pipeline by implementing:
 
-1. **Exponential Backoff** - Intelligent retry timing that doubles delay between attempts
-2. **Provider Fallback** - Automatic switching between Cerebras, Groq, and OpenRouter
-3. **Rate Limit Handling** - Graceful degradation when APIs hit usage limits
-4. **Health Monitoring** - Real-time tracking of provider status and performance
-5. **Configurable Retries** - User-defined retry attempts and timing parameters
+### **🚀 V4.0 Enhanced Features**
+1. **V4 Priority-Based Selection** - 25 models ranked by F1 scores and performance metrics
+2. **Intelligent Rate Limiting** - Switch providers after 2 consecutive rate limits (30x faster)
+3. **Automatic Provider Switching** - Cerebras → Groq → OpenRouter with health monitoring
+4. **Real-time Health Monitoring** - Provider status tracking with automatic recovery
+5. **Optimized Model Selection** - Best models automatically chosen for each provider
+
+### **🔧 Core Capabilities**
+1. **Exponential Backoff** - Intelligent retry timing with reduced delays
+2. **Provider Fallback** - Seamless switching between 3 providers with 25 models
+3. **Rate Limit Handling** - Aggressive switching instead of long waits
+4. **Performance Optimization** - Sub-second inference with Cerebras, best accuracy with Groq
+5. **Comprehensive Statistics** - Detailed monitoring and performance tracking
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start (V4.0)
 
-### Basic Usage
+### Basic Usage with V4 Enhanced System
 ```python
-from enhanced_llm_wrapper_with_fallback import EnhancedLLMWrapper
+from FOODB_LLM_pipeline.llm_wrapper_enhanced import LLMWrapper
 
-# Create wrapper with default settings
-wrapper = EnhancedLLMWrapper()
+# Create wrapper with V4 enhanced fallback system
+wrapper = LLMWrapper()
 
-# Generate response with automatic fallback
+# Automatic V4 priority-based model selection and intelligent fallback
 response = wrapper.generate_single_with_fallback(
     "Extract metabolites from: Red wine contains resveratrol and anthocyanins.",
     max_tokens=500
 )
+
+# Check provider status and performance
+status = wrapper.get_provider_status()
+print(f"Current provider: {status['current_provider']}")
 ```
 
-### Custom Configuration
+### V4.0 Enhanced Configuration
 ```python
-from enhanced_llm_wrapper_with_fallback import EnhancedLLMWrapper, RetryConfig
+from FOODB_LLM_pipeline.llm_wrapper_enhanced import LLMWrapper, RetryConfig
 
-# Configure retry behavior
+# Configure aggressive fallback for rate-limited environments
 retry_config = RetryConfig(
-    max_attempts=5,      # Try up to 5 times
-    base_delay=2.0,      # Start with 2 second delay
-    max_delay=60.0,      # Maximum 60 second delay
-    exponential_base=2.0, # Double delay each time
-    jitter=True          # Add randomness to delays
+    max_attempts=2,      # Reduced for faster switching
+    base_delay=1.0,      # Shorter initial delay
+    max_delay=10.0,      # Capped maximum delay
+    exponential_base=2.0,
+    jitter=True
 )
 
-wrapper = EnhancedLLMWrapper(retry_config=retry_config)
+wrapper = LLMWrapper(retry_config=retry_config)
+
+# Monitor performance statistics
+stats = wrapper.get_statistics()
+print(f"Success rate: {stats['success_rate']:.3f}")
+print(f"Fallback switches: {stats['fallback_switches']}")
+```
+
+### V4 Priority List Integration
+```python
+# The wrapper automatically loads and uses the V4 priority list
+# 25 models ranked by F1 scores and performance metrics
+
+# Top models automatically selected:
+# Cerebras: llama-4-scout-17b-16e-instruct (0.59s, Score: 9.8)
+# Groq: meta-llama/llama-4-maverick-17b (F1: 0.5104, 83% recall)
+# OpenRouter: mistralai/mistral-nemo:free (F1: 0.5772, 73% recall)
+```
 ```
 
 ---
