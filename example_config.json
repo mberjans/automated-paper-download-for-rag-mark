@@ -1,0 +1,21 @@
+{
+  "output_dir": "./production_results",
+  "csv_database": "urinary_wine_biomarkers.csv",
+  "chunk_size": 2000,
+  "chunk_overlap": 100,
+  "min_chunk_size": 200,
+  "max_tokens": 300,
+  "document_only": true,
+  "verify_compounds": true,
+  "max_attempts": 5,
+  "base_delay": 2.0,
+  "max_delay": 60.0,
+  "exponential_base": 2.0,
+  "providers": ["cerebras", "groq", "openrouter"],
+  "batch_mode": false,
+  "calculate_metrics": true,
+  "export_format": "all",
+  "save_chunks": false,
+  "save_timing": true,
+  "save_raw_responses": false
+}
