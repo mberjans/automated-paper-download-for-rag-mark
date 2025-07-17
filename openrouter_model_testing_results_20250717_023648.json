@@ -1,0 +1,238 @@
+{
+  "google/gemma-3-27b-it:free": {
+    "model_info": {
+      "rank": 5,
+      "model_name": "Google: Gemma 3 27B (free)",
+      "model_id": "google/gemma-3-27b-it:free",
+      "provider": "OpenRouter",
+      "reasoning_score": 9.5,
+      "average_response_time": 7.18,
+      "success_rate": 100.0,
+      "context_tokens": 96000,
+      "api_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "cost": "FREE",
+      "reliability": "Reliable",
+      "strengths": [
+        "Perfect logic (10/10)",
+        "Good math (8/10)",
+        "Perfect patterns (10/10)",
+        "Perfect causal reasoning (10/10)",
+        "Math specialist"
+      ],
+      "test_results": {
+        "logical_deduction": 10,
+        "mathematical_reasoning": 8,
+        "pattern_recognition": 10,
+        "causal_reasoning": 10
+      }
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 3.6220970153808594,
+      "status_code": 200,
+      "content_length": 222,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "glucuronide",
+        "sulfate"
+      ],
+      "metabolites_count": 5,
+      "response_preview": "\n\nHere's a list of the metabolites and biomarkers mentioned in the text:\n\n*   **Resveratrol**\n*   **Gallic acid**\n*   **Catechin**\n*   **Glucuronide conjugates** (of the above)\n*   **Sulfate conjugate...",
+      "usage": {
+        "prompt_tokens": 69,
+        "completion_tokens": 68,
+        "total_tokens": 137
+      },
+      "model_used": "google/gemma-3-27b-it:free"
+    }
+  },
+  "tngtech/deepseek-r1t-chimera:free": {
+    "model_info": {
+      "rank": 8,
+      "model_name": "TNG: DeepSeek R1T Chimera (free)",
+      "model_id": "tngtech/deepseek-r1t-chimera:free",
+      "provider": "OpenRouter",
+      "reasoning_score": 8.2,
+      "average_response_time": 13.94,
+      "success_rate": 100.0,
+      "context_tokens": 163840,
+      "api_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "cost": "FREE",
+      "reliability": "Reliable",
+      "strengths": [
+        "Large context",
+        "Excellent logic (9/10)",
+        "Strong patterns (9/10)",
+        "Strong causal reasoning (9/10)",
+        "R1 reasoning style"
+      ],
+      "test_results": {
+        "logical_deduction": 9,
+        "mathematical_reasoning": 6,
+        "pattern_recognition": 9,
+        "causal_reasoning": 9
+      }
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 5.739833116531372,
+      "status_code": 200,
+      "content_length": 934,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "glucuronide",
+        "sulfate"
+      ],
+      "metabolites_count": 5,
+      "response_preview": "Okay, so the user wants me to extract metabolites and biomarkers from the given text. Let me read the text carefully. It says, \"Wine consumption leads to the excretion of several urinary biomarkers in...",
+      "usage": {
+        "prompt_tokens": 72,
+        "completion_tokens": 200,
+        "total_tokens": 272,
+        "prompt_tokens_details": null
+      },
+      "model_used": "tngtech/deepseek-r1t-chimera:free"
+    }
+  },
+  "deepseek/deepseek-chat:free": {
+    "model_info": {
+      "rank": 9,
+      "model_name": "DeepSeek: DeepSeek V3 (free)",
+      "model_id": "deepseek/deepseek-chat:free",
+      "provider": "OpenRouter",
+      "reasoning_score": 7.8,
+      "average_response_time": 14.66,
+      "success_rate": 100.0,
+      "context_tokens": 163840,
+      "api_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "cost": "FREE",
+      "reliability": "Reliable",
+      "strengths": [
+        "Large context",
+        "Excellent logic (9/10)",
+        "Strong patterns (9/10)",
+        "Strong causal reasoning (9/10)"
+      ],
+      "test_results": {
+        "logical_deduction": 9,
+        "mathematical_reasoning": 4,
+        "pattern_recognition": 9,
+        "causal_reasoning": 9
+      }
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 6.6885459423065186,
+      "status_code": 200,
+      "content_length": 146,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "glucuronide",
+        "sulfate"
+      ],
+      "metabolites_count": 5,
+      "response_preview": "Here are the metabolites mentioned in the text:\n\n1. Resveratrol  \n2. Gallic acid  \n3. Catechin  \n4. Glucuronide conjugates  \n5. Sulfate conjugates",
+      "usage": {
+        "prompt_tokens": 72,
+        "completion_tokens": 44,
+        "total_tokens": 116,
+        "prompt_tokens_details": null
+      },
+      "model_used": "deepseek/deepseek-chat:free"
+    }
+  },
+  "deepseek/deepseek-chat-v3-0324:free": {
+    "model_info": {
+      "rank": 10,
+      "model_name": "DeepSeek: DeepSeek V3 0324 (free)",
+      "model_id": "deepseek/deepseek-chat-v3-0324:free",
+      "provider": "OpenRouter",
+      "reasoning_score": 7.5,
+      "average_response_time": 12.38,
+      "success_rate": 100.0,
+      "context_tokens": 163840,
+      "api_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "cost": "FREE",
+      "reliability": "Reliable",
+      "strengths": [
+        "Large context",
+        "Good logic (7/10)",
+        "Strong patterns (9/10)",
+        "Perfect causal reasoning (10/10)"
+      ],
+      "test_results": {
+        "logical_deduction": 7,
+        "mathematical_reasoning": 4,
+        "pattern_recognition": 9,
+        "causal_reasoning": 10
+      }
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 1.8580410480499268,
+      "status_code": 200,
+      "content_length": 143,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "glucuronide",
+        "sulfate"
+      ],
+      "metabolites_count": 5,
+      "response_preview": "Here are the metabolites mentioned in the text:  \n\n- Resveratrol  \n- Gallic acid  \n- Catechin  \n- Glucuronide conjugates  \n- Sulfate conjugates",
+      "usage": {
+        "prompt_tokens": 72,
+        "completion_tokens": 40,
+        "total_tokens": 112,
+        "prompt_tokens_details": null
+      },
+      "model_used": "deepseek/deepseek-chat-v3-0324:free"
+    }
+  },
+  "nvidia/llama-3.3-nemotron-super-49b-v1:free": {
+    "model_info": {
+      "rank": 11,
+      "model_name": "NVIDIA: Llama 3.3 Nemotron Super 49B v1 (free)",
+      "model_id": "nvidia/llama-3.3-nemotron-super-49b-v1:free",
+      "provider": "OpenRouter",
+      "reasoning_score": 7.2,
+      "average_response_time": 7.77,
+      "success_rate": 100.0,
+      "context_tokens": 131072,
+      "api_url": "https://openrouter.ai/api/v1/chat/completions",
+      "api_key_env": "OPENROUTER_API_KEY",
+      "cost": "FREE",
+      "reliability": "Reliable",
+      "strengths": [
+        "Excellent logic (9/10)",
+        "Strong patterns (9/10)",
+        "Good causal reasoning (7/10)",
+        "NVIDIA optimized"
+      ],
+      "test_results": {
+        "logical_deduction": 9,
+        "mathematical_reasoning": 4,
+        "pattern_recognition": 9,
+        "causal_reasoning": 7
+      }
+    },
+    "test_result": {
+      "success": false,
+      "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for nvidia/llama-3.3-nemotron-super-49b-v1:free.\",\"code\":404},\"user_id\":\"user_2eESRD2ZwPbPvak4pDZ6PI7SPT5\"}",
+      "response_time": 0.28862500190734863,
+      "status_code": 404,
+      "response_text": "{\"error\":{\"message\":\"No endpoints found for nvidia/llama-3.3-nemotron-super-49b-v1:free.\",\"code\":404},\"user_id\":\"user_2eESRD2ZwPbPvak4pDZ6PI7SPT5\"}"
+    }
+  }
+}
