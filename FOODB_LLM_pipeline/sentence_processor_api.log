@@ -21,3 +21,9 @@
 2025-07-16 01:30:36,473 - DEBUG - https://api.cerebras.ai:443 "POST /v1/chat/completions HTTP/1.1" 200 None
 2025-07-16 01:30:36,477 - DEBUG - Starting new HTTPS connection (1): api.cerebras.ai:443
 2025-07-16 01:30:36,954 - DEBUG - https://api.cerebras.ai:443 "POST /v1/chat/completions HTTP/1.1" 200 None
+2025-07-16 10:00:11,230 - INFO - Use pytorch device_name: mps
+2025-07-16 10:00:11,230 - INFO - Load pretrained SentenceTransformer: paraphrase-MiniLM-L6-v2
+2025-07-16 10:00:11,234 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-07-16 10:00:11,362 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 401 0
+2025-07-16 10:00:11,363 - WARNING - No sentence-transformers model found with name sentence-transformers/paraphrase-MiniLM-L6-v2. Creating a new one with mean pooling.
+2025-07-16 10:00:11,443 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/paraphrase-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 401 0

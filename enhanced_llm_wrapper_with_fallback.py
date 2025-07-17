@@ -80,12 +80,30 @@ class EnhancedLLMWrapper:
             return []
     
     def _load_api_keys(self) -> Dict[str, str]:
-        """Load API keys from environment or config"""
+        """Load API keys from .env file only (not global environment)"""
         import os
+
+        # Load API keys from .env file only
+        env_vars = {}
+
+        try:
+            if os.path.exists('.env'):
+                with open('.env', 'r') as f:
+                    for line in f:
+                        line = line.strip()
+                        if line and not line.startswith('#') and '=' in line:
+                            key, value = line.split('=', 1)
+                            env_vars[key.strip()] = value.strip()
+                print("✅ Loaded API keys from .env file")
+            else:
+                print("❌ No .env file found")
+        except Exception as e:
+            print(f"❌ Error loading .env file: {e}")
+
         return {
-            'cerebras': os.getenv('CEREBRAS_API_KEY'),
-            'groq': os.getenv('GROQ_API_KEY'),
-            'openrouter': os.getenv('OPENROUTER_API_KEY')
+            'cerebras': env_vars.get('CEREBRAS_API_KEY'),
+            'groq': env_vars.get('GROQ_API_KEY'),
+            'openrouter': env_vars.get('OPENROUTER_API_KEY')
         }
     
     def _initialize_providers(self):

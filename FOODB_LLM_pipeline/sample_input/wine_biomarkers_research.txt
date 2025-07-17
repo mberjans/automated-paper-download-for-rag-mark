@@ -1,0 +1,65 @@
+
+    Urinary Biomarkers of Wine Consumption: A Comprehensive Analysis
+    
+    Abstract:
+    Wine consumption can be monitored through the detection of specific urinary biomarkers. 
+    This study examines the excretion patterns of wine-derived compounds in human urine 
+    following controlled wine consumption.
+    
+    Introduction:
+    Red wine contains numerous polyphenolic compounds that are metabolized and excreted 
+    in urine. These compounds serve as reliable biomarkers for wine intake assessment.
+    
+    Phenolic Acids and Derivatives:
+    Tartaric acid is a major organic acid in wine that appears unchanged in urine after 
+    consumption. Gallic acid, a phenolic acid abundant in red wine, is also detected 
+    in urine samples.
+    
+    Hippuric acid levels increase significantly after wine consumption, likely due to 
+    the metabolism of benzoic acid derivatives present in wine.
+    
+    Flavonoid Metabolites:
+    Quercetin, a major flavonol in wine, is metabolized to various conjugated forms 
+    that appear in urine. Catechin and epicatechin from wine are also excreted as 
+    glucuronide and sulfate conjugates.
+    
+    Resveratrol, the famous stilbene compound in red wine, appears in urine primarily 
+    as resveratrol-3-O-glucuronide and resveratrol-4'-O-glucuronide.
+    
+    Anthocyanin Metabolites:
+    Malvidin, the predominant anthocyanin in red wine, is detected in urine as 
+    malvidin-3-O-glucoside and its metabolites. Peonidin and cyanidin derivatives 
+    are also found in post-consumption urine samples.
+    
+    Organic Acids:
+    Citric acid concentrations in urine correlate with wine consumption patterns. 
+    Malic acid, another wine acid, shows increased urinary excretion after wine intake.
+    
+    Caffeic acid and its metabolites, including caffeic acid-3-O-sulfate, are 
+    reliable indicators of wine consumption.
+    
+    Hydroxybenzoic Acid Derivatives:
+    4-Hydroxybenzoic acid and vanillic acid levels in urine increase following 
+    wine consumption. These compounds originate from the breakdown of more complex 
+    wine phenolics.
+    
+    Protocatechuic acid, a metabolite of anthocyanins and other phenolics, is 
+    consistently detected in post-wine consumption urine samples.
+    
+    Novel Biomarkers:
+    Syringic acid has emerged as a specific biomarker for red wine consumption. 
+    Homovanillic acid levels also correlate with wine intake.
+    
+    Ferulic acid and its conjugates show increased urinary excretion after wine 
+    consumption, making them useful biomarkers.
+    
+    Methodology Considerations:
+    Urine collection timing is critical, as most wine biomarkers peak 2-6 hours 
+    post-consumption. Sample preservation and analytical methods significantly 
+    impact biomarker detection.
+    
+    Conclusion:
+    Multiple urinary biomarkers can reliably indicate wine consumption. The combination 
+    of tartaric acid, resveratrol metabolites, and specific phenolic acids provides 
+    robust evidence of wine intake.
+    

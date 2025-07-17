@@ -1,0 +1,131 @@
+{
+  "timestamp": "2025-07-16 10:21:16",
+  "total_processing_time": 11.751978158950806,
+  "step_times": {
+    "database_loading": 0.6484794616699219,
+    "document_preparation": 0.00020194053649902344,
+    "ground_truth_extraction": 0.0013298988342285156,
+    "sentence_generation": 3.5028560161590576,
+    "triple_extraction": 7.597732067108154,
+    "metrics_calculation": 0.001377105712890625
+  },
+  "metabolite_database": {
+    "file": "urinary_wine_biomarkers.csv",
+    "metabolite_count": 59
+  },
+  "ground_truth_metrics": {
+    "extraction_time": 0.0013039112091064453,
+    "database_size": 70,
+    "found_count": 9,
+    "positions": {
+      "polyphenol": [
+        5,
+        250,
+        338,
+        1981,
+        2492
+      ],
+      "flavonoid": [
+        452,
+        582,
+        2303
+      ],
+      "egcg": [
+        945
+      ],
+      "xanthine": [
+        2359
+      ],
+      "resveratrol": [
+        664
+      ],
+      "epigallocatechin gallate": [
+        919
+      ],
+      "anthocyanin": [
+        753
+      ],
+      "cyanidin": [
+        780,
+        2283
+      ],
+      "delphinidin": [
+        798
+      ]
+    }
+  },
+  "sentence_generation_metrics": {
+    "total_time": 3.5027542114257812,
+    "sentence_count": 10,
+    "avg_time_per_sentence": 0.3421076059341431,
+    "success_rate": 1.0,
+    "provider_switches": 1,
+    "processing_times": [
+      0.3095512390136719,
+      0.3179161548614502,
+      0.2505340576171875,
+      0.2035541534423828,
+      0.22762680053710938,
+      0.22600293159484863,
+      0.6451079845428467,
+      0.38083982467651367,
+      0.4996631145477295,
+      0.36027979850769043
+    ]
+  },
+  "triple_extraction_metrics": {
+    "total_time": 7.597697019577026,
+    "triple_count": 10,
+    "avg_time_per_triple": 0.3584803342819214,
+    "processing_times": [
+      0.24656224250793457,
+      0.25345277786254883,
+      0.2657041549682617,
+      0.20123600959777832,
+      0.17400598526000977,
+      0.516345739364624,
+      0.44852113723754883,
+      0.5967133045196533,
+      0.46230506896972656,
+      0.41995692253112793
+    ]
+  },
+  "detection_performance": {
+    "ground_truth_count": 9,
+    "pipeline_detected_count": 15,
+    "true_positives": 2,
+    "false_positives": 13,
+    "false_negatives": 7,
+    "precision": 0.13333333333333333,
+    "recall": 0.2222222222222222,
+    "f1_score": 0.16666666666666669,
+    "ground_truth_metabolites": [
+      "polyphenol",
+      "cyanidin",
+      "resveratrol",
+      "egcg",
+      "epigallocatechin gallate",
+      "delphinidin",
+      "xanthine",
+      "flavonoid",
+      "anthocyanin"
+    ],
+    "pipeline_metabolites": [
+      "sulforaphane",
+      "naringin",
+      "resveratrol",
+      "catechin",
+      "hesperidin",
+      "lutein",
+      "lycopene",
+      "zeaxanthin",
+      "beta-carotene",
+      "curcumin",
+      "chlorogenic acid",
+      "anthocyanin",
+      "epicatechin",
+      "allicin",
+      "quercetin"
+    ]
+  }
+}

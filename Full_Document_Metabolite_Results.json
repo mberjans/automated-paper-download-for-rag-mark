@@ -1,0 +1,3715 @@
+{
+  "processing_info": {
+    "chunks_processed": 45,
+    "total_time": 25.44571280479431,
+    "avg_time_per_chunk": 0.5654602845509847,
+    "document_coverage": "100%"
+  },
+  "results": {
+    "total_expected": 59,
+    "total_extracted": 494,
+    "detected_count": 59,
+    "expected_count": 145,
+    "recall": 1.0,
+    "precision": 0.2935222672064777,
+    "f1_score": 0.4538341158059468
+  },
+  "matches_expected": [
+    {
+      "expected": "Malvidin-3-glucoside",
+      "found": "Malvidin-3-glucoside",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Malvidin-3-glucuronide",
+      "found": "Malvidin-3-glucuronide",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Cyanidin-3-glucuronide",
+      "found": "Cyanidin-3-glucuronide",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Peonidin-3-glucoside",
+      "found": "Peonidin-3-glucoside",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Peonidin-3-(6\u2033-acetyl)-glucoside",
+      "found": "Peonidin-3-(6\u2033-acetyl)-glucoside",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Peonidin-3-glucuronide",
+      "found": "Peonidin-3-glucuronide",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Peonidin-diglucuronide",
+      "found": "Peonidin-diglucuronide",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Methyl-peonidin-3-glucuronide-sulfate",
+      "found": "Methyl-peonidin-3-glucuronide-sulfate",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Delphinidin-3-arabinoside",
+      "found": "Delphinidin-3-arabinoside",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "trans-Delphinidin-3-(6\u2033-coumaroyl)-glucoside",
+      "found": "trans-Delphinidin-3-(6\u2033-coumaroyl)-glucoside",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Caffeic acid ethyl ester",
+      "found": "Caffeic acid ethyl ester",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "cis-Coumaric acid",
+      "found": "cis-Coumaric acid",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "trans-Fertaric acid",
+      "found": "trans-Fertaric acid",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "4-Hydroxybenzoic acid",
+      "found": "4-Hydroxybenzoic acid",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "4-Hydroxybenzoic acid sulfate",
+      "found": "4-Hydroxybenzoic acid sulfate",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Protocatechuic acid ethyl ester",
+      "found": "Protocatechuic acid ethyl ester",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Ethyl-gallate",
+      "found": "Ethyl-gallate",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Gallic acid",
+      "found": "Gallic",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Gallic acid sulfate",
+      "found": "Gallic acid sulfate",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Syringic acid",
+      "found": "Syringic acid",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Syringic acid glucuronide",
+      "found": "Syringic acid glucuronide",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "5-(3\u2032,4\u2032-dihydroxyphenyl)-valeric acid",
+      "found": "5-(3\u2032,4\u2032-dihydroxyphenyl)-",
+      "match_type": "partial",
+      "detected": true
+    },
+    {
+      "expected": "Catechin sulfate",
+      "found": "Catechin sulfate",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Methylcatechin sulfate",
+      "found": "Methylcatechin sulfate",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Methylepicatechin glucuronide",
+      "found": "Methylepicatechin glucuronide",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Methylepicatechin sulfate",
+      "found": "Methylepicatechin sulfate",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "trans-Resveratrol glucoside",
+      "found": "trans-Resveratrol glucoside",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "trans-Resveratrol glucuronide",
+      "found": "trans-Resveratrol glucuronide",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "trans-Resveratrol sulfate",
+      "found": "trans-Resveratrol sulfate",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Dihydroresveratrol",
+      "found": "Dihydroresveratrol",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Dihydroresveratrol sulfate",
+      "found": "Dihydroresveratrol sulfate",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Dihydroresveratrol sulfate-glucuronide",
+      "found": "Dihydroresveratrol sulfate-glucuronide",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Urolithin A",
+      "found": "Urolithin A",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Dihydroferulic acid sulfate",
+      "found": "Dihydroferulic acid sulfate",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Equol",
+      "found": "Equol",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Resveratrol",
+      "found": "+ Resveratrol",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "6-Hydroxy-4\u2032,5,7-trimethoxyflavone",
+      "found": "+ 6-Hydroxy-4\u2032,5,7-trimethoxyflavone",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Isohelenol",
+      "found": "+ Isohelenol",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Valine-Histidine (Val-His)",
+      "found": "+ Valine-Histidine (Val-His)",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Gravolenic acid",
+      "found": "+ Gravolenic acid",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Luteolin 7-sulfate",
+      "found": "Luteolin 7-sulfate",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Citramalic acid",
+      "found": "Citramalic acid",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Beta-lactic acid",
+      "found": "Beta-lactic acid",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Erythro-3-methylmalic acid",
+      "found": "Erythro-3-methylmalic acid",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Threo-3-methylmalic acid",
+      "found": "Threo-3-methylmalic acid",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "p-Coumaryl alcohol 4-O-glucoside",
+      "found": "p-Coumaryl alcohol 4-O-glucoside",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "2-amino-3-oxoadipic acid",
+      "found": "2-Amino-3-oxoadipic acid",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "N-formyl-L-glutamic acid",
+      "found": "N-Formyl-L-glutamic acid",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Galactopinitol A",
+      "found": "Galactopinitol A",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Galactopinitol B",
+      "found": "Galactopinitol B",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Methyl (2E)-5-(5-methyl-2-thienyl)-2-penten-4-ynoate",
+      "found": "Methyl (2E)-5-(5-methyl-2-thienyl)-2-penten-4-ynoate",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Vanillic acid-4-O-glucuronide",
+      "found": "Vanillic acid-4-O-glucuronide",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "1-Caffeoyl-beta-D-glucose",
+      "found": "1-Caffeoyl-beta-D-glucose",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Caffeic acid 3-glucoside",
+      "found": "Caffeic acid 3-glucoside",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "1-O-[3-(2,4-Dihydroxy-methoxyphenyl)propanoyl]hexopyranuronic acid",
+      "found": "1-O-[3-(2,4-Dihydroxy-methoxyphenyl)propanoyl]hexopyranuronic acid",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "4-(2-Carboxyethyl)-3-hydroxy-2-methoxyphenyl hexopyranosiduronic acid",
+      "found": "4-(2-Carboxyethyl)-3-hydroxy-2-methoxyphenyl hexopyranosiduronic acid",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "Xanthine",
+      "found": "Xanthine",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "O-adipoylcarnitine",
+      "found": "O-adipoylcarnitine",
+      "match_type": "exact",
+      "detected": true
+    },
+    {
+      "expected": "3-Methylglutarylcarnitine",
+      "found": "3-Methylglutarylcarnitine",
+      "match_type": "exact",
+      "detected": true
+    }
+  ],
+  "matches_found": [
+    {
+      "extracted": "Quercetin-3-glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Quercetin-3-glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Quercetin-3-sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Kaempferol-3-glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Kaempferol-3-glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Isorhapontigenin-3-glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Isorhapontigenin-3-glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Resveratrol-3-glucoside (resveratrol glucoside)",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Resveratrol-3-glucuronide (resveratrol glucuronide)",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Resveratrol sulfate (resveratrol sulfate)",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Catechin",
+      "expected": "Catechin sulfate",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Epicatechin",
+      "expected": "Methylepicatechin glucuronide",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Anthocyanins,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Flavonoids:",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenolic acids:",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Proanthocyanidins",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Hydroxytyrosol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Tyrosol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Gallic",
+      "expected": "Gallic acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Ellagic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Myricetin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Naringenin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Erythritol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Lactic acid",
+      "expected": "Beta-lactic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Glycerol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Acetic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Propanoic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Butanoic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Catechol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Pyrocatechol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Vanillic acid",
+      "expected": "Vanillic acid-4-O-glucuronide",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Syringic acid",
+      "expected": "Syringic acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Benzoic acid",
+      "expected": "4-Hydroxybenzoic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Protocatechuic acid",
+      "expected": "Protocatechuic acid ethyl ester",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "3-Hydroxybenzoic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "4-Hydroxybenzoic acid",
+      "expected": "4-Hydroxybenzoic acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Hydroxyhippuric acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "4-Hydroxyphenylacetic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Homovanillic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "3,4-Dihydroxyphenylacetic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "3,4-Dihydroxybenzoic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Vanillin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Guaiacol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "3-Methoxy-4-hydroxyphenylacetic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "3-Methoxy-4-hydroxybenzoic acid",
+      "expected": "4-Hydroxybenzoic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Catechin glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Catechin glucuronide",
+      "expected": "Methylepicatechin glucuronide",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Catechin sulfate",
+      "expected": "Catechin sulfate",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Epicatechin glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Epicatechin glucuronide",
+      "expected": "Methylepicatechin glucuronide",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Epicatechin sulfate",
+      "expected": "Catechin sulfate",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Quercetin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Kaempferol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Isorhapontigenin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "+ Resveratrol",
+      "expected": "Resveratrol",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Hydroxyresveratrol",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Dihydro-resveratrol",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Lunularin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "3,5-Dihydroxy-4'-methoxy-trans-stilbene",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "3,5-Dihydroxy-4'-methoxy-cis-stilbene",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "4'-O-Acetyl-3,5-dihydroxy-4'-methoxy-trans-stilbene",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "4'-O-Acetyl-3,5-dihydroxy-4'-methoxy-cis-stilbene",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "4'-O-Glucuronyl-3,5-dihydroxy-4'-methoxy-trans-stilbene",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "4'-O-Glucuronyl-3,5-dihydroxy-4'-methoxy-cis-stilbene",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "4'-O-Sulfate-3,5-dihydroxy-4'-methoxy-trans-stilbene",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "4'-O-Sulfate-3,5-dihydroxy-4'-methoxy-cis-stilbene",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "3,5-Dihydroxy-4'-ethoxy-trans-stilbene",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "3,5-Dihydro",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Glucoside,",
+      "expected": "Malvidin-3-glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Glucuronide,",
+      "expected": "Malvidin-3-glucuronide",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "+ sulfate:",
+      "expected": "Methyl-peonidin-3-glucuronide-sulfate",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Resveratrol-3-glucoside",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Resveratrol-3-glucuronide",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Resveratrol-3-sulfate",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Kaempferol-3-sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Polyphenols",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "4-O-methylgallic acid",
+      "expected": "Gallic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Dihydroxyphenyl valerolactones",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Ethylgallate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Tartaric acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Resveratrol glucoside",
+      "expected": "trans-Resveratrol glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Resveratrol glucuronide",
+      "expected": "trans-Resveratrol glucuronide",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Resveratrol sulfate",
+      "expected": "trans-Resveratrol sulfate",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Quercetin glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Quercetin glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Quercetin sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Glucosides (e.g. resveratrol glucoside, quercetin glucoside, catechin glucoside)",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Glucuronides (e.g. resveratrol glucuronide, quercetin glucuronide, catechin glucuronide)",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Sulfates (e.g. resveratrol sulfate, quercetin sulfate, catechin sulfate)",
+      "expected": "Catechin sulfate",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "However, these are often associated with the mentioned compounds:",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Glucosides",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Glucuronides",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Sulfates",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "are not specifically mentioned",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "are mentioned",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "No specific compound names are mentioned",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "However  metabolic derivatives and conjugates",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Delphinidin",
+      "expected": "Delphinidin-3-arabinoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Petunidin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Malvidin",
+      "expected": "Malvidin-3-glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Cyanidin",
+      "expected": "Cyanidin-3-glucuronide",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Peonidin",
+      "expected": "Peonidin-3-glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "and their  glucosides",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "and  some  Flavonoids",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Luteolin",
+      "expected": "Luteolin 7-sulfate",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Eriodictyol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "and  their  glucosides  glucuronides  and  sulfates",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "and  Phenolic  acids",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Cinnamic",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Coumaric acid",
+      "expected": "cis-Coumaric acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Ferulic acid",
+      "expected": "Dihydroferulic acid sulfate",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "and  their  derivatives",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "If you need more help or have any further questions please let me know.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "However, some related terms that might be relevant:",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Acetonitrile (ACN)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Ammonium formate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Formic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Methanol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Hydrochloric acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Ultrapure water",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Note that the text does not specifically mention individual anthocyanins, flavonoids, or phenolic acids, so I couldn't extract specific compound names. However, I extracted the general categories of compounds.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Let me know if you'd like me to help with anything else!",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Kaempferol glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Kaempferol glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Kaempferol sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Let me know if you need further assistance!",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Leucine-enkephalin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "No specific compound names mentioned other than Leucine-enkephalin and Methanol.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Also, it is worth noting that the text mentions that \"The analytical standards used in targeted metabolomics are described in Supplementary Material (Supplementary Material Text S1)\" which might contain more information about the compounds of interest.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Please provide the rest of the text if you want me to extract more compounds.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "OASIS HLB",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "UHPLC/QqQ-MS/MS",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "BEH C18",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "VanGuard Pre-Column Acquity BEH C18",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Electrospray ionization (ESI)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "But no specific compound names with these modifications are mentioned.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Anthocyanin derivatives",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Isorhapontigenin-3-sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Catechins",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Epigallocatechin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Naringenin-4'-glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Naringenin-4-glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Naringenin-4-sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Erythric acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Please let me know if I missed anything or if you need further clarification!",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Since no specific compound was mentioned I will add",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[M-H]\u207b",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Let me know if I made another mistake",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "After re-reading the prompt again",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "No specific compound names were mentioned",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Let me know if I can assist further",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Acetonitrile",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "PVDF (polyvinylidene difluoride)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Glucosides (e.g., anthocyanin glucosides)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Glucuronides (e.g., phenolic glucuronides)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Sulfates (e.g., phenolic sulfates)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Polyvinylidene difluoride (PVDF)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "ESI+ (positive mode)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "ESI- (negative mode)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "For clarity and completeness in scientific contexts, compounds like anthocyanins, flavonoids, and phenolic acids can have numerous derivatives and conjugates, including glucosides, glucuronides, and sulfates, which are crucial in understanding their metabolism and bioavailability in the body.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Ammonium formiate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Water",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Hippuric acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenylacetylglutamine",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Creatinine",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Leucine enkephalin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "No specific compound names mentioned other than leucine enkephalin.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Note that the text appears to be more focused on the analytical methodology and quality control procedures rather than the specific compounds being analyzed.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Leucine",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Enkephalin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "But only Leucine enkephalin seems to be a specific compound mentioned.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "RP-LC and HILIC are types of chromatography columns and are not compounds.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "m/z is a term used in mass spectrometry to describe the mass-to-charge ratio.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "ESI is an ionization technique.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[M-H]-,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[M+H]+,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[M+Cl]-,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[M-2H]2-,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[2M-H]-,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[M-H-2O-H]-,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[M+FA-H]-,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[M+2H]2+,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[M+H-H2O]+,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[M+] +,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[M+NH4]+,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[M+Na]+,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[M+K]+,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[2M+H]+,",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "[2M+Na]+",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "However, these are not specific compounds but rather ionization forms used in mass spectrometry analysis.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "No specific compound names with modifications are mentioned.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "No specific metabolic derivatives and conjugates are mentioned.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Markers",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Urine markers",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Metabolic derivatives",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Conjugates",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Naringenin-7-glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Eriodictyol-7-glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Luteolin-7-glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Chrysoeriol-7-glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Procyanidin B1",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Procyanidin B2",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "3-O-methylgallic acid",
+      "expected": "Gallic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Pyrogallol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Resveratrol-4'-sulfate",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Dihydro-resveratrol-3-glucoside",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Dihydro-resveratrol-3-glucuronide",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Catechin gallate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Rutin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Fisetin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Chrysoeriol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Gallic acid glucoside",
+      "expected": "Gallic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Protocatechuic acid glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "4-Hydroxybenzoic acid glucoside",
+      "expected": "4-Hydroxybenzoic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Vanillic acid glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Syringic acid glucoside",
+      "expected": "Syringic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Benzoic acid glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Pyrogallol glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenol glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Hotelling's ellipse is not a compound but rather a statistical method.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Metlin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Metabolic Profiling CCS",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "ChemSpider",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenol-explorer",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "KEGG",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Human Metabolome Database (HMDB)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "FooDB",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Urine Metabolome Database",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Malvidin-3-glucuronide",
+      "expected": "Malvidin-3-glucuronide",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Flavan-3-ols",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Stilbenes",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Malvidins",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Delphinidin-3-arabinoside",
+      "expected": "Delphinidin-3-arabinoside",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Trans-delphinidin",
+      "expected": "trans-Delphinidin-3-(6\u2033-coumaroyl)-glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Glucosides (e.g. anthocyanin-glucosides)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Glucuronides (e.g. malvidin-3-glucuronide)",
+      "expected": "Malvidin-3-glucuronide",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "3-(6\u2033-coumaroyl)-glucoside",
+      "expected": "trans-Delphinidin-3-(6\u2033-coumaroyl)-glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Gallic acid sulfate",
+      "expected": "Gallic acid sulfate",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Caffeic acid ethyl ester",
+      "expected": "Caffeic acid ethyl ester",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Protocatechuic acid ethyl ester",
+      "expected": "Protocatechuic acid ethyl ester",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Ethyl-gallate",
+      "expected": "Ethyl-gallate",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Procyanidins",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Caffeic acid",
+      "expected": "Caffeic acid ethyl ester",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "glucuronide (not explicitly mentioned, but implied as a possible phase-II metabolite)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Let me know if you'd like me to extract any further information!",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Malvidin-3-glucoside",
+      "expected": "Malvidin-3-glucoside",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Cyanidin-3-glucuronide",
+      "expected": "Cyanidin-3-glucuronide",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Peonidin-3-glucoside",
+      "expected": "Peonidin-3-glucoside",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Peonidin-3-(6\u2033-acetyl)-glucoside",
+      "expected": "Peonidin-3-(6\u2033-acetyl)-glucoside",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Peonidin-3-glucuronide",
+      "expected": "Peonidin-3-glucuronide",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Peonidin-diglucuronide",
+      "expected": "Peonidin-diglucuronide",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Methyl-peonidin-3-glucuronide-sulfate",
+      "expected": "Methyl-peonidin-3-glucuronide-sulfate",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "trans-Delphinidin-3-(6\u2033-coumaroyl)-glucoside",
+      "expected": "trans-Delphinidin-3-(6\u2033-coumaroyl)-glucoside",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "cis-Coumaric acid",
+      "expected": "cis-Coumaric acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "trans-Fertaric acid",
+      "expected": "trans-Fertaric acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "4-Hydroxybenzoic acid sulfate",
+      "expected": "4-Hydroxybenzoic acid sulfate",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Syringic acid glucuronide",
+      "expected": "Syringic acid glucuronide",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "5-(3\u2032,4\u2032-dihydroxyphenyl)-",
+      "expected": "5-(3\u2032,4\u2032-dihydroxyphenyl)-valeric acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Valeric acid",
+      "expected": "5-(3\u2032,4\u2032-dihydroxyphenyl)-valeric acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Methylcatechin sulfate",
+      "expected": "Methylcatechin sulfate",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Methylepicatechin glucuronide",
+      "expected": "Methylepicatechin glucuronide",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Methylepicatechin sulfate",
+      "expected": "Methylepicatechin sulfate",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "trans-Resveratrol glucoside",
+      "expected": "trans-Resveratrol glucoside",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "trans-Resveratrol glucuronide",
+      "expected": "trans-Resveratrol glucuronide",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "trans-Resveratrol sulfate",
+      "expected": "trans-Resveratrol sulfate",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Dihydroresveratrol",
+      "expected": "Dihydroresveratrol",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Dihydroresveratrol sulfate",
+      "expected": "Dihydroresveratrol sulfate",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Dihydroresveratrol sulfate-glucuronide",
+      "expected": "Dihydroresveratrol sulfate-glucuronide",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Urolithin A",
+      "expected": "Urolithin A",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Methylcatechin",
+      "expected": "Methylcatechin sulfate",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Phenylalanine",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Let me know if you need any further assistance!",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "trans-Resveratrol",
+      "expected": "trans-Resveratrol glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Ellagitannins",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "3-(3-Hydroxy-4-methoxyphenyl)-2-(sulfooxy) propanoic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Dihydroferulic acid",
+      "expected": "Dihydroferulic acid sulfate",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Sulfate group",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Ferulic acid 4-O-sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Dihydroferulic acid sulfate",
+      "expected": "Dihydroferulic acid sulfate",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "3-[3-Hydroxy-5-methoxy-4-(sulfooxy)phenyl]propanoic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "2-Hydroxy-6-methoxy-4-vinylphenyl hydrogen sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Equol",
+      "expected": "Equol",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Daidzein",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Hydroxycinnamic acids",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "has been reformatted to",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Genistein",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "3-[1-Hydroxy-2-(2-hydroxyphenyl)ethyl]-5-methoxyphenol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Resveratrol-3-O-glucuronide",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Glucuronide (as in resveratrol-3-O-glucuronide)",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Glucoside (not specifically mentioned but implied as a possible modification)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Sulfate (not specifically mentioned but implied as a possible modification)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "+ 6-Hydroxy-4\u2032,5,7-trimethoxyflavone",
+      "expected": "6-Hydroxy-4\u2032,5,7-trimethoxyflavone",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Scutellarein",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Apigenin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "+ Isohelenol",
+      "expected": "Isohelenol",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "+ Valine-Histidine (Val-His)",
+      "expected": "Valine-Histidine (Val-His)",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "+ Gravolenic acid",
+      "expected": "Gravolenic acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Luteolin 7-sulfate",
+      "expected": "Luteolin 7-sulfate",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Coumaric acids",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Hydroxycinnamic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Note that some of these compounds may be mentioned as part of a larger class or family (e.g. \"hydroxycinnamic acid family\"), but I have only extracted the specific compounds mentioned by name. Let me know if you'd like me to extract the broader categories as well!",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Anthocyanins - none mentioned",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Flavonoids -",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenolic acids -",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Specific compound names mentioned:",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Metabolic derivatives and conjugates:",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "+ 3-(3-Hydroxy-4-methoxyphenyl)-2-(sulfooxy)propanoic acid (Dihydroferulic acid sulfate)",
+      "expected": "Dihydroferulic acid sulfate",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "+ 3-(4-Hydroxyphenyl)chroman-7-ol (Equol)",
+      "expected": "Equol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "(4S,4aR,7aR,8R,9aR)-4-Hydroxy-3-(hydroxymethyl)-4a,8-dimethyl-4,4a,7a,8,9,9a-hexahydroazuleno[6,5-b]furan-2,5-dione (Isohelenol)",
+      "expected": "Isohelenol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "(2Z)-3-[4,5-Dihydroxy-2-(2-hydroxy-2-propanyl)-2,3-dihydro-1-benzofuran-7-yl]acrylic acid (Gravolenic acid)",
+      "expected": "Gravolenic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Val-His",
+      "expected": "Valine-Histidine (Val-His)",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Anthocyanins: None mentioned",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "+ glucoside: None mentioned",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "+ glucuronide: None mentioned",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "2-(3,4-Dihydroxyphenyl)-5-hydroxy-4-oxo-4H-chromen-7-yl hydrogen sulfate (Luteolin 7-sulfate)",
+      "expected": "Luteolin 7-sulfate",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Citramalic acid",
+      "expected": "Citramalic acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Beta-lactic acid",
+      "expected": "Beta-lactic acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Erythro-3-methylmalic acid",
+      "expected": "Erythro-3-methylmalic acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Threo-3-methylmalic acid",
+      "expected": "Threo-3-methylmalic acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "p-Coumaryl alcohol 4-O-glucoside",
+      "expected": "p-Coumaryl alcohol 4-O-glucoside",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "2-Amino-3-oxoadipic acid",
+      "expected": "2-amino-3-oxoadipic acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "N-Formyl-L-glutamic acid",
+      "expected": "N-formyl-L-glutamic acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Galactopinitol A",
+      "expected": "Galactopinitol A",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Galactopinitol B",
+      "expected": "Galactopinitol B",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Methyl (2E)-5-(5-methyl-2-thienyl)-2-penten-4-ynoate",
+      "expected": "Methyl (2E)-5-(5-methyl-2-thienyl)-2-penten-4-ynoate",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Vanillic acid-4-O-glucuronide",
+      "expected": "Vanillic acid-4-O-glucuronide",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "1-Caffeoyl-beta-D-glucose",
+      "expected": "1-Caffeoyl-beta-D-glucose",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Caffeic acid 3-glucoside",
+      "expected": "Caffeic acid 3-glucoside",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "1-O-[3-(2,4-Dihydroxy-methoxyphenyl)propanoyl] hexopyranuronic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "4-(2-Carboxyethyl)-3-hydroxy-2-methoxyphenyl hexopyranosiduronic acid",
+      "expected": "4-(2-Carboxyethyl)-3-hydroxy-2-methoxyphenyl hexopyranosiduronic acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Xanthine",
+      "expected": "Xanthine",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Luteolin (aglycone of Luteolin 7-sulfate)",
+      "expected": "Luteolin 7-sulfate",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "p-Coumaryl alcohol (aglycone of p-Coumaryl alcohol 4-O-glucoside)",
+      "expected": "p-Coumaryl alcohol 4-O-glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Vanillic acid (aglycone of Vanillic acid-4-O-glucuronide)",
+      "expected": "Vanillic acid-4-O-glucuronide",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Caffeic acid (aglycone of Caffeic acid 3-glucoside)",
+      "expected": "Caffeic acid 3-glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Anthocyanins: none explicitly mentioned",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Flavonoids: Luteolin, Caffeic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenolic acids: Vanillic acid, p-Coumaryl alcohol, Citramalic acid",
+      "expected": "Citramalic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Glucosides: p-Coumaryl alcohol 4-O-glucoside, Caffeic acid 3-glucoside",
+      "expected": "p-Coumaryl alcohol 4-O-glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Glucuronides: Vanillic acid-4-O-glucuronide",
+      "expected": "Vanillic acid-4-O-glucuronide",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Sulfates: Luteolin 7-sulfate",
+      "expected": "Luteolin 7-sulfate",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "N-formyl",
+      "expected": "N-formyl-L-glutamic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "O-glucoside",
+      "expected": "p-Coumaryl alcohol 4-O-glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "O-glucuronide",
+      "expected": "Vanillic acid-4-O-glucuronide",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "O-adipoylcarnitine",
+      "expected": "O-adipoylcarnitine",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "3-Methylglutarylcarnitine",
+      "expected": "3-Methylglutarylcarnitine",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "2-Amino-3-oxoadipidic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "p-Coumaryl alcohol 4-O-glucoside (a hydroxycinnamic acid)",
+      "expected": "p-Coumaryl alcohol 4-O-glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Coumaric acid (a phenolic acid)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "p-Coumaryl alcohol 4-O-glucoside (glucoside)",
+      "expected": "p-Coumaryl alcohol 4-O-glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Galactopinitol",
+      "expected": "Galactopinitol A",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Fatty acid ethyl esters",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Vanillin 4-sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Vanillic acid 4-sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "1-O-[3-(2,4-Dihydroxy-methoxyphenyl)propanoyl]hexopyranuronic acid",
+      "expected": "1-O-[3-(2,4-Dihydroxy-methoxyphenyl)propanoyl]hexopyranuronic acid",
+      "match_type": "exact",
+      "in_expected": true
+    },
+    {
+      "extracted": "Note that some of these compounds may be classified under broader categories, such as:",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenolic compounds: vanillic acid, caffeic acid 3-glucoside, 1-caffeoyl-beta-D-glucose",
+      "expected": "1-Caffeoyl-beta-D-glucose",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Flavonoids: none mentioned",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenolic acids: vanillic acid, caffeic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Caffeic acid sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Dihydrocaffeic acid 3-sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "7H-Purine-6,8-diol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenolic acids (general term, specifically caffeic acid)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Note that some of these compounds are derivatives or conjugates of others (e.g. glucosides, sulfates), and some are general terms that encompass multiple specific compounds (e.g. phenolic acids, anthocyanins, flavonoids).",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Caffeic acid (phenolic acid)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Hydroxycinnamic acids (general term, specifically 1-caffeoyl-beta-D-glucose and caffeic acid 3-glucoside)",
+      "expected": "1-Caffeoyl-beta-D-glucose",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "1-Caffeoyl-beta-D-glucose (hydroxycinnamic acid, glucoside)",
+      "expected": "1-Caffeoyl-beta-D-glucose",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Caffeic acid 3-glucoside (glucoside)",
+      "expected": "Caffeic acid 3-glucoside",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Caffeic acid sulfate (sulfate)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Dihydrocaffeic acid 3-sulfate (sulfate)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Xanthine (purine base)",
+      "expected": "Xanthine",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "7H-Purine-6,8-diol (purine base)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "O-Adipoylcarnitine (acylcarnitine)",
+      "expected": "O-adipoylcarnitine",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "3-Methylglutarylcarnitine (acylcarnitine)",
+      "expected": "3-Methylglutarylcarnitine",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Resveratrol (free form)",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Caffeic acid derivatives",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Ethyl ester",
+      "expected": "Caffeic acid ethyl ester",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Gallic acid glucuronide",
+      "expected": "Gallic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Ellagic acid glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Ellagic acid glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Ellagic acid sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "O-glucuronides",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Please let me know if I missed anything.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Let me know if you have any further requests!",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Adipoylcarnitine",
+      "expected": "O-adipoylcarnitine",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Anthocyanin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Stilbene derivatives",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phase-II conjugates",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Anthocyanin glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Anthocyanin glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Stilbene sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenol glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenol sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Flavonoid glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Flavonoid glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "A more accurate reflection of what is in the text would be:",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenolic compounds (including phenolic acids, flavonoids, anthocyanins)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phase-II conjugates (including glucuronide, sulfate, glucoside)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "However, some technical terms related to analysis are mentioned:",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "UPLC-QTOF-MS",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Also, some grant and funding names:",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "PID2019- 108851RB-C22",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Margarita Salas",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "NextGenerationEU",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "European Union",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Let me know if you want me to look for anything else.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "If you provide more text from the research paper, I may be able to help you extract more information.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "If you provide more text I can continue extracting.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Resveratrol (a stilbene)",
+      "expected": "Resveratrol",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Quercetin (a flavonoid)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Kaempferol (a flavonoid)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Catechins (flavonoids)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Cyanidin (an anthocyanin)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Delphinidin (an anthocyanin)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Petunidin (an anthocyanin)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Malvidin (an anthocyanin)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Gallic acid (a phenolic acid)",
+      "expected": "Gallic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Ellagic acid (a phenolic acid)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Carotenoids",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Sesquiterpenes",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Urolithins",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Quercetin derivatives (not explicitly mentioned but often related to the mentioned compounds)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Epicatechins",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "are general categories of compounds.",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Isorhapontigenin glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Sinapic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Hydroxytyrosol glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Hydroxytyrosol glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Tyrosol glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Tyrosol glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Oleuropein",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Oleuropein glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Oleuropein glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Piceatannol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Piceatannol glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Piceatannol glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Pterostilbene",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Epigallocatechin gallate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Delphinidin-3-glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Petunidin-3-glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Cyanidin-3-glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Pterostilbene glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Pterostilbene glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Pterostilbene sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Caftaric acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Coutaric acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Rutinoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Isorhapontigenin glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Naringenin glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Naringenin glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Naringenin sulfate",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Luteolin glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Luteolin glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Eriodictyol glucoside",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Eriodictyol glucuronide",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Phenolic extract",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Isoflavonoids",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Hydroxybenzoic acid",
+      "expected": "4-Hydroxybenzoic acid",
+      "match_type": "partial",
+      "in_expected": true
+    },
+    {
+      "extracted": "Hydroxyphenylacetic acid",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Enterolactone",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Enterodiol",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "O-desmethylangolensin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "8-Prenylnaringenin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Puerarin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Glycitein",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Enterobactin",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "References:",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Gonz \u02d8alez-Dom\u00ednguez et al. (2019)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Mosele & Motilva (2021)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Motilva et al. (2016)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Noad et al. (2016)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Noh et al. (2017)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    },
+    {
+      "extracted": "Jim\u02d8enez-Salcedo et al. (2025)",
+      "expected": null,
+      "match_type": null,
+      "in_expected": false
+    }
+  ],
+  "all_extracted_metabolites": [
+    "Quercetin-3-glucoside",
+    "Quercetin-3-glucuronide",
+    "Quercetin-3-sulfate",
+    "Kaempferol-3-glucoside",
+    "Kaempferol-3-glucuronide",
+    "Isorhapontigenin-3-glucoside",
+    "Isorhapontigenin-3-glucuronide",
+    "Resveratrol-3-glucoside (resveratrol glucoside)",
+    "Resveratrol-3-glucuronide (resveratrol glucuronide)",
+    "Resveratrol sulfate (resveratrol sulfate)",
+    "Catechin",
+    "Epicatechin",
+    "Anthocyanins",
+    "Flavonoids",
+    "Phenolic acids",
+    "Proanthocyanidins",
+    "Hydroxytyrosol",
+    "Tyrosol",
+    "Gallic acid",
+    "Ellagic acid",
+    "Myricetin",
+    "Naringenin",
+    "Erythritol",
+    "Lactic acid",
+    "Glycerol",
+    "Acetic acid",
+    "Propanoic acid",
+    "Butanoic acid",
+    "Catechol",
+    "Pyrocatechol",
+    "Vanillic acid",
+    "Syringic acid",
+    "Benzoic acid",
+    "Protocatechuic acid",
+    "3-Hydroxybenzoic acid",
+    "4-Hydroxybenzoic acid",
+    "Hydroxyhippuric acid",
+    "4-Hydroxyphenylacetic acid",
+    "Homovanillic acid",
+    "3,4-Dihydroxyphenylacetic acid",
+    "3,4-Dihydroxybenzoic acid",
+    "Vanillin",
+    "Guaiacol",
+    "3-Methoxy-4-hydroxyphenylacetic acid",
+    "3-Methoxy-4-hydroxybenzoic acid",
+    "Catechin glucoside",
+    "Catechin glucuronide",
+    "Catechin sulfate",
+    "Epicatechin glucoside",
+    "Epicatechin glucuronide",
+    "Epicatechin sulfate",
+    "Quercetin",
+    "Kaempferol",
+    "Isorhapontigenin",
+    "Resveratrol",
+    "Hydroxyresveratrol",
+    "Dihydro-resveratrol",
+    "Lunularin",
+    "3,5-Dihydroxy-4'-methoxy-trans-stilbene",
+    "3,5-Dihydroxy-4'-methoxy-cis-stilbene",
+    "4'-O-Acetyl-3,5-dihydroxy-4'-methoxy-trans-stilbene",
+    "4'-O-Acetyl-3,5-dihydroxy-4'-methoxy-cis-stilbene",
+    "4'-O-Glucuronyl-3,5-dihydroxy-4'-methoxy-trans-stilbene",
+    "4'-O-Glucuronyl-3,5-dihydroxy-4'-methoxy-cis-stilbene",
+    "4'-O-Sulfate-3,5-dihydroxy-4'-methoxy-trans-stilbene",
+    "4'-O-Sulfate-3,5-dihydroxy-4'-methoxy-cis-stilbene",
+    "3,5-Dihydroxy-4'-ethoxy-trans-stilbene",
+    "3,5-Dihydro",
+    "Glucoside",
+    "Glucuronide",
+    "Sulfate",
+    "Resveratrol-3-glucoside",
+    "Resveratrol-3-glucuronide",
+    "Resveratrol-3-sulfate",
+    "Kaempferol-3-sulfate",
+    "Polyphenols",
+    "4-O-methylgallic acid",
+    "Dihydroxyphenyl valerolactones",
+    "Ethylgallate",
+    "Tartaric acid",
+    "Resveratrol glucoside",
+    "Resveratrol glucuronide",
+    "Resveratrol sulfate",
+    "Quercetin glucoside",
+    "Quercetin glucuronide",
+    "Quercetin sulfate",
+    "Glucosides (e.g. resveratrol glucoside, quercetin glucoside, catechin glucoside)",
+    "Glucuronides (e.g. resveratrol glucuronide, quercetin glucuronide, catechin glucuronide)",
+    "Sulfates (e.g. resveratrol sulfate, quercetin sulfate, catechin sulfate)",
+    "However, these are often associated with the mentioned compounds:",
+    "Glucosides",
+    "Glucuronides",
+    "Sulfates",
+    "are not specifically mentioned",
+    "are mentioned",
+    "No specific compound names are mentioned",
+    "However  metabolic derivatives and conjugates",
+    "Delphinidin",
+    "Petunidin",
+    "Malvidin",
+    "Cyanidin",
+    "Peonidin",
+    "and their  glucosides",
+    "and  some  Flavonoids",
+    "Luteolin",
+    "Eriodictyol",
+    "and  their  glucosides  glucuronides  and  sulfates",
+    "and  Phenolic  acids",
+    "Gallic",
+    "Cinnamic",
+    "Coumaric",
+    "Ferulic",
+    "and  their  derivatives",
+    "If you need more help or have any further questions please let me know.",
+    "Phenol",
+    "However, some related terms that might be relevant:",
+    "Acetonitrile (ACN)",
+    "Ammonium formate",
+    "Formic acid",
+    "Methanol",
+    "Hydrochloric acid",
+    "Ultrapure water",
+    "Note that the text does not specifically mention individual anthocyanins, flavonoids, or phenolic acids, so I couldn't extract specific compound names. However, I extracted the general categories of compounds.",
+    "Let me know if you'd like me to help with anything else!",
+    "Kaempferol glucoside",
+    "Kaempferol glucuronide",
+    "Kaempferol sulfate",
+    "Let me know if you need further assistance!",
+    "Leucine-enkephalin",
+    "No specific compound names mentioned other than Leucine-enkephalin and Methanol.",
+    "Also, it is worth noting that the text mentions that \"The analytical standards used in targeted metabolomics are described in Supplementary Material (Supplementary Material Text S1)\" which might contain more information about the compounds of interest.",
+    "Please provide the rest of the text if you want me to extract more compounds.",
+    "Anthocyanins,",
+    "Flavonoids,",
+    "Phenolic acids,",
+    "OASIS HLB",
+    "UHPLC/QqQ-MS/MS",
+    "BEH C18",
+    "VanGuard Pre-Column Acquity BEH C18",
+    "Electrospray ionization (ESI)",
+    "But no specific compound names with these modifications are mentioned.",
+    "Anthocyanin derivatives",
+    "Isorhapontigenin-3-sulfate",
+    "Catechins",
+    "Epigallocatechin",
+    "Naringenin-4-glucoside",
+    "Naringenin-4-glucuronide",
+    "Naringenin-4-sulfate",
+    "Erythric acid",
+    "Please let me know if I missed anything or if you need further clarification!",
+    "Since no specific compound was mentioned I will add",
+    "[M-H]",
+    "[M-H]\u207b",
+    "Let me know if I made another mistake",
+    "After re-reading the prompt again",
+    "No specific compound names were mentioned",
+    "Let me know if I can assist further",
+    "Acetonitrile",
+    "PVDF (polyvinylidene difluoride)",
+    "Glucosides (e.g., anthocyanin glucosides)",
+    "Glucuronides (e.g., phenolic glucuronides)",
+    "Sulfates (e.g., phenolic sulfates)",
+    "Polyvinylidene difluoride (PVDF)",
+    "ESI+ (positive mode)",
+    "ESI- (negative mode)",
+    "For clarity and completeness in scientific contexts, compounds like anthocyanins, flavonoids, and phenolic acids can have numerous derivatives and conjugates, including glucosides, glucuronides, and sulfates, which are crucial in understanding their metabolism and bioavailability in the body.",
+    "Ammonium formiate",
+    "Water",
+    "Hippuric acid",
+    "Phenylacetylglutamine",
+    "Creatinine",
+    "Leucine enkephalin",
+    "No specific compound names mentioned other than leucine enkephalin.",
+    "Note that the text appears to be more focused on the analytical methodology and quality control procedures rather than the specific compounds being analyzed.",
+    "Leucine",
+    "Enkephalin",
+    "But only Leucine enkephalin seems to be a specific compound mentioned.",
+    "RP-LC and HILIC are types of chromatography columns and are not compounds.",
+    "m/z is a term used in mass spectrometry to describe the mass-to-charge ratio.",
+    "ESI is an ionization technique.",
+    "Glucoside,",
+    "Glucuronide,",
+    "[M-H]-,",
+    "[M+H]+,",
+    "[M+Cl]-,",
+    "[M-2H]2-,",
+    "[2M-H]-,",
+    "[M-H-2O-H]-,",
+    "[M+FA-H]-,",
+    "[M+2H]2+,",
+    "[M+H-H2O]+,",
+    "[M+] +,",
+    "[M+NH4]+,",
+    "[M+Na]+,",
+    "[M+K]+,",
+    "[2M+H]+,",
+    "[2M+Na]+",
+    "However, these are not specific compounds but rather ionization forms used in mass spectrometry analysis.",
+    "No specific compound names with modifications are mentioned.",
+    "No specific metabolic derivatives and conjugates are mentioned.",
+    "Markers",
+    "Urine markers",
+    "Metabolic derivatives",
+    "Conjugates",
+    "Naringenin-4'-glucoside",
+    "Naringenin-7-glucoside",
+    "Eriodictyol-7-glucoside",
+    "Luteolin-7-glucoside",
+    "Chrysoeriol-7-glucoside",
+    "Procyanidin B1",
+    "Procyanidin B2",
+    "3-O-methylgallic acid",
+    "Pyrogallol",
+    "Resveratrol-4'-sulfate",
+    "Dihydro-resveratrol-3-glucoside",
+    "Dihydro-resveratrol-3-glucuronide",
+    "Catechin gallate",
+    "Rutin",
+    "Fisetin",
+    "Chrysoeriol",
+    "Gallic acid glucoside",
+    "Protocatechuic acid glucoside",
+    "4-Hydroxybenzoic acid glucoside",
+    "Vanillic acid glucoside",
+    "Syringic acid glucoside",
+    "Benzoic acid glucoside",
+    "Pyrogallol glucoside",
+    "Phenol glucoside",
+    "Hotelling's ellipse is not a compound but rather a statistical method.",
+    "Metlin",
+    "Metabolic Profiling CCS",
+    "ChemSpider",
+    "Phenol-explorer",
+    "KEGG",
+    "Human Metabolome Database (HMDB)",
+    "FooDB",
+    "Urine Metabolome Database",
+    "Malvidin-3-glucuronide",
+    "Flavan-3-ols",
+    "Stilbenes",
+    "Malvidins",
+    "Delphinidin-3-arabinoside",
+    "Trans-delphinidin",
+    "Glucosides (e.g. anthocyanin-glucosides)",
+    "Glucuronides (e.g. malvidin-3-glucuronide)",
+    "3-(6\u2033-coumaroyl)-glucoside",
+    "Gallic acid sulfate",
+    "Caffeic acid ethyl ester",
+    "Protocatechuic acid ethyl ester",
+    "Ethyl-gallate",
+    "Procyanidins",
+    "Caffeic acid",
+    "Flavonoids:",
+    "Phenolic acids:",
+    "glucuronide (not explicitly mentioned, but implied as a possible phase-II metabolite)",
+    "Let me know if you'd like me to extract any further information!",
+    "Malvidin-3-glucoside",
+    "Cyanidin-3-glucuronide",
+    "Peonidin-3-glucoside",
+    "Peonidin-3-(6\u2033-acetyl)-glucoside",
+    "Peonidin-3-glucuronide",
+    "Peonidin-diglucuronide",
+    "Methyl-peonidin-3-glucuronide-sulfate",
+    "trans-Delphinidin-3-(6\u2033-coumaroyl)-glucoside",
+    "cis-Coumaric acid",
+    "trans-Fertaric acid",
+    "4-Hydroxybenzoic acid sulfate",
+    "Syringic acid glucuronide",
+    "5-(3\u2032,4\u2032-dihydroxyphenyl)-",
+    "Valeric acid",
+    "Methylcatechin sulfate",
+    "Methylepicatechin glucuronide",
+    "Methylepicatechin sulfate",
+    "trans-Resveratrol glucoside",
+    "trans-Resveratrol glucuronide",
+    "trans-Resveratrol sulfate",
+    "Dihydroresveratrol",
+    "Dihydroresveratrol sulfate",
+    "Dihydroresveratrol sulfate-glucuronide",
+    "Urolithin A",
+    "Methylcatechin",
+    "Phenylalanine",
+    "Let me know if you need any further assistance!",
+    "trans-Resveratrol",
+    "Ellagitannins",
+    "3-(3-Hydroxy-4-methoxyphenyl)-2-(sulfooxy) propanoic acid",
+    "Dihydroferulic acid",
+    "Sulfate group",
+    "Ferulic acid 4-O-sulfate",
+    "Dihydroferulic acid sulfate",
+    "3-[3-Hydroxy-5-methoxy-4-(sulfooxy)phenyl]propanoic acid",
+    "2-Hydroxy-6-methoxy-4-vinylphenyl hydrogen sulfate",
+    "Equol",
+    "Daidzein",
+    "Hydroxycinnamic acids",
+    "has been reformatted to",
+    "Genistein",
+    "3-[1-Hydroxy-2-(2-hydroxyphenyl)ethyl]-5-methoxyphenol",
+    "Resveratrol-3-O-glucuronide",
+    "Glucuronide (as in resveratrol-3-O-glucuronide)",
+    "Glucoside (not specifically mentioned but implied as a possible modification)",
+    "Sulfate (not specifically mentioned but implied as a possible modification)",
+    "6-Hydroxy-4\u2032,5,7-trimethoxyflavone",
+    "Scutellarein",
+    "Apigenin",
+    "Isohelenol",
+    "Valine-Histidine (Val-His)",
+    "Gravolenic acid",
+    "Luteolin 7-sulfate",
+    "Coumaric acids",
+    "Hydroxycinnamic acid",
+    "Note that some of these compounds may be mentioned as part of a larger class or family (e.g. \"hydroxycinnamic acid family\"), but I have only extracted the specific compounds mentioned by name. Let me know if you'd like me to extract the broader categories as well!",
+    "Anthocyanins - none mentioned",
+    "Flavonoids -",
+    "Phenolic acids -",
+    "Specific compound names mentioned:",
+    "Metabolic derivatives and conjugates:",
+    "3-(3-Hydroxy-4-methoxyphenyl)-2-(sulfooxy)propanoic acid (Dihydroferulic acid sulfate)",
+    "3-(4-Hydroxyphenyl)chroman-7-ol (Equol)",
+    "(4S,4aR,7aR,8R,9aR)-4-Hydroxy-3-(hydroxymethyl)-4a,8-dimethyl-4,4a,7a,8,9,9a-hexahydroazuleno[6,5-b]furan-2,5-dione (Isohelenol)",
+    "(2Z)-3-[4,5-Dihydroxy-2-(2-hydroxy-2-propanyl)-2,3-dihydro-1-benzofuran-7-yl]acrylic acid (Gravolenic acid)",
+    "Val-His",
+    "Anthocyanins: None mentioned",
+    "+ 6-Hydroxy-4\u2032,5,7-trimethoxyflavone",
+    "+ Resveratrol",
+    "+ 3-(3-Hydroxy-4-methoxyphenyl)-2-(sulfooxy)propanoic acid (Dihydroferulic acid sulfate)",
+    "+ Gravolenic acid",
+    "+ 3-(4-Hydroxyphenyl)chroman-7-ol (Equol)",
+    "+ Isohelenol",
+    "+ Valine-Histidine (Val-His)",
+    "+ glucoside: None mentioned",
+    "+ glucuronide: None mentioned",
+    "+ sulfate:",
+    "2-(3,4-Dihydroxyphenyl)-5-hydroxy-4-oxo-4H-chromen-7-yl hydrogen sulfate (Luteolin 7-sulfate)",
+    "Citramalic acid",
+    "Beta-lactic acid",
+    "Erythro-3-methylmalic acid",
+    "Threo-3-methylmalic acid",
+    "p-Coumaryl alcohol 4-O-glucoside",
+    "2-Amino-3-oxoadipic acid",
+    "N-Formyl-L-glutamic acid",
+    "Galactopinitol A",
+    "Galactopinitol B",
+    "Methyl (2E)-5-(5-methyl-2-thienyl)-2-penten-4-ynoate",
+    "Vanillic acid-4-O-glucuronide",
+    "1-Caffeoyl-beta-D-glucose",
+    "Caffeic acid 3-glucoside",
+    "1-O-[3-(2,4-Dihydroxy-methoxyphenyl)propanoyl] hexopyranuronic acid",
+    "4-(2-Carboxyethyl)-3-hydroxy-2-methoxyphenyl hexopyranosiduronic acid",
+    "Xanthine",
+    "Luteolin (aglycone of Luteolin 7-sulfate)",
+    "p-Coumaryl alcohol (aglycone of p-Coumaryl alcohol 4-O-glucoside)",
+    "Vanillic acid (aglycone of Vanillic acid-4-O-glucuronide)",
+    "Caffeic acid (aglycone of Caffeic acid 3-glucoside)",
+    "Anthocyanins: none explicitly mentioned",
+    "Flavonoids: Luteolin, Caffeic acid",
+    "Phenolic acids: Vanillic acid, p-Coumaryl alcohol, Citramalic acid",
+    "Glucosides: p-Coumaryl alcohol 4-O-glucoside, Caffeic acid 3-glucoside",
+    "Glucuronides: Vanillic acid-4-O-glucuronide",
+    "Sulfates: Luteolin 7-sulfate",
+    "N-formyl",
+    "O-glucoside",
+    "O-glucuronide",
+    "O-adipoylcarnitine",
+    "3-Methylglutarylcarnitine",
+    "Coumaric acid",
+    "2-Amino-3-oxoadipidic acid",
+    "p-Coumaryl alcohol 4-O-glucoside (a hydroxycinnamic acid)",
+    "Coumaric acid (a phenolic acid)",
+    "p-Coumaryl alcohol 4-O-glucoside (glucoside)",
+    "Galactopinitol",
+    "Fatty acid ethyl esters",
+    "Vanillin 4-sulfate",
+    "Vanillic acid 4-sulfate",
+    "1-O-[3-(2,4-Dihydroxy-methoxyphenyl)propanoyl]hexopyranuronic acid",
+    "Note that some of these compounds may be classified under broader categories, such as:",
+    "Phenolic compounds: vanillic acid, caffeic acid 3-glucoside, 1-caffeoyl-beta-D-glucose",
+    "Flavonoids: none mentioned",
+    "Phenolic acids: vanillic acid, caffeic acid",
+    "Caffeic acid sulfate",
+    "Dihydrocaffeic acid 3-sulfate",
+    "7H-Purine-6,8-diol",
+    "Phenolic acids (general term, specifically caffeic acid)",
+    "Note that some of these compounds are derivatives or conjugates of others (e.g. glucosides, sulfates), and some are general terms that encompass multiple specific compounds (e.g. phenolic acids, anthocyanins, flavonoids).",
+    "Caffeic acid (phenolic acid)",
+    "Hydroxycinnamic acids (general term, specifically 1-caffeoyl-beta-D-glucose and caffeic acid 3-glucoside)",
+    "1-Caffeoyl-beta-D-glucose (hydroxycinnamic acid, glucoside)",
+    "Caffeic acid 3-glucoside (glucoside)",
+    "Caffeic acid sulfate (sulfate)",
+    "Dihydrocaffeic acid 3-sulfate (sulfate)",
+    "Xanthine (purine base)",
+    "7H-Purine-6,8-diol (purine base)",
+    "O-Adipoylcarnitine (acylcarnitine)",
+    "3-Methylglutarylcarnitine (acylcarnitine)",
+    "Resveratrol (free form)",
+    "Caffeic acid derivatives",
+    "Ethyl ester",
+    "Gallic acid glucuronide",
+    "Ellagic acid glucoside",
+    "Ellagic acid glucuronide",
+    "Ellagic acid sulfate",
+    "O-glucuronides",
+    "Please let me know if I missed anything.",
+    "Let me know if you have any further requests!",
+    "Adipoylcarnitine",
+    "Anthocyanin",
+    "Stilbene derivatives",
+    "Phase-II conjugates",
+    "Anthocyanin glucoside",
+    "Anthocyanin glucuronide",
+    "Stilbene sulfate",
+    "Phenol glucuronide",
+    "Phenol sulfate",
+    "Flavonoid glucoside",
+    "Flavonoid glucuronide",
+    "A more accurate reflection of what is in the text would be:",
+    "Phenolic compounds (including phenolic acids, flavonoids, anthocyanins)",
+    "Phase-II conjugates (including glucuronide, sulfate, glucoside)",
+    "However, some technical terms related to analysis are mentioned:",
+    "UPLC-QTOF-MS",
+    "Also, some grant and funding names:",
+    "PID2019- 108851RB-C22",
+    "Margarita Salas",
+    "NextGenerationEU",
+    "European Union",
+    "Let me know if you want me to look for anything else.",
+    "If you provide more text from the research paper, I may be able to help you extract more information.",
+    "If you provide more text I can continue extracting.",
+    "Resveratrol (a stilbene)",
+    "Quercetin (a flavonoid)",
+    "Kaempferol (a flavonoid)",
+    "Catechins (flavonoids)",
+    "Cyanidin (an anthocyanin)",
+    "Delphinidin (an anthocyanin)",
+    "Petunidin (an anthocyanin)",
+    "Malvidin (an anthocyanin)",
+    "Gallic acid (a phenolic acid)",
+    "Ellagic acid (a phenolic acid)",
+    "Carotenoids",
+    "Sesquiterpenes",
+    "Urolithins",
+    "Quercetin derivatives (not explicitly mentioned but often related to the mentioned compounds)",
+    "Epicatechins",
+    "are general categories of compounds.",
+    "Isorhapontigenin glucoside",
+    "Ferulic acid",
+    "Sinapic acid",
+    "Hydroxytyrosol glucoside",
+    "Hydroxytyrosol glucuronide",
+    "Tyrosol glucoside",
+    "Tyrosol glucuronide",
+    "Oleuropein",
+    "Oleuropein glucoside",
+    "Oleuropein glucuronide",
+    "Piceatannol",
+    "Piceatannol glucoside",
+    "Piceatannol glucuronide",
+    "Pterostilbene",
+    "Epigallocatechin gallate",
+    "Delphinidin-3-glucoside",
+    "Petunidin-3-glucoside",
+    "Cyanidin-3-glucoside",
+    "Pterostilbene glucoside",
+    "Pterostilbene glucuronide",
+    "Pterostilbene sulfate",
+    "Caftaric acid",
+    "Coutaric acid",
+    "Rutinoside",
+    "Isorhapontigenin glucuronide",
+    "Naringenin glucoside",
+    "Naringenin glucuronide",
+    "Naringenin sulfate",
+    "Luteolin glucoside",
+    "Luteolin glucuronide",
+    "Eriodictyol glucoside",
+    "Eriodictyol glucuronide",
+    "Phenolic extract",
+    "Isoflavonoids",
+    "Hydroxybenzoic acid",
+    "Hydroxyphenylacetic acid",
+    "Enterolactone",
+    "Enterodiol",
+    "O-desmethylangolensin",
+    "8-Prenylnaringenin",
+    "Puerarin",
+    "Glycitein",
+    "Enterobactin",
+    "References:",
+    "Gonz \u02d8alez-Dom\u00ednguez et al. (2019)",
+    "Mosele & Motilva (2021)",
+    "Motilva et al. (2016)",
+    "Noad et al. (2016)",
+    "Noh et al. (2017)",
+    "Jim\u02d8enez-Salcedo et al. (2025)"
+  ]
+}
