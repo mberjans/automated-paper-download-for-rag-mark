@@ -1,25 +1,66 @@
 {
-  "output_dir": "./production_results",
-  "output_prefix": "foodb",
-  "timestamp_files": true,
-  "timestamp_format": "%Y%m%d_%H%M%S",
-  "csv_database": "urinary_wine_biomarkers.csv",
-  "csv_column": "Compound Name",
-  "chunk_size": 2000,
-  "chunk_overlap": 100,
-  "min_chunk_size": 200,
-  "max_tokens": 300,
-  "document_only": true,
-  "verify_compounds": true,
-  "max_attempts": 5,
-  "base_delay": 2.0,
-  "max_delay": 60.0,
-  "exponential_base": 2.0,
-  "providers": ["cerebras", "groq", "openrouter"],
-  "batch_mode": false,
-  "calculate_metrics": true,
-  "export_format": "all",
-  "save_chunks": false,
-  "save_timing": true,
-  "save_raw_responses": false
+  "_comment": "FOODB Pipeline Production Configuration",
+  "_description": "Comprehensive configuration for production metabolite extraction",
+  "_version": "2.0.0",
+  "_last_updated": "2025-07-16",
+
+  "output_configuration": {
+    "output_dir": "./production_results",
+    "output_prefix": "foodb",
+    "timestamp_files": true,
+    "timestamp_format": "%Y%m%d_%H%M%S",
+    "export_format": "all",
+    "save_chunks": false,
+    "save_timing": true,
+    "save_raw_responses": false
+  },
+
+  "directory_processing": {
+    "directory_mode": false,
+    "consolidated_output": true,
+    "individual_output": true,
+    "individual_subdir": "individual_papers",
+    "consolidated_subdir": "consolidated"
+  },
+
+  "database_configuration": {
+    "csv_database": "urinary_wine_biomarkers.csv",
+    "csv_column": "Compound Name"
+  },
+
+  "text_processing": {
+    "chunk_size": 2000,
+    "chunk_overlap": 100,
+    "min_chunk_size": 200
+  },
+
+  "llm_configuration": {
+    "max_tokens": 300,
+    "document_only": true,
+    "verify_compounds": true,
+    "providers": ["cerebras", "groq", "openrouter"]
+  },
+
+  "retry_configuration": {
+    "max_attempts": 5,
+    "base_delay": 2.0,
+    "max_delay": 60.0,
+    "exponential_base": 2.0,
+    "disable_jitter": false
+  },
+
+  "processing_configuration": {
+    "batch_mode": false,
+    "parallel_chunks": 1,
+    "skip_existing": false,
+    "calculate_metrics": true,
+    "generate_report": true
+  },
+
+  "logging_configuration": {
+    "debug": false,
+    "verbose": false,
+    "quiet": false,
+    "progress_bar": true
+  }
 }
