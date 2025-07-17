@@ -1,0 +1,28 @@
+2025-07-17 07:13:36,107 - INFO - ✅ MoonshotAI: Kimi K2 (free): SUCCESS - 2.22s, 7/9 metabolites
+2025-07-17 07:13:47,873 - INFO - ✅ TNG: DeepSeek R1T2 Chimera (free): SUCCESS - 8.76s, 0/9 metabolites
+2025-07-17 07:13:54,981 - INFO - ✅ Mistral: Mistral Small 3.2 24B (free): SUCCESS - 4.10s, 9/9 metabolites
+2025-07-17 07:13:58,785 - ERROR - ❌ Kimi Dev 72b (free): HTTP 503: {"error":{"message":"Provider returned error","code":503,"metadata":{"raw":"{\"detail\":\"No instances available (yet) for chute_id='00331b13-3614-5b0a-ab48-56116167aeef'\"}","provider_name":"Chutes"}
+2025-07-17 07:14:43,298 - INFO - ✅ DeepSeek: Deepseek R1 0528 Qwen3 8B (free): SUCCESS - 41.51s, 0/9 metabolites
+2025-07-17 07:15:02,472 - INFO - ✅ DeepSeek: R1 0528 (free): SUCCESS - 16.16s, 0/9 metabolites
+2025-07-17 07:15:13,588 - INFO - ✅ Qwen: Qwen3 235B A22B (free): SUCCESS - 8.10s, 9/9 metabolites
+2025-07-17 07:15:25,662 - INFO - ✅ TNG: DeepSeek R1T Chimera (free): SUCCESS - 9.06s, 9/9 metabolites
+2025-07-17 07:15:34,044 - INFO - ✅ Microsoft: MAI DS R1 (free): SUCCESS - 5.37s, 0/9 metabolites
+2025-07-17 07:15:42,453 - INFO - ✅ Agentica: Deepcoder 14B Preview (free): SUCCESS - 5.40s, 0/9 metabolites
+2025-07-17 07:15:52,758 - INFO - ✅ Moonshot AI: Kimi VL A3B Thinking (free): SUCCESS - 7.29s, 9/9 metabolites
+2025-07-17 07:15:56,797 - ERROR - ❌ NVIDIA: Llama 3.1 Nemotron Ultra 253B v1 (free): HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"detail\":\"model not found: nvidia/Llama-3_1-Nemotron-Ultra-253B-v1\"}","provider_name":"Chutes"}},"user_id":"user_2eESRD
+2025-07-17 07:16:07,820 - INFO - ✅ DeepSeek: DeepSeek V3 Base (free): SUCCESS - 8.01s, 9/9 metabolites
+2025-07-17 07:16:11,608 - ERROR - ❌ Google: Gemini 2.5 Pro Experimental: HTTP 404: {"error":{"message":"No endpoints found for google/gemini-2.5-pro-exp-03-25.","code":404},"user_id":"user_2eESRD2ZwPbPvak4pDZ6PI7SPT5"}
+2025-07-17 07:16:16,581 - INFO - ✅ Mistral: Mistral Small 3.1 24B (free): SUCCESS - 1.97s, 9/9 metabolites
+2025-07-17 07:16:23,507 - INFO - ✅ Google: Gemma 3 12B (free): SUCCESS - 3.92s, 9/9 metabolites
+2025-07-17 07:16:31,279 - INFO - ✅ Google: Gemma 3 27B (free): SUCCESS - 4.76s, 9/9 metabolites
+2025-07-17 07:16:36,036 - INFO - ✅ Nous: DeepHermes 3 Llama 3 8B Preview (free): SUCCESS - 1.75s, 7/9 metabolites
+2025-07-17 07:16:39,831 - ERROR - ❌ DeepSeek: R1 Distill Qwen 14B (free): HTTP 404: {"error":{"message":"Provider returned error","code":404,"metadata":{"raw":"{\"detail\":\"model not found: deepseek-ai/DeepSeek-R1-Distill-Qwen-14B\"}","provider_name":"Chutes"}},"user_id":"user_2eESR
+2025-07-17 07:16:59,267 - INFO - ✅ DeepSeek: R1 (free): SUCCESS - 16.43s, 0/9 metabolites
+2025-07-17 07:17:06,872 - INFO - ✅ DeepSeek: DeepSeek V3 (free): SUCCESS - 4.60s, 9/9 metabolites
+2025-07-17 07:17:11,623 - INFO - ✅ Google: Gemini 2.0 Flash Experimental (free): SUCCESS - 1.74s, 9/9 metabolites
+2025-07-17 07:17:17,840 - INFO - ✅ Meta: Llama 3.3 70B Instruct (free): SUCCESS - 3.21s, 9/9 metabolites
+2025-07-17 07:17:21,528 - ERROR - ❌ Meta: Llama 3.2 3B Instruct (free): HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"meta-llama/llama-3.2-3b-instruct:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to acc
+2025-07-17 07:17:26,333 - INFO - ✅ Meta: Llama 3.2 11B Vision Instruct (free): SUCCESS - 1.80s, 9/9 metabolites
+2025-07-17 07:17:30,008 - ERROR - ❌ Meta: Llama 3.1 405B Instruct (free): HTTP 429: {"error":{"message":"Provider returned error","code":429,"metadata":{"raw":"meta-llama/llama-3.1-405b-instruct:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to a
+2025-07-17 07:17:35,880 - INFO - ✅ Mistral: Mistral Nemo (free): SUCCESS - 2.86s, 9/9 metabolites
+2025-07-17 07:17:35,885 - INFO - 💾 Results saved to: additional_openrouter_testing_results_20250717_071735.json

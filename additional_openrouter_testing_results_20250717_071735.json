@@ -1,0 +1,823 @@
+{
+  "moonshotai/kimi-k2:free": {
+    "model_info": {
+      "model_name": "MoonshotAI: Kimi K2 (free)",
+      "model_id": "moonshotai/kimi-k2:free",
+      "context_tokens": 65536,
+      "category": "Moonshot AI"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 2.224829912185669,
+      "status_code": 200,
+      "content_length": 175,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 7,
+      "total_possible": 9,
+      "detection_rate": 0.7777777777777778,
+      "response_preview": "Metabolites and biomarkers mentioned in the text:\n\n- Resveratrol  \n- Gallic acid  \n- Catechin  \n- Epicatechin  \n- Tartaric acid  \n- Malic acid  \n- Anthocyanins (general class)",
+      "usage": {
+        "prompt_tokens": 115,
+        "completion_tokens": 53,
+        "total_tokens": 168,
+        "prompt_tokens_details": null
+      },
+      "model_used": "moonshotai/kimi-k2:free",
+      "context_tokens": 65536,
+      "category": "Moonshot AI"
+    }
+  },
+  "tngtech/deepseek-r1t2-chimera:free": {
+    "model_info": {
+      "model_name": "TNG: DeepSeek R1T2 Chimera (free)",
+      "model_id": "tngtech/deepseek-r1t2-chimera:free",
+      "context_tokens": 163840,
+      "category": "DeepSeek R1"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 8.76159119606018,
+      "status_code": 200,
+      "content_length": 0,
+      "metabolites_found": [],
+      "metabolites_count": 0,
+      "total_possible": 9,
+      "detection_rate": 0.0,
+      "response_preview": "",
+      "usage": {
+        "prompt_tokens": 95,
+        "completion_tokens": 300,
+        "total_tokens": 395,
+        "prompt_tokens_details": null
+      },
+      "model_used": "tngtech/deepseek-r1t2-chimera:free",
+      "context_tokens": 163840,
+      "category": "DeepSeek R1"
+    }
+  },
+  "mistralai/mistral-small-3.2-24b-instruct:free": {
+    "model_info": {
+      "model_name": "Mistral: Mistral Small 3.2 24B (free)",
+      "model_id": "mistralai/mistral-small-3.2-24b-instruct:free",
+      "context_tokens": 96000,
+      "category": "Mistral"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 4.103724718093872,
+      "status_code": 200,
+      "content_length": 621,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "glucuronide",
+        "sulfate",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 9,
+      "total_possible": 9,
+      "detection_rate": 1.0,
+      "response_preview": "Here is a clear list of the metabolites and biomarkers mentioned in the text:\n\n### **Metabolites:**\n1. **Resveratrol** (and its conjugates: glucuronide, sulfate)\n2. **Gallic acid** (and its conjugates: glucuronide, sulfate)\n3. **Catechin** (and its conjugates: glucuronide, sulfate)\n4. **Epicatechin*...",
+      "usage": {
+        "prompt_tokens": 93,
+        "completion_tokens": 179,
+        "total_tokens": 272
+      },
+      "model_used": "mistralai/mistral-small-3.2-24b-instruct:free",
+      "context_tokens": 96000,
+      "category": "Mistral"
+    }
+  },
+  "moonshotai/kimi-dev-72b:free": {
+    "model_info": {
+      "model_name": "Kimi Dev 72b (free)",
+      "model_id": "moonshotai/kimi-dev-72b:free",
+      "context_tokens": 131072,
+      "category": "Moonshot AI"
+    },
+    "test_result": {
+      "success": false,
+      "error": "HTTP 503: {\"error\":{\"message\":\"Provider returned error\",\"code\":503,\"metadata\":{\"raw\":\"{\\\"detail\\\":\\\"No instances available (yet) for chute_id='00331b13-3614-5b0a-ab48-56116167aeef'\\\"}\",\"provider_name\":\"Chutes\"}",
+      "response_time": 0.7945990562438965,
+      "status_code": 503,
+      "response_text": "{\"error\":{\"message\":\"Provider returned error\",\"code\":503,\"metadata\":{\"raw\":\"{\\\"detail\\\":\\\"No instances available (yet) for chute_id='00331b13-3614-5b0a-ab48-56116167aeef'\\\"}\",\"provider_name\":\"Chutes\"}},\"user_id\":\"user_2eESRD2ZwPbPvak4pDZ6PI7SPT5\"}",
+      "context_tokens": 131072,
+      "category": "Moonshot AI"
+    }
+  },
+  "deepseek/deepseek-r1-0528-qwen3-8b:free": {
+    "model_info": {
+      "model_name": "DeepSeek: Deepseek R1 0528 Qwen3 8B (free)",
+      "model_id": "deepseek/deepseek-r1-0528-qwen3-8b:free",
+      "context_tokens": 131072,
+      "category": "DeepSeek R1"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 41.5076699256897,
+      "status_code": 200,
+      "content_length": 0,
+      "metabolites_found": [],
+      "metabolites_count": 0,
+      "total_possible": 9,
+      "detection_rate": 0.0,
+      "response_preview": "",
+      "usage": {
+        "prompt_tokens": 102,
+        "completion_tokens": 300,
+        "total_tokens": 402
+      },
+      "model_used": "deepseek/deepseek-r1-0528-qwen3-8b:free",
+      "context_tokens": 131072,
+      "category": "DeepSeek R1"
+    }
+  },
+  "deepseek/deepseek-r1-0528:free": {
+    "model_info": {
+      "model_name": "DeepSeek: R1 0528 (free)",
+      "model_id": "deepseek/deepseek-r1-0528:free",
+      "context_tokens": 163840,
+      "category": "DeepSeek R1"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 16.16017198562622,
+      "status_code": 200,
+      "content_length": 0,
+      "metabolites_found": [],
+      "metabolites_count": 0,
+      "total_possible": 9,
+      "detection_rate": 0.0,
+      "response_preview": "",
+      "usage": {
+        "prompt_tokens": 98,
+        "completion_tokens": 300,
+        "total_tokens": 398
+      },
+      "model_used": "deepseek/deepseek-r1-0528:free",
+      "context_tokens": 163840,
+      "category": "DeepSeek R1"
+    }
+  },
+  "qwen/qwen3-235b-a22b:free": {
+    "model_info": {
+      "model_name": "Qwen: Qwen3 235B A22B (free)",
+      "model_id": "qwen/qwen3-235b-a22b:free",
+      "context_tokens": 131072,
+      "category": "Qwen"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 8.103092193603516,
+      "status_code": 200,
+      "content_length": 1391,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "glucuronide",
+        "sulfate",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 9,
+      "total_possible": 9,
+      "detection_rate": 1.0,
+      "response_preview": "<think><think>\nOkay, let's tackle this query. The user wants me to extract metabolites and biomarkers from the given scientific text. First, I need to read the text carefully.\n\nThe sentence says wine consumption leads to excretion of urinary biomarkers: resveratrol, gallic acid, catechin, and epicat...",
+      "usage": {
+        "prompt_tokens": 409,
+        "completion_tokens": 300,
+        "total_tokens": 709
+      },
+      "model_used": "qwen/qwen3-235b-a22b:free",
+      "context_tokens": 131072,
+      "category": "Qwen"
+    }
+  },
+  "tngtech/deepseek-r1t-chimera:free": {
+    "model_info": {
+      "model_name": "TNG: DeepSeek R1T Chimera (free)",
+      "model_id": "tngtech/deepseek-r1t-chimera:free",
+      "context_tokens": 163840,
+      "category": "DeepSeek R1"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 9.062800168991089,
+      "status_code": 200,
+      "content_length": 1372,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "glucuronide",
+        "sulfate",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 9,
+      "total_possible": 9,
+      "detection_rate": 1.0,
+      "response_preview": "Okay, so I need to extract all the metabolites and biomarkers mentioned in the given scientific text about wine consumption. Let me read through the text carefully.\n\nThe first sentence says, \"Wine consumption leads to the excretion of several urinary biomarkers including resveratrol, gallic acid, ca...",
+      "usage": {
+        "prompt_tokens": 97,
+        "completion_tokens": 300,
+        "total_tokens": 397,
+        "prompt_tokens_details": null
+      },
+      "model_used": "tngtech/deepseek-r1t-chimera:free",
+      "context_tokens": 163840,
+      "category": "DeepSeek R1"
+    }
+  },
+  "microsoft/mai-ds-r1:free": {
+    "model_info": {
+      "model_name": "Microsoft: MAI DS R1 (free)",
+      "model_id": "microsoft/mai-ds-r1:free",
+      "context_tokens": 163840,
+      "category": "Microsoft"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 5.372328758239746,
+      "status_code": 200,
+      "content_length": 0,
+      "metabolites_found": [],
+      "metabolites_count": 0,
+      "total_possible": 9,
+      "detection_rate": 0.0,
+      "response_preview": "",
+      "usage": {
+        "prompt_tokens": 98,
+        "completion_tokens": 300,
+        "total_tokens": 398
+      },
+      "model_used": "microsoft/mai-ds-r1:free",
+      "context_tokens": 163840,
+      "category": "Microsoft"
+    }
+  },
+  "agentica-org/deepcoder-14b-preview:free": {
+    "model_info": {
+      "model_name": "Agentica: Deepcoder 14B Preview (free)",
+      "model_id": "agentica-org/deepcoder-14b-preview:free",
+      "context_tokens": 96000,
+      "category": "Agentica"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 5.400517702102661,
+      "status_code": 200,
+      "content_length": 0,
+      "metabolites_found": [],
+      "metabolites_count": 0,
+      "total_possible": 9,
+      "detection_rate": 0.0,
+      "response_preview": "",
+      "usage": {
+        "prompt_tokens": 103,
+        "completion_tokens": 300,
+        "total_tokens": 403
+      },
+      "model_used": "agentica-org/deepcoder-14b-preview:free",
+      "context_tokens": 96000,
+      "category": "Agentica"
+    }
+  },
+  "moonshotai/kimi-vl-a3b-thinking:free": {
+    "model_info": {
+      "model_name": "Moonshot AI: Kimi VL A3B Thinking (free)",
+      "model_id": "moonshotai/kimi-vl-a3b-thinking:free",
+      "context_tokens": 131072,
+      "category": "Moonshot AI"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 7.2948291301727295,
+      "status_code": 200,
+      "content_length": 1310,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "glucuronide",
+        "sulfate",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 9,
+      "total_possible": 9,
+      "detection_rate": 1.0,
+      "response_preview": "\u25c1think\u25b7Okay, let's tackle this query. The user wants me to extract metabolites and biomarkers from the given scientific text. First, I need to read the text carefully to identify all the relevant terms.\n\nThe text starts by mentioning that wine consumption leads to excretion of urinary biomarkers lik...",
+      "usage": {
+        "prompt_tokens": 115,
+        "completion_tokens": 300,
+        "total_tokens": 415
+      },
+      "model_used": "moonshotai/kimi-vl-a3b-thinking:free",
+      "context_tokens": 131072,
+      "category": "Moonshot AI"
+    }
+  },
+  "nvidia/llama-3.1-nemotron-ultra-253b-v1:free": {
+    "model_info": {
+      "model_name": "NVIDIA: Llama 3.1 Nemotron Ultra 253B v1 (free)",
+      "model_id": "nvidia/llama-3.1-nemotron-ultra-253b-v1:free",
+      "context_tokens": 131072,
+      "category": "NVIDIA"
+    },
+    "test_result": {
+      "success": false,
+      "error": "HTTP 404: {\"error\":{\"message\":\"Provider returned error\",\"code\":404,\"metadata\":{\"raw\":\"{\\\"detail\\\":\\\"model not found: nvidia/Llama-3_1-Nemotron-Ultra-253B-v1\\\"}\",\"provider_name\":\"Chutes\"}},\"user_id\":\"user_2eESRD",
+      "response_time": 1.0287880897521973,
+      "status_code": 404,
+      "response_text": "{\"error\":{\"message\":\"Provider returned error\",\"code\":404,\"metadata\":{\"raw\":\"{\\\"detail\\\":\\\"model not found: nvidia/Llama-3_1-Nemotron-Ultra-253B-v1\\\"}\",\"provider_name\":\"Chutes\"}},\"user_id\":\"user_2eESRD2ZwPbPvak4pDZ6PI7SPT5\"}",
+      "context_tokens": 131072,
+      "category": "NVIDIA"
+    }
+  },
+  "deepseek/deepseek-v3-base:free": {
+    "model_info": {
+      "model_name": "DeepSeek: DeepSeek V3 Base (free)",
+      "model_id": "deepseek/deepseek-v3-base:free",
+      "context_tokens": 163840,
+      "category": "DeepSeek"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 8.012085914611816,
+      "status_code": 200,
+      "content_length": 1234,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "glucuronide",
+        "sulfate",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 9,
+      "total_possible": 9,
+      "detection_rate": 1.0,
+      "response_preview": "\n\nHere are the metabolites mentioned in the text:\n\n1. Resveratrol\n2. Gallic acid\n3. Catechin\n4. Epicatechin\n5. Tartaric acid\n6. Malic acid\n7. Anthocyanins (various)\n\nThese metabolites are excreted in urine after wine consumption and are present as glucuronide and sulfate conjugates due to liver meta...",
+      "usage": {
+        "prompt_tokens": 95,
+        "completion_tokens": 300,
+        "total_tokens": 395,
+        "prompt_tokens_details": null
+      },
+      "model_used": "deepseek/deepseek-v3-base:free",
+      "context_tokens": 163840,
+      "category": "DeepSeek"
+    }
+  },
+  "google/gemini-2.5-pro-exp-03-25": {
+    "model_info": {
+      "model_name": "Google: Gemini 2.5 Pro Experimental",
+      "model_id": "google/gemini-2.5-pro-exp-03-25",
+      "context_tokens": 1048576,
+      "category": "Google"
+    },
+    "test_result": {
+      "success": false,
+      "error": "HTTP 404: {\"error\":{\"message\":\"No endpoints found for google/gemini-2.5-pro-exp-03-25.\",\"code\":404},\"user_id\":\"user_2eESRD2ZwPbPvak4pDZ6PI7SPT5\"}",
+      "response_time": 0.7729418277740479,
+      "status_code": 404,
+      "response_text": "{\"error\":{\"message\":\"No endpoints found for google/gemini-2.5-pro-exp-03-25.\",\"code\":404},\"user_id\":\"user_2eESRD2ZwPbPvak4pDZ6PI7SPT5\"}",
+      "context_tokens": 1048576,
+      "category": "Google"
+    }
+  },
+  "mistralai/mistral-small-3.1-24b-instruct:free": {
+    "model_info": {
+      "model_name": "Mistral: Mistral Small 3.1 24B (free)",
+      "model_id": "mistralai/mistral-small-3.1-24b-instruct:free",
+      "context_tokens": 128000,
+      "category": "Mistral"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 1.9671108722686768,
+      "status_code": 200,
+      "content_length": 482,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "glucuronide",
+        "sulfate",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 9,
+      "total_possible": 9,
+      "detection_rate": 1.0,
+      "response_preview": "Here are the metabolites and biomarkers mentioned in the text:\n\n**Metabolites:**\n- Resveratrol (and its glucuronide and sulfate conjugates)\n- Gallic acid (and its glucuronide and sulfate conjugates)\n- Catechin (and its glucuronide and sulfate conjugates)\n- Epicatechin (and its glucuronide and sulfat...",
+      "usage": {
+        "prompt_tokens": 777,
+        "completion_tokens": 130,
+        "total_tokens": 907
+      },
+      "model_used": "mistralai/mistral-small-3.1-24b-instruct:free",
+      "context_tokens": 128000,
+      "category": "Mistral"
+    }
+  },
+  "google/gemma-3-12b-it:free": {
+    "model_info": {
+      "model_name": "Google: Gemma 3 12B (free)",
+      "model_id": "google/gemma-3-12b-it:free",
+      "context_tokens": 96000,
+      "category": "Google"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 3.9176337718963623,
+      "status_code": 200,
+      "content_length": 522,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "glucuronide",
+        "sulfate",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 9,
+      "total_possible": 9,
+      "detection_rate": 1.0,
+      "response_preview": "Here's a list of the metabolites mentioned in the text, presented clearly:\n\n**Metabolites:**\n\n*   **Resveratrol**\n*   **Gallic acid**\n*   **Catechin**\n*   **Epicatechin**\n*   **Tartaric acid**\n*   **Malic acid**\n*   **Anthocyanins** (Note: This is a class of compounds, not a single metabolite)\n\n\n\n**...",
+      "usage": {
+        "prompt_tokens": 93,
+        "completion_tokens": 156,
+        "total_tokens": 249
+      },
+      "model_used": "google/gemma-3-12b-it:free",
+      "context_tokens": 96000,
+      "category": "Google"
+    }
+  },
+  "google/gemma-3-27b-it:free": {
+    "model_info": {
+      "model_name": "Google: Gemma 3 27B (free)",
+      "model_id": "google/gemma-3-27b-it:free",
+      "context_tokens": 96000,
+      "category": "Google"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 4.763597011566162,
+      "status_code": 200,
+      "content_length": 671,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "glucuronide",
+        "sulfate",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 9,
+      "total_possible": 9,
+      "detection_rate": 1.0,
+      "response_preview": "Here's a list of the metabolites and biomarkers extracted from the text, presented clearly:\n\n**Metabolites & Biomarkers:**\n\n*   **Resveratrol**\n*   **Gallic acid**\n*   **Catechin**\n*   **Epicatechin**\n*   **Tartaric acid**\n*   **Malic acid**\n*   **Anthocyanins** (Note: This is a class of compounds, ...",
+      "usage": {
+        "prompt_tokens": 85,
+        "completion_tokens": 0,
+        "total_tokens": 85
+      },
+      "model_used": "google/gemma-3-27b-it:free",
+      "context_tokens": 96000,
+      "category": "Google"
+    }
+  },
+  "nousresearch/deephermes-3-llama-3-8b-preview:free": {
+    "model_info": {
+      "model_name": "Nous: DeepHermes 3 Llama 3 8B Preview (free)",
+      "model_id": "nousresearch/deephermes-3-llama-3-8b-preview:free",
+      "context_tokens": 131072,
+      "category": "Nous Research"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 1.7527401447296143,
+      "status_code": 200,
+      "content_length": 124,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 7,
+      "total_possible": 9,
+      "detection_rate": 0.7777777777777778,
+      "response_preview": "Metabolites:\n1. Resveratrol\n2. Gallic acid\n3. Catechin\n4. Epicatechin\n5. Tartaric acid\n6. Malic acid\n7. Various anthocyanins",
+      "usage": {
+        "prompt_tokens": 107,
+        "completion_tokens": 50,
+        "total_tokens": 157,
+        "prompt_tokens_details": null
+      },
+      "model_used": "nousresearch/deephermes-3-llama-3-8b-preview:free",
+      "context_tokens": 131072,
+      "category": "Nous Research"
+    }
+  },
+  "deepseek/deepseek-r1-distill-qwen-14b:free": {
+    "model_info": {
+      "model_name": "DeepSeek: R1 Distill Qwen 14B (free)",
+      "model_id": "deepseek/deepseek-r1-distill-qwen-14b:free",
+      "context_tokens": 64000,
+      "category": "DeepSeek R1"
+    },
+    "test_result": {
+      "success": false,
+      "error": "HTTP 404: {\"error\":{\"message\":\"Provider returned error\",\"code\":404,\"metadata\":{\"raw\":\"{\\\"detail\\\":\\\"model not found: deepseek-ai/DeepSeek-R1-Distill-Qwen-14B\\\"}\",\"provider_name\":\"Chutes\"}},\"user_id\":\"user_2eESR",
+      "response_time": 0.7911679744720459,
+      "status_code": 404,
+      "response_text": "{\"error\":{\"message\":\"Provider returned error\",\"code\":404,\"metadata\":{\"raw\":\"{\\\"detail\\\":\\\"model not found: deepseek-ai/DeepSeek-R1-Distill-Qwen-14B\\\"}\",\"provider_name\":\"Chutes\"}},\"user_id\":\"user_2eESRD2ZwPbPvak4pDZ6PI7SPT5\"}",
+      "context_tokens": 64000,
+      "category": "DeepSeek R1"
+    }
+  },
+  "deepseek/deepseek-r1:free": {
+    "model_info": {
+      "model_name": "DeepSeek: R1 (free)",
+      "model_id": "deepseek/deepseek-r1:free",
+      "context_tokens": 163840,
+      "category": "DeepSeek R1"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 16.426384925842285,
+      "status_code": 200,
+      "content_length": 0,
+      "metabolites_found": [],
+      "metabolites_count": 0,
+      "total_possible": 9,
+      "detection_rate": 0.0,
+      "response_preview": "",
+      "usage": {
+        "prompt_tokens": 98,
+        "completion_tokens": 300,
+        "total_tokens": 398
+      },
+      "model_used": "deepseek/deepseek-r1:free",
+      "context_tokens": 163840,
+      "category": "DeepSeek R1"
+    }
+  },
+  "deepseek/deepseek-chat:free": {
+    "model_info": {
+      "model_name": "DeepSeek: DeepSeek V3 (free)",
+      "model_id": "deepseek/deepseek-chat:free",
+      "context_tokens": 163840,
+      "category": "DeepSeek"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 4.598257064819336,
+      "status_code": 200,
+      "content_length": 344,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "glucuronide",
+        "sulfate",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 9,
+      "total_possible": 9,
+      "detection_rate": 1.0,
+      "response_preview": "Here are the metabolites mentioned in the text, listed in a clear format:\n\n1. **Resveratrol**  \n2. **Gallic acid**  \n3. **Catechin**  \n4. **Epicatechin**  \n5. **Tartaric acid**  \n6. **Malic acid**  \n7. **Anthocyanins**  \n\nAdditionally, the text mentions their conjugated forms in urine:  \n- **Glucuro...",
+      "usage": {
+        "prompt_tokens": 97,
+        "completion_tokens": 104,
+        "total_tokens": 201,
+        "prompt_tokens_details": null
+      },
+      "model_used": "deepseek/deepseek-chat:free",
+      "context_tokens": 163840,
+      "category": "DeepSeek"
+    }
+  },
+  "google/gemini-2.0-flash-exp:free": {
+    "model_info": {
+      "model_name": "Google: Gemini 2.0 Flash Experimental (free)",
+      "model_id": "google/gemini-2.0-flash-exp:free",
+      "context_tokens": 1048576,
+      "category": "Google"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 1.7428817749023438,
+      "status_code": 200,
+      "content_length": 399,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "glucuronide",
+        "sulfate",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 9,
+      "total_possible": 9,
+      "detection_rate": 1.0,
+      "response_preview": "Here's a list of the metabolites mentioned in the text, formatted for clarity:\n\n*   **Resveratrol** (and its glucuronide and sulfate conjugates)\n*   **Gallic acid** (and its glucuronide and sulfate conjugates)\n*   **Catechin** (and its glucuronide and sulfate conjugates)\n*   **Epicatechin** (and its...",
+      "usage": {
+        "prompt_tokens": 90,
+        "completion_tokens": 120,
+        "total_tokens": 210
+      },
+      "model_used": "google/gemini-2.0-flash-exp:free",
+      "context_tokens": 1048576,
+      "category": "Google"
+    }
+  },
+  "meta-llama/llama-3.3-70b-instruct:free": {
+    "model_info": {
+      "model_name": "Meta: Llama 3.3 70B Instruct (free)",
+      "model_id": "meta-llama/llama-3.3-70b-instruct:free",
+      "context_tokens": 65536,
+      "category": "Meta"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 3.2062082290649414,
+      "status_code": 200,
+      "content_length": 672,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "glucuronide",
+        "sulfate",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 9,
+      "total_possible": 9,
+      "detection_rate": 1.0,
+      "response_preview": "Here are the metabolites and biomarkers mentioned in the text:\n\n1. **Resveratrol**\n2. **Gallic acid**\n3. **Catechin**\n4. **Epicatechin**\n5. **Glucuronide conjugates** (of polyphenolic compounds)\n6. **Sulfate conjugates** (of polyphenolic compounds)\n7. **Tartaric acid**\n8. **Malic acid**\n9. **Anthocy...",
+      "usage": {
+        "prompt_tokens": 431,
+        "completion_tokens": 206,
+        "total_tokens": 637
+      },
+      "model_used": "meta-llama/llama-3.3-70b-instruct:free",
+      "context_tokens": 65536,
+      "category": "Meta"
+    }
+  },
+  "meta-llama/llama-3.2-3b-instruct:free": {
+    "model_info": {
+      "model_name": "Meta: Llama 3.2 3B Instruct (free)",
+      "model_id": "meta-llama/llama-3.2-3b-instruct:free",
+      "context_tokens": 131072,
+      "category": "Meta"
+    },
+    "test_result": {
+      "success": false,
+      "error": "HTTP 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"meta-llama/llama-3.2-3b-instruct:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to acc",
+      "response_time": 0.6759800910949707,
+      "status_code": 429,
+      "response_text": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"meta-llama/llama-3.2-3b-instruct:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Venice\"}},\"user_id\":\"user_2eESRD2ZwPbPvak4pDZ6PI7SPT5\"}",
+      "context_tokens": 131072,
+      "category": "Meta"
+    }
+  },
+  "meta-llama/llama-3.2-11b-vision-instruct:free": {
+    "model_info": {
+      "model_name": "Meta: Llama 3.2 11B Vision Instruct (free)",
+      "model_id": "meta-llama/llama-3.2-11b-vision-instruct:free",
+      "context_tokens": 131072,
+      "category": "Meta"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 1.7979097366333008,
+      "status_code": 200,
+      "content_length": 387,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "glucuronide",
+        "sulfate",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 9,
+      "total_possible": 9,
+      "detection_rate": 1.0,
+      "response_preview": "Here are the metabolites mentioned in the text:\n\n**Metabolites:**\n\n1. Glucuronide conjugates\n2. Sulfate conjugates\n3. Tartaric acid\n4. Malic acid\n\nNote that the polyphenolic compounds mentioned in the text (resveratrol, gallic acid, catechin, epicatechin, and anthocyanins) are not metabolites themse...",
+      "usage": {
+        "prompt_tokens": 107,
+        "completion_tokens": 102,
+        "total_tokens": 209
+      },
+      "model_used": "meta-llama/llama-3.2-11b-vision-instruct:free",
+      "context_tokens": 131072,
+      "category": "Meta"
+    }
+  },
+  "meta-llama/llama-3.1-405b-instruct:free": {
+    "model_info": {
+      "model_name": "Meta: Llama 3.1 405B Instruct (free)",
+      "model_id": "meta-llama/llama-3.1-405b-instruct:free",
+      "context_tokens": 65536,
+      "category": "Meta"
+    },
+    "test_result": {
+      "success": false,
+      "error": "HTTP 429: {\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"meta-llama/llama-3.1-405b-instruct:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to a",
+      "response_time": 0.6641879081726074,
+      "status_code": 429,
+      "response_text": "{\"error\":{\"message\":\"Provider returned error\",\"code\":429,\"metadata\":{\"raw\":\"meta-llama/llama-3.1-405b-instruct:free is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations\",\"provider_name\":\"Venice\"}},\"user_id\":\"user_2eESRD2ZwPbPvak4pDZ6PI7SPT5\"}",
+      "context_tokens": 65536,
+      "category": "Meta"
+    }
+  },
+  "mistralai/mistral-nemo:free": {
+    "model_info": {
+      "model_name": "Mistral: Mistral Nemo (free)",
+      "model_id": "mistralai/mistral-nemo:free",
+      "context_tokens": 131072,
+      "category": "Mistral"
+    },
+    "test_result": {
+      "success": true,
+      "response_time": 2.8612401485443115,
+      "status_code": 200,
+      "content_length": 320,
+      "metabolites_found": [
+        "resveratrol",
+        "gallic acid",
+        "catechin",
+        "epicatechin",
+        "glucuronide",
+        "sulfate",
+        "tartaric acid",
+        "malic acid",
+        "anthocyanins"
+      ],
+      "metabolites_count": 9,
+      "total_possible": 9,
+      "detection_rate": 1.0,
+      "response_preview": "Here are the metabolites mentioned in the text, listed in a clear format:\n\n1. **Polyphenolic compounds (as glucuronide and sulfate conjugates):**\n   - Resveratrol\n   - Gallic acid\n   - Catechin\n   - Epicatechin\n\n2. **Organic acids:**\n   - Tartaric acid\n   - Malic acid\n\n3. **Anthocyanins** (a group o...",
+      "usage": {
+        "prompt_tokens": 96,
+        "completion_tokens": 93,
+        "total_tokens": 189
+      },
+      "model_used": "mistralai/mistral-nemo:free",
+      "context_tokens": 131072,
+      "category": "Mistral"
+    }
+  }
+}
