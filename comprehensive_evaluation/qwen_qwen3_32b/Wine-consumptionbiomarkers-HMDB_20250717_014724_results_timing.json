@@ -1,0 +1,376 @@
+{
+  "total_processing_time": 237.13211703300476,
+  "pdf_extraction_time": 0.4753563404083252,
+  "metabolite_extraction_time": 236.62146997451782,
+  "database_matching_time": 0.033519744873046875,
+  "chunk_timings": [
+    {
+      "chunk_id": 1,
+      "processing_time": 0.4172341823577881,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 2,
+      "processing_time": 0.6595170497894287,
+      "metabolites_found": 1,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 3,
+      "processing_time": 0.6129870414733887,
+      "metabolites_found": 9,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 4,
+      "processing_time": 0.5613372325897217,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 5,
+      "processing_time": 0.69429612159729,
+      "metabolites_found": 2,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 6,
+      "processing_time": 0.8171789646148682,
+      "metabolites_found": 6,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 7,
+      "processing_time": 0.5579330921173096,
+      "metabolites_found": 2,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 8,
+      "processing_time": 0.6509077548980713,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 9,
+      "processing_time": 0.369549036026001,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 10,
+      "processing_time": 0.6930739879608154,
+      "metabolites_found": 1,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 11,
+      "processing_time": 0.7794771194458008,
+      "metabolites_found": 3,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 12,
+      "processing_time": 0.7386729717254639,
+      "metabolites_found": 3,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 13,
+      "processing_time": 0.26062798500061035,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 14,
+      "processing_time": 1.1469979286193848,
+      "metabolites_found": 6,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 15,
+      "processing_time": 0.36568617820739746,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 16,
+      "processing_time": 0.2767496109008789,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 17,
+      "processing_time": 0.6986360549926758,
+      "metabolites_found": 4,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 18,
+      "processing_time": 0.692878246307373,
+      "metabolites_found": 7,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 19,
+      "processing_time": 23.437987089157104,
+      "metabolites_found": 15,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 20,
+      "processing_time": 1.045428991317749,
+      "metabolites_found": 18,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 21,
+      "processing_time": 1.1944169998168945,
+      "metabolites_found": 10,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 22,
+      "processing_time": 0.6004180908203125,
+      "metabolites_found": 2,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 23,
+      "processing_time": 2.8667221069335938,
+      "metabolites_found": 5,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 24,
+      "processing_time": 0.8266260623931885,
+      "metabolites_found": 4,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 25,
+      "processing_time": 1.1047718524932861,
+      "metabolites_found": 6,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 26,
+      "processing_time": 0.6401500701904297,
+      "metabolites_found": 6,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 27,
+      "processing_time": 0.8439030647277832,
+      "metabolites_found": 12,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 28,
+      "processing_time": 0.8106098175048828,
+      "metabolites_found": 12,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 29,
+      "processing_time": 1.226870059967041,
+      "metabolites_found": 8,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 30,
+      "processing_time": 1.140199899673462,
+      "metabolites_found": 9,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 31,
+      "processing_time": 1.0649027824401855,
+      "metabolites_found": 9,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 32,
+      "processing_time": 0.5631847381591797,
+      "metabolites_found": 3,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 33,
+      "processing_time": 0.6982457637786865,
+      "metabolites_found": 2,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 34,
+      "processing_time": 24.572665214538574,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 35,
+      "processing_time": 1.8618781566619873,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 36,
+      "processing_time": 1.924206018447876,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 37,
+      "processing_time": 2.178114891052246,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 38,
+      "processing_time": 5.856940984725952,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 39,
+      "processing_time": 18.997363805770874,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 40,
+      "processing_time": 20.56154227256775,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 41,
+      "processing_time": 19.790122985839844,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 42,
+      "processing_time": 24.720402002334595,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 43,
+      "processing_time": 21.975700855255127,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 44,
+      "processing_time": 12.408607006072998,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 45,
+      "processing_time": 17.69438409805298,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    },
+    {
+      "chunk_id": 46,
+      "processing_time": 14.946009635925293,
+      "metabolites_found": 0,
+      "success": true,
+      "metabolites": null,
+      "raw_response": null
+    }
+  ]
+}

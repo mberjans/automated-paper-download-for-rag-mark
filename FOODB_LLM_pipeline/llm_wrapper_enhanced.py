@@ -159,6 +159,7 @@ class LLMWrapper:
 
         # Ranked by performance (speed and accuracy) from testing
         groq_models = [
+            "llama-3.3-70b-versatile",              # Latest Llama 3.3 model
             "moonshotai/kimi-k2-instruct",           # Fastest (0.57s) with excellent extraction (13 compounds)
             "meta-llama/llama-4-scout-17b-16e-instruct",  # Fast (0.88s) with excellent extraction (13 compounds)
             "meta-llama/llama-4-maverick-17b-128e-instruct",  # Good (1.37s) with excellent extraction (13 compounds)

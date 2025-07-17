@@ -1,0 +1,144 @@
+2025-07-17 01:12:56,525 - INFO - 📋 Evaluating 6 models
+2025-07-17 01:12:56,525 - INFO - 📄 Test document: Wine-consumptionbiomarkers-HMDB.pdf
+2025-07-17 01:12:56,525 - INFO - 📊 Ground truth: urinary_wine_biomarkers.csv
+2025-07-17 01:12:56,525 - INFO - Running pipeline with model: llama-3.3-70b-versatile
+2025-07-17 01:12:56,565 - ERROR - Pipeline failed for llama-3.3-70b-versatile: usage: foodb_pipeline_cli.py [-h] [--output-dir OUTPUT_DIR]
+                             [--output-prefix OUTPUT_PREFIX] [--save-chunks]
+                             [--save-timing] [--save-raw-responses]
+                             [--timestamp-files] [--no-timestamp]
+                             [--timestamp-format TIMESTAMP_FORMAT]
+                             [--custom-timestamp CUSTOM_TIMESTAMP]
+                             [--directory-mode] [--consolidated-output]
+                             [--individual-output]
+                             [--individual-subdir INDIVIDUAL_SUBDIR]
+                             [--consolidated-subdir CONSOLIDATED_SUBDIR]
+                             [--csv-database CSV_DATABASE]
+                             [--csv-column CSV_COLUMN]
+                             [--chunk-size CHUNK_SIZE]
+                             [--chunk-overlap CHUNK_OVERLAP]
+                             [--min-chunk-size MIN_CHUNK_SIZE]
+                             [--max-tokens MAX_TOKENS] [--document-only]
+                             [--verify-compounds]
+                             [--custom-prompt CUSTOM_PROMPT]
+                             [--max-attempts MAX_ATTEMPTS]
+                             [--base-delay BASE_DELAY] [--max-delay MAX_DELAY]
+                             [--exponential-base EXPONENTIAL_BASE]
+                             [--disable-jitter]
+                             [--providers {cerebras,groq,openrouter} [{cerebras,groq,openrouter} ...]]
+                             [--primary-provider {cerebras,groq,openrouter}]
+                             [--groq-model {moonshotai/kimi-k2-instruct,meta-llama/llama-4-scout-17b-16e-instruct,meta-llama/llama-4-maverick-17b-128e-instruct,llama-3.1-8b-instant,qwen/qwen3-32b}]
+                             [--batch-mode]
+                             [--parallel-chunks PARALLEL_CHUNKS]
+                             [--skip-existing]
+                             [--resume-from-chunk RESUME_FROM_CHUNK]
+                             [--calculate-metrics] [--generate-report]
+                             [--export-format {json,csv,xlsx,all}] [--debug]
+                             [--verbose] [--quiet] [--log-file LOG_FILE]
+                             [--progress-bar] [--config CONFIG]
+                             [--save-config SAVE_CONFIG]
+                             input_files [input_files ...]
+foodb_pipeline_cli.py: error: argument --groq-model: invalid choice: 'llama-3.3-70b-versatile' (choose from moonshotai/kimi-k2-instruct, meta-llama/llama-4-scout-17b-16e-instruct, meta-llama/llama-4-maverick-17b-128e-instruct, llama-3.1-8b-instant, qwen/qwen3-32b)
+
+2025-07-17 01:12:56,566 - INFO - Running pipeline with model: moonshotai/kimi-k2-instruct
+2025-07-17 01:15:36,939 - INFO - Analysis complete for moonshotai/kimi-k2-instruct: F1=0.4052, Recall=0.5254
+2025-07-17 01:15:36,939 - INFO - Running pipeline with model: llama-4-scout-17b-16e
+2025-07-17 01:15:37,001 - ERROR - Pipeline failed for llama-4-scout-17b-16e: usage: foodb_pipeline_cli.py [-h] [--output-dir OUTPUT_DIR]
+                             [--output-prefix OUTPUT_PREFIX] [--save-chunks]
+                             [--save-timing] [--save-raw-responses]
+                             [--timestamp-files] [--no-timestamp]
+                             [--timestamp-format TIMESTAMP_FORMAT]
+                             [--custom-timestamp CUSTOM_TIMESTAMP]
+                             [--directory-mode] [--consolidated-output]
+                             [--individual-output]
+                             [--individual-subdir INDIVIDUAL_SUBDIR]
+                             [--consolidated-subdir CONSOLIDATED_SUBDIR]
+                             [--csv-database CSV_DATABASE]
+                             [--csv-column CSV_COLUMN]
+                             [--chunk-size CHUNK_SIZE]
+                             [--chunk-overlap CHUNK_OVERLAP]
+                             [--min-chunk-size MIN_CHUNK_SIZE]
+                             [--max-tokens MAX_TOKENS] [--document-only]
+                             [--verify-compounds]
+                             [--custom-prompt CUSTOM_PROMPT]
+                             [--max-attempts MAX_ATTEMPTS]
+                             [--base-delay BASE_DELAY] [--max-delay MAX_DELAY]
+                             [--exponential-base EXPONENTIAL_BASE]
+                             [--disable-jitter]
+                             [--providers {cerebras,groq,openrouter} [{cerebras,groq,openrouter} ...]]
+                             [--primary-provider {cerebras,groq,openrouter}]
+                             [--groq-model {moonshotai/kimi-k2-instruct,meta-llama/llama-4-scout-17b-16e-instruct,meta-llama/llama-4-maverick-17b-128e-instruct,llama-3.1-8b-instant,qwen/qwen3-32b}]
+                             [--batch-mode]
+                             [--parallel-chunks PARALLEL_CHUNKS]
+                             [--skip-existing]
+                             [--resume-from-chunk RESUME_FROM_CHUNK]
+                             [--calculate-metrics] [--generate-report]
+                             [--export-format {json,csv,xlsx,all}] [--debug]
+                             [--verbose] [--quiet] [--log-file LOG_FILE]
+                             [--progress-bar] [--config CONFIG]
+                             [--save-config SAVE_CONFIG]
+                             input_files [input_files ...]
+foodb_pipeline_cli.py: error: argument --groq-model: invalid choice: 'llama-4-scout-17b-16e' (choose from moonshotai/kimi-k2-instruct, meta-llama/llama-4-scout-17b-16e-instruct, meta-llama/llama-4-maverick-17b-128e-instruct, llama-3.1-8b-instant, qwen/qwen3-32b)
+
+2025-07-17 01:15:37,001 - INFO - Running pipeline with model: llama-4-maverick-17b-128e
+2025-07-17 01:15:37,039 - ERROR - Pipeline failed for llama-4-maverick-17b-128e: usage: foodb_pipeline_cli.py [-h] [--output-dir OUTPUT_DIR]
+                             [--output-prefix OUTPUT_PREFIX] [--save-chunks]
+                             [--save-timing] [--save-raw-responses]
+                             [--timestamp-files] [--no-timestamp]
+                             [--timestamp-format TIMESTAMP_FORMAT]
+                             [--custom-timestamp CUSTOM_TIMESTAMP]
+                             [--directory-mode] [--consolidated-output]
+                             [--individual-output]
+                             [--individual-subdir INDIVIDUAL_SUBDIR]
+                             [--consolidated-subdir CONSOLIDATED_SUBDIR]
+                             [--csv-database CSV_DATABASE]
+                             [--csv-column CSV_COLUMN]
+                             [--chunk-size CHUNK_SIZE]
+                             [--chunk-overlap CHUNK_OVERLAP]
+                             [--min-chunk-size MIN_CHUNK_SIZE]
+                             [--max-tokens MAX_TOKENS] [--document-only]
+                             [--verify-compounds]
+                             [--custom-prompt CUSTOM_PROMPT]
+                             [--max-attempts MAX_ATTEMPTS]
+                             [--base-delay BASE_DELAY] [--max-delay MAX_DELAY]
+                             [--exponential-base EXPONENTIAL_BASE]
+                             [--disable-jitter]
+                             [--providers {cerebras,groq,openrouter} [{cerebras,groq,openrouter} ...]]
+                             [--primary-provider {cerebras,groq,openrouter}]
+                             [--groq-model {moonshotai/kimi-k2-instruct,meta-llama/llama-4-scout-17b-16e-instruct,meta-llama/llama-4-maverick-17b-128e-instruct,llama-3.1-8b-instant,qwen/qwen3-32b}]
+                             [--batch-mode]
+                             [--parallel-chunks PARALLEL_CHUNKS]
+                             [--skip-existing]
+                             [--resume-from-chunk RESUME_FROM_CHUNK]
+                             [--calculate-metrics] [--generate-report]
+                             [--export-format {json,csv,xlsx,all}] [--debug]
+                             [--verbose] [--quiet] [--log-file LOG_FILE]
+                             [--progress-bar] [--config CONFIG]
+                             [--save-config SAVE_CONFIG]
+                             input_files [input_files ...]
+foodb_pipeline_cli.py: error: argument --groq-model: invalid choice: 'llama-4-maverick-17b-128e' (choose from moonshotai/kimi-k2-instruct, meta-llama/llama-4-scout-17b-16e-instruct, meta-llama/llama-4-maverick-17b-128e-instruct, llama-3.1-8b-instant, qwen/qwen3-32b)
+
+2025-07-17 01:15:37,040 - INFO - Running pipeline with model: llama-3.1-8b-instant
+2025-07-17 01:18:37,751 - INFO - Analysis complete for llama-3.1-8b-instant: F1=0.5000, Recall=0.7966
+2025-07-17 01:18:37,753 - INFO - Running pipeline with model: qwen/qwen3-32b
+2025-07-17 01:22:41,161 - INFO - Analysis complete for qwen/qwen3-32b: F1=0.5056, Recall=0.7627
+2025-07-17 01:22:41,162 - INFO - 
+📊 COMPREHENSIVE MODEL EVALUATION REPORT
+2025-07-17 01:22:41,164 - INFO - 💾 Detailed evaluation results saved to: comprehensive_model_evaluation_20250717_012241.json
+2025-07-17 01:26:51,709 - INFO - 📋 Evaluating 6 models
+2025-07-17 01:26:51,709 - INFO - 📄 Test document: Wine-consumptionbiomarkers-HMDB.pdf
+2025-07-17 01:26:51,709 - INFO - 📊 Ground truth: urinary_wine_biomarkers.csv
+2025-07-17 01:26:51,709 - INFO - Running pipeline with model: llama-3.3-70b-versatile
+2025-07-17 01:29:04,508 - INFO - Analysis complete for llama-3.3-70b-versatile: F1=0.4706, Recall=0.7458
+2025-07-17 01:29:04,510 - INFO - Running pipeline with model: moonshotai/kimi-k2-instruct
+2025-07-17 01:32:00,153 - INFO - Analysis complete for moonshotai/kimi-k2-instruct: F1=0.4052, Recall=0.5254
+2025-07-17 01:32:00,153 - INFO - Running pipeline with model: meta-llama/llama-4-scout-17b-16e-instruct
+2025-07-17 01:34:04,519 - INFO - Analysis complete for meta-llama/llama-4-scout-17b-16e-instruct: F1=0.5081, Recall=0.7966
+2025-07-17 01:34:04,520 - INFO - Running pipeline with model: meta-llama/llama-4-maverick-17b-128e-instruct
+2025-07-17 01:40:37,918 - INFO - Analysis complete for meta-llama/llama-4-maverick-17b-128e-instruct: F1=0.5104, Recall=0.8305
+2025-07-17 01:40:37,920 - INFO - Running pipeline with model: llama-3.1-8b-instant
+2025-07-17 01:43:27,380 - INFO - Analysis complete for llama-3.1-8b-instant: F1=0.5000, Recall=0.7966
+2025-07-17 01:43:27,380 - INFO - Running pipeline with model: qwen/qwen3-32b
+2025-07-17 01:47:24,985 - INFO - Analysis complete for qwen/qwen3-32b: F1=0.5056, Recall=0.7627
+2025-07-17 01:47:24,985 - INFO - 
+📊 COMPREHENSIVE MODEL EVALUATION REPORT
+2025-07-17 01:47:24,987 - INFO - 💾 Detailed evaluation results saved to: comprehensive_model_evaluation_20250717_014724.json
