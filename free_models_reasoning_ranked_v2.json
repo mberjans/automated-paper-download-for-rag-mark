@@ -1,0 +1,366 @@
+[
+  {
+    "rank": 1,
+    "model_name": "Llama 4 Maverick",
+    "model_id": "meta-llama/llama-4-maverick-17b-128e-instruct",
+    "provider": "Groq",
+    "reasoning_score": 9.9,
+    "average_response_time": 1.45,
+    "success_rate": 100.0,
+    "context_tokens": 131072,
+    "api_url": "https://api.groq.com/openai/v1/chat/completions",
+    "api_key_env": "GROQ_API_KEY",
+    "cost": "FREE",
+    "reliability": "Perfect",
+    "strengths": ["Highest F1 score (0.5104)", "Best biomarker detection (83.1% recall)", "Most comprehensive extraction", "Perfect reasoning", "Excellent for research"],
+    "test_results": {
+      "logical_deduction": 10,
+      "mathematical_reasoning": 10,
+      "pattern_recognition": 10,
+      "causal_reasoning": 9
+    },
+    "foodb_performance": {
+      "f1_score": 0.5104,
+      "precision": 0.3684,
+      "recall": 0.8305,
+      "processing_time": 393.4,
+      "metabolites_extracted": 154,
+      "biomarkers_detected": 49
+    }
+  },
+  {
+    "rank": 2,
+    "model_name": "Llama 4 Scout",
+    "model_id": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "provider": "Groq",
+    "reasoning_score": 9.8,
+    "average_response_time": 1.23,
+    "success_rate": 100.0,
+    "context_tokens": 131072,
+    "api_url": "https://api.groq.com/openai/v1/chat/completions",
+    "api_key_env": "GROQ_API_KEY",
+    "cost": "FREE",
+    "reliability": "Perfect",
+    "strengths": ["Best speed-accuracy balance", "Fastest processing (124.4s)", "Excellent F1 score (0.5081)", "High efficiency", "Recommended for production"],
+    "test_results": {
+      "logical_deduction": 9,
+      "mathematical_reasoning": 10,
+      "pattern_recognition": 10,
+      "causal_reasoning": 10
+    },
+    "foodb_performance": {
+      "f1_score": 0.5081,
+      "precision": 0.3730,
+      "recall": 0.7966,
+      "processing_time": 124.4,
+      "metabolites_extracted": 142,
+      "biomarkers_detected": 47
+    }
+  },
+  {
+    "rank": 3,
+    "model_name": "Llama 4 Scout",
+    "model_id": "llama-4-scout-17b-16e-instruct",
+    "provider": "Cerebras",
+    "reasoning_score": 9.8,
+    "average_response_time": 0.59,
+    "success_rate": 100.0,
+    "context_tokens": 131072,
+    "api_url": "https://api.cerebras.ai/v1/chat/completions",
+    "api_key_env": "CEREBRAS_API_KEY",
+    "cost": "FREE",
+    "reliability": "Perfect",
+    "strengths": ["Fastest reasoning", "Highest score", "Perfect math (10/10)", "Excellent logic (9/10)", "Perfect patterns (10/10)", "Perfect causal reasoning (10/10)"],
+    "test_results": {
+      "logical_deduction": 9,
+      "mathematical_reasoning": 10,
+      "pattern_recognition": 10,
+      "causal_reasoning": 10
+    }
+  },
+  {
+    "rank": 4,
+    "model_name": "Qwen 3 32B",
+    "model_id": "qwen/qwen3-32b",
+    "provider": "Groq",
+    "reasoning_score": 9.6,
+    "average_response_time": 2.15,
+    "success_rate": 100.0,
+    "context_tokens": 131072,
+    "api_url": "https://api.groq.com/openai/v1/chat/completions",
+    "api_key_env": "GROQ_API_KEY",
+    "cost": "FREE",
+    "reliability": "Perfect",
+    "strengths": ["Excellent F1 score (0.5056)", "Good recall (76.3%)", "Consistent performance", "Alternative architecture", "Reliable results"],
+    "test_results": {
+      "logical_deduction": 9,
+      "mathematical_reasoning": 9,
+      "pattern_recognition": 10,
+      "causal_reasoning": 10
+    },
+    "foodb_performance": {
+      "f1_score": 0.5056,
+      "precision": 0.3782,
+      "recall": 0.7627,
+      "processing_time": 237.6,
+      "metabolites_extracted": 136,
+      "biomarkers_detected": 45
+    }
+  },
+  {
+    "rank": 5,
+    "model_name": "Llama 3.3 70B Versatile",
+    "model_id": "llama-3.3-70b-versatile",
+    "provider": "Groq",
+    "reasoning_score": 9.5,
+    "average_response_time": 1.34,
+    "success_rate": 100.0,
+    "delay_in_seconds": 10,
+    "context_tokens": 131072,
+    "api_url": "https://api.groq.com/openai/v1/chat/completions",
+    "api_key_env": "GROQ_API_KEY",
+    "cost": "FREE",
+    "reliability": "Perfect",
+    "strengths": ["Large 70B model", "Good speed for size", "Solid F1 score (0.4706)", "Good recall (74.6%)", "Versatile performance"],
+    "test_results": {
+      "logical_deduction": 9,
+      "mathematical_reasoning": 10,
+      "pattern_recognition": 10,
+      "causal_reasoning": 9
+    },
+    "foodb_performance": {
+      "f1_score": 0.4706,
+      "precision": 0.3438,
+      "recall": 0.7458,
+      "processing_time": 132.8,
+      "metabolites_extracted": 151,
+      "biomarkers_detected": 44
+    }
+  },
+  {
+    "rank": 6,
+    "model_name": "Llama 3.3 70B",
+    "model_id": "llama-3.3-70b",
+    "provider": "Cerebras",
+    "reasoning_score": 9.5,
+    "average_response_time": 0.62,
+    "success_rate": 100.0,
+    "context_tokens": 131072,
+    "api_url": "https://api.cerebras.ai/v1/chat/completions",
+    "api_key_env": "CEREBRAS_API_KEY",
+    "cost": "FREE",
+    "reliability": "Perfect",
+    "strengths": ["Ultra-fast", "Perfect math (10/10)", "Excellent logic (9/10)", "Perfect patterns (10/10)", "Strong causal reasoning (9/10)"],
+    "test_results": {
+      "logical_deduction": 9,
+      "mathematical_reasoning": 10,
+      "pattern_recognition": 10,
+      "causal_reasoning": 9
+    }
+  },
+  {
+    "rank": 7,
+    "model_name": "Llama 3.1 8B Instant",
+    "model_id": "llama-3.1-8b-instant",
+    "provider": "Groq",
+    "reasoning_score": 9.0,
+    "average_response_time": 0.95,
+    "success_rate": 100.0,
+    "context_tokens": 131072,
+    "api_url": "https://api.groq.com/openai/v1/chat/completions",
+    "api_key_env": "GROQ_API_KEY",
+    "cost": "FREE",
+    "reliability": "Perfect",
+    "strengths": ["Proven baseline", "Solid F1 score (0.5000)", "Good recall (79.7%)", "Reliable processing", "Well-tested stability"],
+    "test_results": {
+      "logical_deduction": 9,
+      "mathematical_reasoning": 8,
+      "pattern_recognition": 9,
+      "causal_reasoning": 10
+    },
+    "foodb_performance": {
+      "f1_score": 0.5000,
+      "precision": 0.3643,
+      "recall": 0.7966,
+      "processing_time": 169.5,
+      "metabolites_extracted": 143,
+      "biomarkers_detected": 47
+    }
+  },
+  {
+    "rank": 8,
+    "model_name": "Google: Gemma 3 27B (free)",
+    "model_id": "google/gemma-3-27b-it:free",
+    "provider": "OpenRouter",
+    "reasoning_score": 9.5,
+    "average_response_time": 7.18,
+    "success_rate": 100.0,
+    "context_tokens": 96000,
+    "api_url": "https://openrouter.ai/api/v1/chat/completions",
+    "api_key_env": "OPENROUTER_API_KEY",
+    "cost": "FREE",
+    "reliability": "Reliable",
+    "strengths": ["Perfect logic (10/10)", "Good math (8/10)", "Perfect patterns (10/10)", "Perfect causal reasoning (10/10)", "Math specialist"],
+    "test_results": {
+      "logical_deduction": 10,
+      "mathematical_reasoning": 8,
+      "pattern_recognition": 10,
+      "causal_reasoning": 10
+    }
+  },
+  {
+    "rank": 9,
+    "model_name": "Llama 3.1 8B",
+    "model_id": "llama3.1-8b",
+    "provider": "Cerebras",
+    "reasoning_score": 8.5,
+    "average_response_time": 0.56,
+    "success_rate": 100.0,
+    "context_tokens": 8192,
+    "api_url": "https://api.cerebras.ai/v1/chat/completions",
+    "api_key_env": "CEREBRAS_API_KEY",
+    "cost": "FREE",
+    "reliability": "Perfect",
+    "strengths": ["Fastest overall", "Perfect logic (10/10)", "Perfect patterns (10/10)", "Perfect causal reasoning (10/10)", "Budget option"],
+    "test_results": {
+      "logical_deduction": 10,
+      "mathematical_reasoning": 4,
+      "pattern_recognition": 10,
+      "causal_reasoning": 10
+    }
+  },
+  {
+    "rank": 10,
+    "model_name": "Qwen 3 32B",
+    "model_id": "qwen-3-32b",
+    "provider": "Cerebras",
+    "reasoning_score": 8.2,
+    "average_response_time": 0.57,
+    "success_rate": 100.0,
+    "context_tokens": 131072,
+    "api_url": "https://api.cerebras.ai/v1/chat/completions",
+    "api_key_env": "CEREBRAS_API_KEY",
+    "cost": "FREE",
+    "reliability": "Perfect",
+    "strengths": ["Very fast", "Excellent logic (9/10)", "Strong patterns (9/10)", "Strong causal reasoning (9/10)"],
+    "test_results": {
+      "logical_deduction": 9,
+      "mathematical_reasoning": 6,
+      "pattern_recognition": 9,
+      "causal_reasoning": 9
+    }
+  },
+  {
+    "rank": 11,
+    "model_name": "Moonshot AI: Kimi K2 Instruct",
+    "model_id": "moonshotai/kimi-k2-instruct",
+    "provider": "Groq",
+    "reasoning_score": 8.0,
+    "average_response_time": 1.75,
+    "success_rate": 100.0,
+    "context_tokens": 131072,
+    "api_url": "https://api.groq.com/openai/v1/chat/completions",
+    "api_key_env": "GROQ_API_KEY",
+    "cost": "FREE",
+    "reliability": "Perfect",
+    "strengths": ["Unique architecture", "Specialized performance", "Good for specific use cases", "Alternative option"],
+    "test_results": {
+      "logical_deduction": 8,
+      "mathematical_reasoning": 7,
+      "pattern_recognition": 8,
+      "causal_reasoning": 9
+    },
+    "foodb_performance": {
+      "f1_score": 0.4053,
+      "precision": 0.3298,
+      "recall": 0.5254,
+      "processing_time": 175.6,
+      "metabolites_extracted": 104,
+      "biomarkers_detected": 31
+    }
+  },
+  {
+    "rank": 12,
+    "model_name": "TNG: DeepSeek R1T Chimera (free)",
+    "model_id": "tngtech/deepseek-r1t-chimera:free",
+    "provider": "OpenRouter",
+    "reasoning_score": 8.2,
+    "average_response_time": 13.94,
+    "success_rate": 100.0,
+    "context_tokens": 163840,
+    "api_url": "https://openrouter.ai/api/v1/chat/completions",
+    "api_key_env": "OPENROUTER_API_KEY",
+    "cost": "FREE",
+    "reliability": "Reliable",
+    "strengths": ["Large context", "Excellent logic (9/10)", "Strong patterns (9/10)", "Strong causal reasoning (9/10)", "R1 reasoning style"],
+    "test_results": {
+      "logical_deduction": 9,
+      "mathematical_reasoning": 6,
+      "pattern_recognition": 9,
+      "causal_reasoning": 9
+    }
+  },
+  {
+    "rank": 13,
+    "model_name": "DeepSeek: DeepSeek V3 (free)",
+    "model_id": "deepseek/deepseek-chat:free",
+    "provider": "OpenRouter",
+    "reasoning_score": 7.8,
+    "average_response_time": 14.66,
+    "success_rate": 100.0,
+    "context_tokens": 163840,
+    "api_url": "https://openrouter.ai/api/v1/chat/completions",
+    "api_key_env": "OPENROUTER_API_KEY",
+    "cost": "FREE",
+    "reliability": "Reliable",
+    "strengths": ["Large context", "Excellent logic (9/10)", "Strong patterns (9/10)", "Strong causal reasoning (9/10)"],
+    "test_results": {
+      "logical_deduction": 9,
+      "mathematical_reasoning": 4,
+      "pattern_recognition": 9,
+      "causal_reasoning": 9
+    }
+  },
+  {
+    "rank": 14,
+    "model_name": "DeepSeek: DeepSeek V3 0324 (free)",
+    "model_id": "deepseek/deepseek-chat-v3-0324:free",
+    "provider": "OpenRouter",
+    "reasoning_score": 7.5,
+    "average_response_time": 12.38,
+    "success_rate": 100.0,
+    "context_tokens": 163840,
+    "api_url": "https://openrouter.ai/api/v1/chat/completions",
+    "api_key_env": "OPENROUTER_API_KEY",
+    "cost": "FREE",
+    "reliability": "Reliable",
+    "strengths": ["Large context", "Good logic (7/10)", "Strong patterns (9/10)", "Perfect causal reasoning (10/10)"],
+    "test_results": {
+      "logical_deduction": 7,
+      "mathematical_reasoning": 4,
+      "pattern_recognition": 9,
+      "causal_reasoning": 10
+    }
+  },
+  {
+    "rank": 15,
+    "model_name": "NVIDIA: Llama 3.3 Nemotron Super 49B v1 (free)",
+    "model_id": "nvidia/llama-3.3-nemotron-super-49b-v1:free",
+    "provider": "OpenRouter",
+    "reasoning_score": 7.2,
+    "average_response_time": 7.77,
+    "success_rate": 100.0,
+    "context_tokens": 131072,
+    "api_url": "https://openrouter.ai/api/v1/chat/completions",
+    "api_key_env": "OPENROUTER_API_KEY",
+    "cost": "FREE",
+    "reliability": "Reliable",
+    "strengths": ["Excellent logic (9/10)", "Strong patterns (9/10)", "Good causal reasoning (7/10)", "NVIDIA optimized"],
+    "test_results": {
+      "logical_deduction": 9,
+      "mathematical_reasoning": 4,
+      "pattern_recognition": 9,
+      "causal_reasoning": 7
+    }
+  }
+]
