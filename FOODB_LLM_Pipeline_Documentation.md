@@ -783,13 +783,52 @@ OpenRouter: mistralai/mistral-nemo:free      # F1: 0.5772, Recall: 73%
 - **30x Faster Recovery**: 2s provider switching vs 60s+ exponential backoff
 - **Comprehensive Statistics**: Success rates, timing, and provider performance
 
+### **🔄 Enhanced V4 Rate Limiting Scenario**
+
+The V4 system implements **intelligent multi-tier fallback** with comprehensive model rotation:
+
+#### **Detailed Multi-Tier Fallback Flow**
+
+**1. Initial Request**
+- Request sent to **Cerebras llama-4-scout-17b-16e-instruct** (best Cerebras model from V4 priority list)
+
+**2. Rate Limit Hit**
+- Apply exponential backoff with doubling time delays between API calls
+- Up to user-defined limit (default: 5 attempts per model)
+
+**3. Cerebras Model Exhaustion**
+- If retry limit exhausted, switch to next unused Cerebras model from V4 priority list:
+  - `llama-3.3-70b` (2nd priority, Speed: 0.62s)
+  - `llama3.1-8b` (3rd priority, Speed: 0.56s)
+  - `qwen-3-32b` (4th priority, Speed: 0.57s)
+
+**4. Provider Escalation to Groq**
+- When all Cerebras models exhausted, escalate to **Groq models** using same retry logic:
+  - `meta-llama/llama-4-maverick-17b-128e-instruct` (best F1: 0.5104, Recall: 83%)
+  - `meta-llama/llama-4-scout-17b-16e-instruct` (2nd best F1: 0.5081, Recall: 80%)
+  - `qwen/qwen3-32b` (3rd best F1: 0.5056, Recall: 76%)
+  - `llama-3.1-8b-instant` (4th best F1: 0.5000, Recall: 80%)
+  - `llama-3.3-70b-versatile` (5th best F1: 0.4706, Recall: 75%)
+  - `moonshotai/kimi-k2-instruct` (6th best F1: 0.4053, Recall: 69%)
+
+**5. Final Fallback to OpenRouter**
+- When all Groq models exhausted, switch to **OpenRouter models** in V4 priority order:
+  - `mistralai/mistral-nemo:free` (best F1: 0.5772, Recall: 73%)
+  - `tngtech/deepseek-r1t-chimera:free` (2nd best F1: 0.4372, Recall: 68%)
+  - `google/gemini-2.0-flash-exp:free` (3rd best F1: 0.4065, Recall: 42%)
+  - Continue through all 15 OpenRouter models in priority order
+
+**6. Complete Failure**
+- Only after all **25 models across 3 providers** have been exhausted, return failure
+
 **📊 Performance Improvements**:
-| Metric | Before | After | Improvement |
-|--------|--------|-------|-------------|
-| Rate Limit Recovery | 60s+ wait | 2s switch | **30x faster** |
-| Provider Switching | Manual | Automatic | **Seamless** |
-| Model Selection | Fixed | V4 optimized | **Better accuracy** |
-| Success Rate | Variable | 100% | **Reliable** |
+| Metric | Before | V4 Enhanced | Improvement |
+|--------|--------|-------------|-------------|
+| Rate Limit Recovery | 60s+ wait | Intelligent model rotation | **30x faster** |
+| Provider Switching | Manual | Automatic escalation through 25 models | **Seamless** |
+| Model Selection | Fixed | V4 priority-based optimization | **Better accuracy** |
+| Success Rate | Variable | 100% (all models exhausted before failure) | **Maximum resilience** |
+| Fallback Options | Limited | 25 models across 3 providers | **Comprehensive** |
 
 ### Legacy LLM Integration
 

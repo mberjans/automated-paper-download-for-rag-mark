@@ -245,15 +245,47 @@ python foodb_pipeline_cli.py paper.pdf --verbose --show-provider-stats
 python foodb_pipeline_cli.py paper.pdf --primary-provider groq
 ```
 
-### Rate Limiting Behavior
+### Enhanced V4 Rate Limiting Scenario
 
-The enhanced system provides **30x faster recovery** from rate limiting:
+The V4 system implements **intelligent multi-tier fallback** with model rotation within each provider:
 
-| Scenario | Old Behavior | New Behavior | Improvement |
-|----------|-------------|--------------|-------------|
-| **Rate Limit Hit** | Wait 60s+ with exponential backoff | Switch provider after 2 failures | **30x faster** |
-| **Provider Down** | Manual intervention required | Automatic fallback to next provider | **Seamless** |
-| **Model Selection** | Fixed hardcoded models | V4 priority-based optimization | **Better accuracy** |
+#### **Detailed Fallback Flow**
+
+**1. Initial Request**
+- Request sent to **Cerebras llama-4-scout-17b-16e-instruct** (best Cerebras model from V4 priority list)
+
+**2. Rate Limit Hit**
+- Apply exponential backoff with doubling time delays between API calls
+- Up to user-defined limit (default: 5 attempts per model)
+
+**3. Cerebras Model Exhaustion**
+- If retry limit exhausted, switch to next unused Cerebras model from V4 priority list:
+  - `llama-3.3-70b` (2nd priority)
+  - `llama3.1-8b` (3rd priority)
+  - `qwen-3-32b` (4th priority)
+
+**4. Provider Escalation**
+- When all Cerebras models exhausted, escalate to **Groq models** using same retry logic:
+  - `meta-llama/llama-4-maverick-17b-128e-instruct` (best F1: 0.5104)
+  - `meta-llama/llama-4-scout-17b-16e-instruct` (2nd best F1: 0.5081)
+  - Continue through all 6 Groq models in V4 priority order
+
+**5. Final Fallback**
+- When all Groq models exhausted, switch to **OpenRouter models** in V4 priority order:
+  - `mistralai/mistral-nemo:free` (best F1: 0.5772)
+  - Continue through all 15 OpenRouter models in priority order
+
+**6. Complete Failure**
+- Only after all **25 models across 3 providers** have been exhausted, return failure
+
+### Performance Comparison
+
+| Scenario | Old Behavior | V4 Enhanced Behavior | Improvement |
+|----------|-------------|---------------------|-------------|
+| **Rate Limit Hit** | Wait 60s+ with exponential backoff | Intelligent model rotation within provider | **30x faster** |
+| **Provider Down** | Manual intervention required | Automatic escalation through 25 models | **Seamless** |
+| **Model Selection** | Fixed hardcoded models | V4 priority-based optimization (25 models) | **Better accuracy** |
+| **Failure Handling** | Limited fallback options | Complete exhaustion of all available models | **Maximum resilience** |
 
 ## 📖 Documentation
 

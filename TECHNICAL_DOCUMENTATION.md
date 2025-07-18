@@ -71,17 +71,52 @@ RetryConfig(
     jitter=True
 )
 
-# Intelligent Rate Limiting Logic
-if consecutive_rate_limits[provider] >= 2:
-    switch_provider_immediately()  # 30x faster than exponential backoff
-)
+# V4 Enhanced Multi-Tier Rate Limiting Logic
+def enhanced_rate_limiting_flow():
+    """
+    Comprehensive multi-tier fallback with intelligent model rotation
+    """
+    # Tier 1: Cerebras Models (Speed Priority)
+    cerebras_models = [
+        "llama-4-scout-17b-16e-instruct",  # 0.59s, Score: 9.8
+        "llama-3.3-70b",                   # 0.62s, Score: 9.5
+        "llama3.1-8b",                     # 0.56s, Score: 8.5
+        "qwen-3-32b"                       # 0.57s, Score: 8.2
+    ]
+
+    # Tier 2: Groq Models (Accuracy Priority)
+    groq_models = [
+        "meta-llama/llama-4-maverick-17b-128e-instruct",  # F1: 0.5104
+        "meta-llama/llama-4-scout-17b-16e-instruct",      # F1: 0.5081
+        "qwen/qwen3-32b",                                 # F1: 0.5056
+        "llama-3.1-8b-instant",                          # F1: 0.5000
+        "llama-3.3-70b-versatile",                       # F1: 0.4706
+        "moonshotai/kimi-k2-instruct"                     # F1: 0.4053
+    ]
+
+    # Tier 3: OpenRouter Models (Diversity Priority)
+    openrouter_models = [
+        "mistralai/mistral-nemo:free",                    # F1: 0.5772
+        "tngtech/deepseek-r1t-chimera:free",             # F1: 0.4372
+        # ... all 15 OpenRouter models in priority order
+    ]
+
+    # Execute multi-tier fallback
+    for provider_models in [cerebras_models, groq_models, openrouter_models]:
+        for model in provider_models:
+            if try_model_with_retries(model, max_attempts=5):
+                return success
+
+    return failure  # Only after all 25 models exhausted
 ```
 
-#### Rate Limiting Handling
-- **Automatic detection** of rate limit responses
-- **Provider switching** when limits exceeded
-- **Exponential backoff** with jitter for retry timing
-- **Statistics tracking** for performance monitoring
+#### Enhanced Rate Limiting Handling
+- **Multi-tier model rotation** within each provider before escalation
+- **Intelligent model selection** based on V4 priority rankings
+- **Comprehensive fallback coverage** across 25 models and 3 providers
+- **Exponential backoff** with user-defined retry limits per model
+- **Provider escalation** only after exhausting all models in current provider
+- **Real-time statistics tracking** for performance monitoring and optimization
 
 ### Text Processing Pipeline
 
@@ -200,15 +235,56 @@ class RetryConfig:
     jitter: bool = True
 ```
 
-### Provider Switching Logic
+### V4 Enhanced Provider Switching Logic
 ```python
-def handle_rate_limit():
+def enhanced_provider_switching():
     """
-    1. Detect rate limit response
-    2. Switch to next provider in fallback order
-    3. Apply exponential backoff
-    4. Track statistics for monitoring
+    V4 Multi-Tier Fallback with Intelligent Model Rotation
+
+    Flow:
+    1. Start with best model from current provider (V4 priority list)
+    2. Apply exponential backoff for rate limits (up to max_attempts)
+    3. If model exhausted, switch to next model in same provider
+    4. If all models in provider exhausted, escalate to next provider
+    5. Continue until all 25 models across 3 providers are exhausted
+    6. Only then return failure
     """
+
+    providers = {
+        'cerebras': {
+            'models': ['llama-4-scout-17b-16e-instruct', 'llama-3.3-70b',
+                      'llama3.1-8b', 'qwen-3-32b'],
+            'priority': 'speed'
+        },
+        'groq': {
+            'models': ['meta-llama/llama-4-maverick-17b-128e-instruct',
+                      'meta-llama/llama-4-scout-17b-16e-instruct',
+                      'qwen/qwen3-32b', 'llama-3.1-8b-instant',
+                      'llama-3.3-70b-versatile', 'moonshotai/kimi-k2-instruct'],
+            'priority': 'accuracy'
+        },
+        'openrouter': {
+            'models': ['mistralai/mistral-nemo:free',
+                      'tngtech/deepseek-r1t-chimera:free',
+                      # ... all 15 models in V4 priority order],
+            'priority': 'diversity'
+        }
+    }
+
+    for provider_name, provider_config in providers.items():
+        for model in provider_config['models']:
+            result = try_model_with_exponential_backoff(
+                provider=provider_name,
+                model=model,
+                max_attempts=5,
+                base_delay=1.0,
+                max_delay=60.0
+            )
+            if result.success:
+                return result
+
+    # All 25 models exhausted
+    return failure_response()
 ```
 
 ### Recovery Strategies
