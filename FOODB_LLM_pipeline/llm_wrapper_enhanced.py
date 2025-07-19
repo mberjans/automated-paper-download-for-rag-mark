@@ -156,7 +156,8 @@ class LLMWrapper:
             if is_rate_limit:
                 health.status = ProviderStatus.RATE_LIMITED
                 health.rate_limit_reset_time = current_time + 60
-                print(f"⚠️ {provider} rate limited, switching providers...")
+                # Don't print "switching providers" here - that's misleading
+                # The actual switching decision is made in the main fallback logic
             else:
                 health.status = ProviderStatus.FAILED
     
@@ -251,7 +252,60 @@ class LLMWrapper:
             "llama-3.1-8b-instant",
             "llama-3.3-70b-versatile"
         ]
-    
+
+    def _get_provider_models(self, provider_name: str) -> List[Dict]:
+        """Get all models for a specific provider from V4 priority list"""
+        if not self.model_priority_list:
+            # Fallback to hardcoded models if V4 list not available
+            if provider_name == 'cerebras':
+                return [
+                    {'model_id': 'llama-4-scout-17b-16e-instruct', 'model_name': 'Llama 4 Scout'},
+                    {'model_id': 'llama-3.3-70b', 'model_name': 'Llama 3.3 70B'},
+                    {'model_id': 'llama3.1-8b', 'model_name': 'Llama 3.1 8B'},
+                    {'model_id': 'qwen-3-32b', 'model_name': 'Qwen 3 32B'}
+                ]
+            elif provider_name == 'groq':
+                return [
+                    {'model_id': 'meta-llama/llama-4-maverick-17b-128e-instruct', 'model_name': 'Llama 4 Maverick'},
+                    {'model_id': 'meta-llama/llama-4-scout-17b-16e-instruct', 'model_name': 'Llama 4 Scout'},
+                    {'model_id': 'qwen/qwen3-32b', 'model_name': 'Qwen 3 32B'},
+                    {'model_id': 'llama-3.1-8b-instant', 'model_name': 'Llama 3.1 8B Instant'},
+                    {'model_id': 'llama-3.3-70b-versatile', 'model_name': 'Llama 3.3 70B Versatile'},
+                    {'model_id': 'moonshotai/kimi-k2-instruct', 'model_name': 'Moonshot Kimi K2'}
+                ]
+            elif provider_name == 'openrouter':
+                return [
+                    {'model_id': 'mistralai/mistral-nemo:free', 'model_name': 'Mistral Nemo'},
+                    {'model_id': 'tngtech/deepseek-r1t-chimera:free', 'model_name': 'DeepSeek R1T Chimera'},
+                    {'model_id': 'google/gemini-2.0-flash-exp:free', 'model_name': 'Google Gemini 2.0 Flash'},
+                    {'model_id': 'mistralai/mistral-small-3.1-24b-instruct:free', 'model_name': 'Mistral Small 3.1'},
+                    {'model_id': 'mistralai/mistral-small-3.2-24b-instruct:free', 'model_name': 'Mistral Small 3.2'}
+                ]
+            return []
+
+        # Get models from V4 priority list
+        provider_models = [
+            model for model in self.model_priority_list
+            if model.get('provider') == provider_name.title()
+        ]
+
+        return provider_models
+
+    def _make_api_request_with_model(self, provider: str, model_id: str, prompt: str, max_tokens: int = 500) -> tuple:
+        """Make API request to specific provider with specific model"""
+        try:
+            if provider == "cerebras":
+                return self._cerebras_request_with_model(model_id, prompt, max_tokens)
+            elif provider == "groq":
+                return self._groq_request_with_model(model_id, prompt, max_tokens)
+            elif provider == "openrouter":
+                return self._openrouter_request_with_model(model_id, prompt, max_tokens)
+            else:
+                return "", False, False
+        except Exception as e:
+            print(f"❌ Error in {provider} API request with model {model_id}: {e}")
+            return "", False, False
+
     def _make_api_request(self, provider: str, prompt: str, max_tokens: int = 500) -> tuple:
         """Make API request to specific provider"""
         try:
@@ -358,95 +412,205 @@ class LLMWrapper:
         response.raise_for_status()
         result = response.json()
         return result['choices'][0]['message']['content'].strip(), True, False
-    
-    def _calculate_delay(self, attempt: int) -> float:
-        """Calculate delay for exponential backoff"""
+
+    def _cerebras_request_with_model(self, model_id: str, prompt: str, max_tokens: int) -> tuple:
+        """Make request to Cerebras API with specific model"""
+        api_key = self.api_keys.get('cerebras')
+        if not api_key:
+            return "", False, False
+
+        url = "https://api.cerebras.ai/v1/chat/completions"
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+
+        data = {
+            "model": model_id,
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": max_tokens,
+            "temperature": 0.1
+        }
+
+        response = requests.post(url, headers=headers, json=data, timeout=30)
+
+        if response.status_code == 429:
+            return "", False, True  # Rate limited
+
+        response.raise_for_status()
+        result = response.json()
+        return result['choices'][0]['message']['content'].strip(), True, False
+
+    def _groq_request_with_model(self, model_id: str, prompt: str, max_tokens: int) -> tuple:
+        """Make request to Groq API with specific model"""
+        api_key = self.api_keys.get('groq')
+        if not api_key:
+            return "", False, False
+
+        url = "https://api.groq.com/openai/v1/chat/completions"
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+
+        data = {
+            "model": model_id,
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": max_tokens,
+            "temperature": 0.1
+        }
+
+        response = requests.post(url, headers=headers, json=data, timeout=30)
+
+        if response.status_code == 429:
+            return "", False, True  # Rate limited
+
+        response.raise_for_status()
+        result = response.json()
+        return result['choices'][0]['message']['content'].strip(), True, False
+
+    def _openrouter_request_with_model(self, model_id: str, prompt: str, max_tokens: int) -> tuple:
+        """Make request to OpenRouter API with specific model"""
+        api_key = self.api_keys.get('openrouter')
+        if not api_key:
+            return "", False, False
+
+        url = "https://openrouter.ai/api/v1/chat/completions"
+        headers = {
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json"
+        }
+
+        data = {
+            "model": model_id,
+            "messages": [{"role": "user", "content": prompt}],
+            "max_tokens": max_tokens,
+            "temperature": 0.1
+        }
+
+        response = requests.post(url, headers=headers, json=data, timeout=30)
+
+        if response.status_code == 429:
+            return "", False, True  # Rate limited
+
+        response.raise_for_status()
+        result = response.json()
+        return result['choices'][0]['message']['content'].strip(), True, False
+
+    def _calculate_delay(self, attempt: int, provider_name: str = "", model_name: str = "") -> float:
+        """Calculate delay for exponential backoff with detailed logging"""
         import random
-        delay = min(
-            self.retry_config.base_delay * (self.retry_config.exponential_base ** attempt),
-            self.retry_config.max_delay
-        )
-        
+
+        # Calculate base delay before exponential increase
+        base_delay = self.retry_config.base_delay
+        exponential_multiplier = self.retry_config.exponential_base ** attempt
+        raw_delay = base_delay * exponential_multiplier
+
+        # Apply max delay cap
+        capped_delay = min(raw_delay, self.retry_config.max_delay)
+
+        # Apply jitter if enabled
+        final_delay = capped_delay
         if self.retry_config.jitter:
-            delay *= (0.5 + random.random() * 0.5)
-        
-        return delay
+            # Reduced jitter: 80% to 100% of calculated delay (was 50% to 100%)
+            jitter_factor = (0.8 + random.random() * 0.2)
+            final_delay = capped_delay * jitter_factor
+
+        # Log detailed delay calculation
+        if attempt == 0:
+            print(f"📊 Delay calculation for {provider_name} {model_name}:")
+            print(f"   Base delay: {base_delay}s")
+            print(f"   Attempt {attempt + 1}: {base_delay}s × {self.retry_config.exponential_base}^{attempt} = {raw_delay:.2f}s")
+        else:
+            previous_raw = base_delay * (self.retry_config.exponential_base ** (attempt - 1))
+            print(f"   Attempt {attempt + 1}: {previous_raw:.2f}s → {raw_delay:.2f}s (×{self.retry_config.exponential_base})")
+
+        if capped_delay != raw_delay:
+            print(f"   Capped at max delay: {raw_delay:.2f}s → {capped_delay:.2f}s")
+
+        if self.retry_config.jitter and final_delay != capped_delay:
+            print(f"   With jitter: {capped_delay:.2f}s → {final_delay:.2f}s")
+
+        print(f"   Final delay: {final_delay:.2f}s")
+
+        return final_delay
     
     def generate_single(self, prompt: str, max_tokens: int = 500, temperature: float = 0.1) -> str:
         """Generate single response with fallback (compatible with original interface)"""
         return self.generate_single_with_fallback(prompt, max_tokens)
     
     def generate_single_with_fallback(self, prompt: str, max_tokens: int = 500) -> str:
-        """Generate single response with enhanced rate limiting fallback"""
+        """Generate single response with multi-tier fallback algorithm"""
         self.stats['total_requests'] += 1
 
-        # Track consecutive rate limits per provider to trigger faster switching
-        consecutive_rate_limits = {}
+        # Multi-tier fallback: Try all models within each provider before escalating
+        for provider_index, provider_name in enumerate(self.fallback_order):
+            if provider_index == 0:
+                print(f"🎯 Starting with primary provider: {provider_name}")
+            else:
+                print(f"🚀 SWITCHING PROVIDERS: {self.fallback_order[provider_index-1]} → {provider_name}")
+                print(f"🔄 Trying provider: {provider_name}")
 
-        # Try each provider in priority order
-        providers_tried = []
+            # Get all models for this provider from V4 priority list
+            provider_models = self._get_provider_models(provider_name)
 
-        while len(providers_tried) < len(self.fallback_order):
-            if not self.current_provider:
-                break
-
-            if self.current_provider in providers_tried:
-                # Switch to next provider if current one already tried
-                if not self._switch_provider():
-                    break
+            if not provider_models:
+                print(f"⚠️  No models available for {provider_name}, skipping...")
                 continue
 
-            providers_tried.append(self.current_provider)
-            provider_name = self.current_provider
+            # Try each model in this provider
+            for model_index, model_info in enumerate(provider_models):
+                model_id = model_info['model_id']
+                model_name = model_info.get('model_name', model_id)
 
-            # Try current provider with limited retries
-            for attempt in range(self.retry_config.max_attempts):
-                # Make API request
-                response, success, is_rate_limit = self._make_api_request(
-                    provider_name, prompt, max_tokens
-                )
+                print(f"🎯 Trying {provider_name} model {model_index + 1}/{len(provider_models)}: {model_name}")
 
-                # Update provider health
-                self._update_provider_health(provider_name, success, is_rate_limit)
+                # Try this specific model with exponential backoff
+                model_success = False
+                for attempt in range(self.retry_config.max_attempts):
+                    # Make API request with specific model
+                    response, success, is_rate_limit = self._make_api_request_with_model(
+                        provider_name, model_id, prompt, max_tokens
+                    )
 
-                if success:
-                    self.stats['successful_requests'] += 1
-                    print(f"✅ Success with {provider_name} on attempt {attempt + 1}")
-                    return response
+                    # Update provider health
+                    self._update_provider_health(provider_name, success, is_rate_limit)
 
-                # Handle rate limiting
-                if is_rate_limit:
-                    self.stats['rate_limited_requests'] += 1
-                    consecutive_rate_limits[provider_name] = consecutive_rate_limits.get(provider_name, 0) + 1
+                    if success:
+                        self.stats['successful_requests'] += 1
+                        print(f"✅ Success with {provider_name} {model_name} on attempt {attempt + 1}")
+                        return response
 
-                    # Switch provider immediately after 2 consecutive rate limits
-                    if consecutive_rate_limits[provider_name] >= 2:
-                        print(f"🔄 {provider_name} hit rate limit {consecutive_rate_limits[provider_name]} times, switching providers immediately...")
-                        break
+                    # Handle rate limiting with exponential backoff
+                    if is_rate_limit:
+                        self.stats['rate_limited_requests'] += 1
 
-                    # For first rate limit, try exponential backoff
-                    if attempt < self.retry_config.max_attempts - 1:
-                        delay = self._calculate_delay(attempt)
-                        print(f"⚠️  {provider_name} rate limited, retrying in {delay:.1f}s (attempt {attempt + 1}/{self.retry_config.max_attempts})...")
-                        time.sleep(delay)
-                        continue
+                        if attempt < self.retry_config.max_attempts - 1:
+                            print(f"⚠️  {provider_name} {model_name} rate limited (attempt {attempt + 1}/{self.retry_config.max_attempts})")
+                            delay = self._calculate_delay(attempt, provider_name, model_name)
+                            print(f"⏳ Waiting {delay:.2f}s before retry...")
+                            time.sleep(delay)
+                            continue
+                        else:
+                            print(f"🔄 {provider_name} {model_name} exhausted all {self.retry_config.max_attempts} retry attempts due to rate limiting")
+                            break
                     else:
-                        print(f"🔄 {provider_name} exhausted retry attempts due to rate limiting, switching providers...")
+                        # Non-rate-limit error, try next model immediately
+                        print(f"❌ {provider_name} {model_name} API error on attempt {attempt + 1}, trying next model...")
                         break
 
+                # If we get here, this model failed - try next model in same provider
+                if model_index < len(provider_models) - 1:
+                    print(f"🔄 {provider_name} {model_name} failed, switching to next model within {provider_name}...")
                 else:
-                    # Non-rate-limit error
-                    print(f"❌ {provider_name} API error on attempt {attempt + 1}: switching providers...")
-                    break
+                    print(f"🔄 {provider_name} {model_name} failed (last model in {provider_name})")
 
-            # Switch to next provider
-            if not self._switch_provider():
-                print(f"❌ No more providers available")
-                break
+            # If we get here, all models in this provider failed - try next provider
+            print(f"🚀 All {provider_name} models exhausted, escalating to next provider...")
 
-        # All providers failed
+        # All providers and models failed
         self.stats['failed_requests'] += 1
-        print(f"❌ All providers failed for prompt: {prompt[:100]}...")
+        print(f"❌ All providers and models failed for prompt: {prompt[:100]}...")
         return ""
     
     def generate_batch(self, prompts: List[str], max_tokens: int = None, 
